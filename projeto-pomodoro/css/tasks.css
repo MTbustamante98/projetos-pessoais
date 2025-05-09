@@ -4,7 +4,7 @@
   background: #ab4343;
   opacity: 0.6;
   position: absolute;
-  bottom: -100px;
+  bottom: -190px;
   right: 470px;
   cursor: pointer;
   border-radius: 6px;
@@ -49,6 +49,27 @@
 
 .tasks.ativo {
   display: block;
+}
+
+.paragraph-task {
+  position: absolute;
+  bottom: -80px;
+  left: 470px;
+}
+
+.paragraph-task p {
+  font: 600 1.2rem "Sansation", sans-serif;
+  color: #fff;
+}
+
+.paragraph-task p::after {
+  content: "";
+  display: block;
+  width: 500px;
+  height: 2px;
+  background: #d4d4d4;
+  opacity: 0.4;
+  margin-top: 8px;
 }
 
 .title-task {
@@ -97,7 +118,7 @@
   background: #ece196;
   margin: 20px 15px;
   width: 90%;
-  height: 230px;
+  min-height: 230px;
   position: relative;
   border: 3px solid #fff;
   border-radius: 6px;
@@ -131,14 +152,15 @@
 .container-task textarea {
   border: none;
   width: 95%;
-  height: 65px;
-  margin: 15px 0px 0 10px;
+  height: 70px;
+  margin: 15px 10px 0 10px;
   padding: 10px;
   background: #f5f5f5;
   color: rgba(0, 0, 0, 0.8);
   font-family: "Inter", Arial, sans-serif;
   border-radius: 6px;
   box-sizing: border-box;
+  resize: none;
   display: none;
 }
 
@@ -292,6 +314,10 @@
     outline: none;
   }
 
+  .container-task textarea {
+    margin: 15px 0 0 8px;
+  }
+
   .add-notes-tasks {
     bottom: 18px;
     left: 40px;
@@ -341,6 +367,10 @@
 
   .container-task input::placeholder {
     font-size: 18px;
+  }
+
+  .container-task textarea {
+    margin: 15px 0 0 7px;
   }
 
   .add-list-tasks {
