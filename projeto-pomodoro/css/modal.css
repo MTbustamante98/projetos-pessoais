@@ -1,0 +1,148 @@
+.modal {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  width: 100%;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal p,
+.modal li {
+  color: #292929;
+}
+
+.on-pomodoro {
+  width: 800px;
+  height: 600px;
+  background: #f5f7f5;
+  border: 2px solid #fb5;
+  border-radius: 6px;
+}
+
+.on-pomodoro .img-close {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px;
+}
+
+.img-close img {
+  cursor: pointer;
+}
+
+.faq-lista {
+  padding: 0 60px;
+}
+
+.faq-lista h1 {
+  font-family: "Sansation", Arial, sans-serif;
+  font-weight: 600;
+  font-size: 1.7rem;
+  color: #954a4a;
+  margin-bottom: 10px;
+  background-image: linear-gradient(to right, #fbf3c3, rgba(148, 230, 190, 0));
+  position: relative;
+}
+
+.faq-lista p {
+  display: block;
+  font-family: "Roboto", Arial, sans-serif;
+  text-align: justify;
+  font-size: 0.975rem;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.faq-lista p a {
+  color: red;
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.faq-lista ul {
+  padding: 0 20px;
+  list-style-type: decimal;
+  font-family: "Roboto", Arial, sans-serif;
+}
+
+.faq-lista ul li {
+  line-height: 1.5;
+}
+
+.modal.ativo {
+  display: flex;
+  animation: showModal ease 0.6s forwards;
+}
+
+@keyframes showModal {
+  from {
+    opacity: 0;
+    transform: translate(0, -20px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.configs {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  width: 100%;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-configs {
+  background: #fff;
+  height: 750px;
+  width: 350px;
+  border-radius: 5px;
+}
+
+.configs.ativo {
+  display: flex;
+}
+
+.menu-configs {
+  height: 750px;
+  width: 400px;
+}
+
+.close-configs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+}
+
+.close-configs h1 {
+  display: block;
+  margin: 0 auto;
+  font-variant: small-caps;
+  font-family: "Sansation", Arial, sans-serif;
+  color: #b4b4b4;
+  letter-spacing: 2px;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.close-configs img {
+  cursor: pointer;
+}
+
+.dec {
+  width: 100%;
+  height: 1px;
+  background: #b4b4b4;
+  opacity: 0.3;
+}

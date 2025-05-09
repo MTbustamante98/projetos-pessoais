@@ -1,0 +1,39 @@
+rgba(154, 219, 183, 0.479)
+#F9F5D9
+
+function openModal(event) {
+  if (event) event.preventDefault();
+  const ativo = "ativo"
+  if (event.target === modalLinks[1]) {
+    modal.classList.add(ativo)
+  }
+
+  if (event.target === modalLinks[0]) {
+    configs.classList.add(ativo)
+  }
+}
+
+function closeModal(event) {
+  if (event.target === modal) 
+  modal.classList.remove("ativo");
+}
+
+function closeConfigs(event) {
+  if (event.target === configs) 
+  configs.classList.remove("ativo");
+}
+
+function imgCloseModalAndConfigs(event) {
+  if (event.target === imgClose[0]) {
+    modal.classList.remove("ativo");
+  }
+
+  if (event.target === imgClose[1]) {
+    configs.classList.remove("ativo");
+  }
+}
+
+modalLinks.forEach(elements => elements.addEventListener("click", openModal))
+modal.addEventListener("click", closeModal);
+configs.addEventListener("click", closeConfigs);
+imgClose.forEach(elements => elements.addEventListener("click", imgCloseModalAndConfigs))

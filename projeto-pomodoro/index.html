@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta name="description" content="Cronômetro pomodoro" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PomoClock</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <div class="image">
+        <img src="/imagens/logo-1-center-pomoclock.png" alt="" />
+      </div>
+      <nav>
+        <ul>
+          <li><a data-config href="#">Configurações</a></li>
+            <li><a data-modal href="#">Sobre a técnica pomodoro</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section class="watches">
+      <div class="clock-pomodoro">
+        <span>25:00</span>
+        <button type="button">START</button>
+      </div>
+      <section class="div-clocks">
+        <div>
+          <p class="section-clock-pomodoro">Pomodoro</p>
+        </div>
+        <div>
+          <p class="clock-short-break">Pausa curta</p>
+        </div>
+        <div>
+          <p class="clock-long-break">Pausa longa</p>
+        </div>
+      </section>
+      <section class="tasks">
+            <p>Adicione uma tarefa</p>
+      </section>
+    </section>
+    <section class="secao-frase">
+      <p class="message"></p>
+    </section>
+    <section class="modal">
+      <div class="on-pomodoro">
+        <div class="img-close">
+          <img data-img-close="modal" src="/imagens/icon-close.svg" alt="representation of an icon to close modal">
+        </div>
+        <div class="faq-lista">
+          <h1>O que é o PomoClock?</h1>
+          <p>
+            PomoClock é um marcador de tempo personalizável que funciona em
+            diversos tipos de dispositivos móveis. O objetivo desta aplicação
+            é ajudá-lo a concentrar-se em qualquer tarefa em que você esteja
+            trabalhando. Aplicativo que obteve inspiração pela
+            <a href="https://www.pomodorotechnique.com/">Técnica Pomodoro</a>
+            que é um método de gestão do tempo desenvolvido por Francesco
+            Cirillo.
+          </p>
+          <h1>O que é a técnica Pomodoro?</h1>
+          <p>
+            A Técnica Pomodoro é um método de gestão de tempo criado no final
+            dos anos 1980 por Francesco Cirillo. Tendo como ideia principal,
+            Trabalhar em curtos períodos altamente focados, evitar distrações,
+            melhorar produtividade e a qualidade do trabalho e descansar entre
+            os ciclos para não sobrecarregar o cerébro.
+          </p>
+          <h1>Como usar o Temporizador Pomodoro?</h1>
+          <p>
+          <ul>
+            <li>Adicionar tarefas que irá trabalhar hoje</li>
+            <li>
+              Definir estimativa pomodoros (1 = 25min de trabalho) para cada
+              tarefa
+            </li>
+            <li>
+              Selecione uma tarefa trabalhar
+            </li>
+            <li>
+              Inicie o temporizador e concentre-se na tarefa para 25 minutos
+            </li>
+            <li>
+              Faça uma pausa durante 5 minutos quando o alarme tocar
+            </li>
+            <li>
+              Iterar 3-5 até terminar as tarefas
+            </li>
+          </ul>
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="configs">
+      <div class="menu-configs">
+        <div class="close-configs">
+          <h1>Configurações</h1>
+          <img data-img-close="configs" src="/imagens/icon-close-configs-3.svg" alt="">
+        </div>
+        <div class="dec"></div>
+      </div>
+    </section>
+    <aside class="add-list-tasks">
+      <img data-img-close="tasks" src="/imagens/arrow-back-close.svg" alt="">
+      <div class="title-task">
+        <h1>Tarefas</h1>
+        <span class="count">0</span>
+      </div>
+      <div class="container-task">
+        <input type="text" name="task" id="task" placeholder="No que você está trabalhando?">
+        <textarea name="textarea" id="textarea" placeholder="Algumas notas"></textarea>
+        <div class="add-notes-tasks">
+            <span class="notes">Add nota</span>
+            <button class="btn-add-tasks">Adicionar tarefa</button>
+        </div>
+      </div>
+    </aside>
+  </main>
+  <script src="js/script.js"></script>
+</body>
+</html>
