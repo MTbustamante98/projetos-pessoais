@@ -46,47 +46,47 @@ function initModals() {
 }
 initModals();
 
-function starTyping() {
-  const tasks = document.querySelector(".tasks")
-  const paragraphMessage = document.querySelector(".message");
-  const frases = [
-    "Bem-vindo(a) ao PomoClock.",
-    "Configure o timer, dê start, concentre-se e trabalhe.",
-    "Foco e atenção.",
-  ];
-  let index = 0;
+// function starTyping() {
+//   const tasks = document.querySelector(".tasks")
+//   const paragraphMessage = document.querySelector(".message");
+//   const frases = [
+//     "Bem-vindo(a) ao PomoClock.",
+//     "Configure o timer, dê start, concentre-se e trabalhe.",
+//     "Foco e atenção.",
+//   ];
+//   let index = 0;
   
-  function initPhrase(frases, callback) {
-    let acumulada = "";
-    for (let i = 0; i < frases.length; i++) {
-      setTimeout(() => {
-        acumulada += frases[i];
-        paragraphMessage.textContent = acumulada;
+//   function initPhrase(frases, callback) {
+//     let acumulada = "";
+//     for (let i = 0; i < frases.length; i++) {
+//       setTimeout(() => {
+//         acumulada += frases[i];
+//         paragraphMessage.textContent = acumulada;
   
-        if (i === frases.length - 1 && callback) {
-          setTimeout(callback, 500);
-        }
-      }, i * 50);
-    }
-  }
+//         if (i === frases.length - 1 && callback) {
+//           setTimeout(callback, 500);
+//         }
+//       }, i * 50);
+//     }
+//   }
   
-  function executarFrases(index) {
-    if (index >= frases.length) return;
+//   function executarFrases(index) {
+//     if (index >= frases.length) return;
   
-    initPhrase(frases[index], () => {
-      setTimeout(() => {
-        paragraphMessage.textContent = "";
-        if (index === frases.length - 1) {
-          tasks.classList.add("ativo");
-        } else {
-          executarFrases(index + 1);
-        }
-      }, 1000);
-    });
-  }
-  executarFrases(0)
-}
-starTyping();
+//     initPhrase(frases[index], () => {
+//       setTimeout(() => {
+//         paragraphMessage.textContent = "";
+//         if (index === frases.length - 1) {
+//           tasks.classList.add("ativo");
+//         } else {
+//           executarFrases(index + 1);
+//         }
+//       }, 1000);
+//     });
+//   }
+//   executarFrases(0)
+// }
+// starTyping();
 
 function initAddTasks() {
   const divAddTasks = document.querySelector(".tasks");

@@ -8,7 +8,7 @@
   right: 470px;
   cursor: pointer;
   border-radius: 6px;
-  display: none;
+  display: block;
 }
 
 .tasks:hover {
@@ -44,7 +44,7 @@
   position: absolute;
   top: 5px;
   left: 125px;
-  background: url("/imagens/add-task2.svg");
+  background: url("../imagens/add-task2.svg");
 }
 
 .tasks.ativo {
@@ -75,13 +75,13 @@
   top: 0;
   left: 0;
   background: #e1d47b;
-  display: none;
+  display: block;
 }
 
-.add-list-tasks.ativo {
+/* .add-list-tasks.ativo {
   display: block;
   animation: showTasks ease 0.6s forwards;
-}
+} */
 
 @keyframes showTasks {
   from {
@@ -134,7 +134,7 @@
   height: 65px;
   margin: 15px 0px 0 10px;
   padding: 10px;
-  background: #F5F5F5;
+  background: #f5f5f5;
   color: rgba(0, 0, 0, 0.8);
   font-family: "Inter", Arial, sans-serif;
   border-radius: 6px;
@@ -181,7 +181,7 @@
 .add-notes-tasks span {
   color: #333;
   cursor: pointer;
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: "Inter", Arial, sans-serif;
 }
 
 .add-notes-tasks span:hover {
@@ -191,7 +191,7 @@
 .add-notes-tasks span::before {
   content: "";
   display: inline-block;
-  background: url("/imagens/add-more-icon.svg");
+  background: url("../imagens/add-more-icon.svg");
   width: 16px;
   height: 16px;
   position: absolute;
@@ -215,7 +215,7 @@
 @media (max-width: 1440px) {
   .tasks {
     bottom: -100px;
-    right: 410px;
+    right: 440px;
   }
 
   .title-task {
@@ -242,8 +242,6 @@
     height: 100vh;
     top: 0;
     left: 0;
-    /* background: #C9EAA0; */
-    /* background: #EED797; */
     background: #e1d47b;
     display: none;
   }
@@ -267,13 +265,13 @@
     width: 90%;
     background: #ece196;
     margin: 25px 15px;
-    height: 200px;
+    height: 220px;
     box-sizing: border-box;
   }
 
   .container-task input {
     width: 100%;
-    padding: 20px 5px;
+    padding: 20px 8px;
     box-sizing: border-box;
     border: none;
     font-size: 20px;
@@ -295,10 +293,8 @@
   }
 
   .add-notes-tasks {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 85px;
+    bottom: 18px;
+    left: 40px;
   }
 
   .add-notes-tasks span {
@@ -317,14 +313,8 @@
   }
 
   .add-notes-tasks span::before {
-    content: "";
-    display: inline-block;
-    background: url("/imagens/add-more-icon.svg");
-    width: 16px;
-    height: 16px;
-    position: absolute;
-    vertical-align: middle;
-    left: 0;
+    top: -1px;
+    left: -20px;
   }
 
   .add-list-tasks img {
@@ -339,5 +329,36 @@
 @media (max-width: 1280px) {
   .tasks {
     right: 370px;
+  }
+
+  .container-task {
+    height: 230px;
+  }
+
+  .container-task input {
+    padding: 20px 8px;
+  }
+
+  .container-task input::placeholder {
+    font-size: 18px;
+  }
+
+  .add-list-tasks {
+    display: block;
+    width: 340px;
+  }
+
+  .add-notes-tasks {
+    left: 40px;
+    gap: 40px;
+  }
+
+  .add-notes-tasks .btn-add-tasks {
+    font-size: 0.875rem;
+  }
+
+  .add-notes-tasks span::before {
+    top: -1px;
+    left: -22px;
   }
 }

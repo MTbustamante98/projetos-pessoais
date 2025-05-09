@@ -55,7 +55,7 @@ li a:hover::after {
 li:nth-child(1) a::before {
   content: "";
   position: absolute;
-  background: url("/imagens/settings.svg") no-repeat;
+  background: url("../imagens/settings.svg") no-repeat;
   height: 24px;
   width: 24px;
   left: -23px;
@@ -65,7 +65,7 @@ li:nth-child(1) a::before {
 li:nth-child(2) a::before {
   content: "";
   position: absolute;
-  background: url("/imagens/curious.svg") no-repeat;
+  background: url("../imagens/curious.svg") no-repeat;
   height: 24px;
   width: 24px;
   left: -25px;
