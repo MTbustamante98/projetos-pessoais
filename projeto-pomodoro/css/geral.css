@@ -1,11 +1,30 @@
+:root {
+  /* Primary */
+  --tomato: #f3615c;
+  --indianRed: #954a4a;
+  --khaki: #e1d47b;
+  --nerolac-kokam-red: #ab4343;
+  --paleGoldenRod: #ece196;
+
+  /* Neutral */
+  --dark-gray: #1d1d1d;
+  --medium-dark: #473A39;
+  --saturated-gray: #b4b4b4;
+  --gainsboro: #d9d9d9;
+  --white-smoke: #f5f7f5;
+  --white-less-clear: #fafafa;
+  --white: #fff;
+}
+
 * {
   padding: 0;
   margin: 0;
 }
 
 body {
-  background: #f3615c;
+  background: var(--tomato);
   position: relative;
+  transition: background 0.6s ease;
 }
 
 .container {
@@ -15,3 +34,8 @@ body {
   margin-left: auto;
   max-width: 1440px;
 }
+
+a {
+  text-decoration: none;
+}
+

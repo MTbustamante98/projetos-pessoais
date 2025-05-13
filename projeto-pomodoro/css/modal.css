@@ -13,21 +13,21 @@
 
 .modal p,
 .modal li {
-  color: #292929;
+  color: var(--medium-dark);
 }
 
 .on-pomodoro {
   width: 800px;
   height: 600px;
-  background: #f5f7f5;
-  border: 2px solid #fb5;
+  background: var(--white-smoke);
+  border: 2px solid var(--khaki);
   border-radius: 6px;
 }
 
 .on-pomodoro .img-close {
   display: flex;
   justify-content: flex-end;
-  padding: 16px;
+  padding: 1rem;
 }
 
 .img-close img {
@@ -35,15 +35,13 @@
 }
 
 .faq-lista {
-  padding: 0 60px;
+  padding: 0 3.75rem;
 }
 
 .faq-lista h1 {
-  font-family: "Sansation", Arial, sans-serif;
-  font-weight: 600;
-  font-size: 1.7rem;
-  color: #954a4a;
-  margin-bottom: 10px;
+  font: 600 1.7rem "Sansation", Arial, sans-serif;
+  color: var(--indianRed);
+  margin-bottom: 0.625rem;
   background-image: linear-gradient(to right, #fbf3c3, rgba(148, 230, 190, 0));
   position: relative;
 }
@@ -53,7 +51,7 @@
   font-family: "Roboto", Arial, sans-serif;
   text-align: justify;
   font-size: 0.975rem;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
   line-height: 1.5;
 }
 
@@ -103,9 +101,9 @@
 }
 
 .menu-configs {
-  background: #fff;
-  height: 750px;
-  width: 350px;
+  background: var(--white);
+  height: 800px;
+  width: 370px;
   border-radius: 5px;
 }
 
@@ -113,36 +111,38 @@
   display: flex;
 }
 
-.menu-configs {
-  height: 750px;
-  width: 400px;
-}
-
-.close-configs {
+.title-and-close-configs {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px;
+  padding: 1rem;
 }
 
-.close-configs h1 {
+.title-and-close-configs h1 {
   display: block;
   margin: 0 auto;
   font-variant: small-caps;
   font-family: "Sansation", Arial, sans-serif;
-  color: #b4b4b4;
+  color: var(--saturated-gray);
   letter-spacing: 2px;
   font-size: 1.3rem;
   font-weight: 600;
 }
 
-.close-configs img {
+.title-and-close-configs img {
   cursor: pointer;
 }
 
 .dec {
   width: 100%;
   height: 1px;
-  background: #b4b4b4;
+  background: var(--saturated-gray);
   opacity: 0.3;
+}
+
+@media (max-width: 1440px) {
+  .menu-configs {
+    height: 700px;
+    width: 350px;
+  }
 }

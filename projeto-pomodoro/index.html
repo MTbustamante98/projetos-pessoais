@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta name="description" content="Cronômetro pomodoro" />
   <meta charset="UTF-8" />
@@ -14,42 +15,41 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
   <main class="container">
-    <header>
+    <header class="header">
       <div class="image">
         <img src="./imagens/logo-1-center-pomoclock.png" alt="" />
       </div>
       <nav>
         <ul>
           <li><a data-config href="#">Configurações</a></li>
-            <li><a data-modal href="#">Sobre a técnica pomodoro</a></li>
+          <li><a data-modal href="#">Sobre a técnica pomodoro</a></li>
         </ul>
       </nav>
     </header>
     <section class="watches">
       <div class="clock-pomodoro">
-        <span>25:00</span>
+        <span data-timer>25:00</span>
         <button type="button">START</button>
       </div>
       <section class="div-clocks">
         <div>
-          <p class="section-clock-pomodoro">Pomodoro</p>
+          <p data-type="pomodoro" class="pomodoro-clock">Pomodoro</p>
         </div>
         <div>
-          <p class="clock-short-break">Pausa curta</p>
+          <p data-type="pomodoro" class="short-pause-pomodoro">Pausa curta</p>
         </div>
         <div>
-          <p class="clock-long-break">Pausa longa</p>
+          <p data-type="pomodoro" class="long-pause-pomodoro">Pausa longa</p>
         </div>
       </section>
-        <div class="paragraph-task">
-          <p>Tarefas</p>
-        </div>
-        <section class="tasks">
-          <p>Adicione uma tarefa</p>
+      <div class="paragraph-task"></div>
+      <section class="tasks">
+        <p>Adicione uma tarefa</p>
       </section>
     </section>
     <section class="secao-frase">
@@ -106,9 +106,9 @@
     </section>
     <section class="configs">
       <div class="menu-configs">
-        <div class="close-configs">
+        <div class="title-and-close-configs">
           <h1>Configurações</h1>
-          <img data-img-close="configs" src="./imagens/icon-close-configs-3.svg" alt="">
+          <img data-img-close="configs" src="./imagens/icon-close-configs.svg" alt="">
         </div>
         <div class="dec"></div>
       </div>
@@ -118,17 +118,29 @@
       <div class="title-task">
         <h1>Tarefas</h1>
         <span class="count">0</span>
+        <button data-menu="button" aria-expanded="false" aria-controls="menu">
+          <img data-menu-img src="./imagens/three-points.svg" alt="">
+        </button>
+        <div class="menu">
+          <nav>
+            <ul>
+              <li><a href="#">Limpar tarefas concluídas</a></li>
+              <li><a href="#">Limpar todas as tarefas</a></li>
+            </ul>
+          </nav>
+        </div>
       </div>
       <div class="container-task">
         <input type="text" name="task" id="task" placeholder="No que você está trabalhando?">
         <textarea name="textarea" id="textarea" placeholder="Algumas notas"></textarea>
         <div class="add-notes-tasks">
-            <span class="notes">Add nota</span>
-            <button class="btn-add-tasks">Adicionar tarefa</button>
+          <span data-notes class="notes">Add nota</span>
+          <button data-add-tasks class="btn-add-tasks">Adicionar tarefa</button>
         </div>
       </div>
     </aside>
   </main>
   <script src="js/script.js"></script>
 </body>
+
 </html>
