@@ -3,6 +3,7 @@ function initModals() {
   const configs = document.querySelector(".configs");
   const tasks = document.querySelector(".add-list-tasks");
   const menu = document.querySelector(".menu");
+  const arrowClose = document.querySelector("[data-img-close='tasks']");
 
   const modalLinks = document.querySelectorAll(
     "[data-modal], [data-config], [data-menu='button']"
@@ -49,6 +50,7 @@ function initModals() {
       configs.classList.remove(ativo);
     } else {
       tasks.classList.remove(ativo);
+      arrowClose.classList.toggle(ativo);
     }
   }
 
@@ -105,9 +107,11 @@ initModals();
 function initAddTasks() {
   const divAddTasks = document.querySelector(".tasks");
   const containerTasks = document.querySelector(".add-list-tasks");
+  const arrowClose = document.querySelector("[data-img-close='tasks']");
 
   function addTasks() {
     containerTasks.classList.toggle("ativo");
+    arrowClose.classList.toggle("ativo");
   }
 
   divAddTasks.addEventListener("click", addTasks);
@@ -168,11 +172,13 @@ function initTasks() {
   const buttonAddTasks = document.querySelector("[data-add-tasks");
   const tasksContainer = document.querySelector(".add-list-tasks");
 
-  
   const arrayList = JSON.parse(localStorage.getItem("inputTask")) || [];
-  
+
   arrayList.forEach((el) => {
-    const span = createElementSpan(el);
+    const para = createElementParagraph(el);
+    const span = createElementSpan();
+
+    span.appendChild(para);
     tasksContainer.appendChild(span);
   });
 
@@ -186,18 +192,28 @@ function initTasks() {
 
     arrayList.push(valueInputTask);
 
-    const span = createElementSpan(valueInputTask);
+    const span = createElementSpan();
     tasksContainer.appendChild(span);
+
+    const para = createElementParagraph(valueInputTask);
+    span.appendChild(para);
 
     localStorage.setItem("inputTask", JSON.stringify(arrayList));
   }
 
-  function createElementSpan(text) {
+  function createElementSpan() {
     const spanElement = document.createElement("span");
     spanElement.classList.add("activatedSpan");
-    spanElement.innerText = text;
 
     return spanElement;
+  }
+
+  function createElementParagraph(text) {
+    const paragraphElement = document.createElement("p");
+    paragraphElement.classList.add("activatedParagraph");
+    paragraphElement.innerText = text;
+
+    return paragraphElement;
   }
 
   addNotes.addEventListener("click", addTextArea);

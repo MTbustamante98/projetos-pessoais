@@ -4,7 +4,6 @@
   margin: 5px 0 0 15px;
   padding: 20px;
   box-sizing: border-box;
-  font: 600 0.925rem "Roboto", Arial, sans-serif;
   border-radius: 5px;
   background: var(--paleGoldenRod);
   position: relative;
@@ -17,8 +16,15 @@
   left: 0;
   top: 0;
   width: 8px;
-  height: 58px;
+  height: 100%;
   background: var(--dark-gray);
+  border-radius: 3px 0 0 3px;
+}
+
+.activatedParagraph {
+  font: 600 0.925rem "Roboto", Arial, sans-serif;
+  color: var(--medium-dark);
+  max-width: 32ch;
 }
 
 @media (max-width: 1440px) {

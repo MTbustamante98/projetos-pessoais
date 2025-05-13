@@ -1,0 +1,37 @@
+function initTasks() {
+  const inputDescriptionTask = document.getElementById("task");
+  const textArea = document.querySelector("textarea");
+
+  const addNotes = document.querySelector("[data-notes");
+  const buttonAddTasks = document.querySelector("[data-add-tasks");
+  const tasksContainer = document.querySelector(".add-list-tasks");
+
+  const arrayList = JSON.parse(localStorage.getItem("inputTask")) || [];
+
+  arrayList.forEach((el) => {
+    const span = createElementSpan(el);
+    tasksContainer.appendChild(span);
+  });
+
+  function addTextArea() {
+    textArea.classList.toggle("ativo");
+  }
+
+  function addTasksAndNotes(e) {
+    const valueInputTask = inputDescriptionTask.value.trim();
+    if (!valueInputTask) return;
+
+    arrayList.push(valueInputTask);
+
+    const span = createElementSpan(valueInputTask);
+    tasksContainer.appendChild(span);
+
+    localStorage.setItem("inputTask", JSON.stringify(arrayList));
+  }
+
+  function createElementSpan(text) {
+    const spanElement = document.createElement("span");
+    spanElement.classList.add("activatedSpan");
+
+    return spanElement;
+  }
