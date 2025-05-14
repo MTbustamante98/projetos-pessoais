@@ -185,6 +185,27 @@
   overflow-x: hidden;
 }
 
+.add-list-tasks {
+  position: fixed;
+  width: 400px;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: var(--khaki);
+  display: none;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.add-list-tasks::-webkit-scrollbar {
+  width: 6px;
+}
+
+.add-list-tasks::-webkit-scrollbar-thumb {
+  background: var(--medium-dark);
+  border-radius: 4px;
+}
+
 .add-list-tasks.ativo {
   display: block;
   animation: showTasks ease 0.6s forwards;
@@ -219,7 +240,7 @@
 @keyframes showArrow {
   from {
     opacity: 0;
-    transform: translate(-20px, 0);
+    transform: translate(20px, 0);
   }
   to {
     opacity: 1;
