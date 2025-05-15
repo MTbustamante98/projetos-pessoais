@@ -172,33 +172,51 @@ function initTasks() {
   const buttonAddTasks = document.querySelector("[data-add-tasks");
   const tasksContainer = document.querySelector(".add-list-tasks");
 
-  const arrayList = JSON.parse(localStorage.getItem("inputTask")) || [];
-
-  arrayList.forEach((el) => {
-    const para = createElementParagraph(el);
-    const span = createElementSpan();
-
-    span.appendChild(para);
-    tasksContainer.appendChild(span);
-  });
-
   function addTextArea() {
     textArea.classList.toggle("ativo");
   }
 
-  function addTasksAndNotes(e) {
-    const valueInputTask = inputDescriptionTask.value.trim();
-    if (!valueInputTask) return;
+  const tasks = JSON.parse(localStorage.getItem("tasksData")) || [];
 
-    arrayList.push(valueInputTask);
-
+  tasks.forEach(({ task, note }) => {
+    const para = createElementParagraph(task);
     const span = createElementSpan();
-    tasksContainer.appendChild(span);
 
-    const para = createElementParagraph(valueInputTask);
     span.appendChild(para);
 
-    localStorage.setItem("inputTask", JSON.stringify(arrayList));
+    if (note) {
+      const div = createElementDiv(note);
+      span.appendChild(div);
+    }
+
+    tasksContainer.appendChild(span);
+  });
+
+  function addTasksAndNotes() {
+    const valueInputTask = inputDescriptionTask.value.trim();
+    const valueTextArea = textArea.value.trim();
+
+    if (!valueInputTask) return;
+
+    const newTask = {
+      task: valueInputTask,
+      note: valueTextArea,
+    };
+
+    tasks.push(newTask);
+
+    const para = createElementParagraph(newTask.task);
+    const span = createElementSpan();
+    span.appendChild(para)
+
+    if (newTask.note) {
+      const div = createElementDiv(newTask.note);
+      span.appendChild(div);
+    }
+
+    tasksContainer.appendChild(span);
+
+    localStorage.setItem("tasksData", JSON.stringify(tasks));
   }
 
   function createElementSpan() {
@@ -214,6 +232,14 @@ function initTasks() {
     paragraphElement.innerText = text;
 
     return paragraphElement;
+  }
+
+  function createElementDiv(text) {
+    const divElement = document.createElement("div");
+    divElement.classList.add("activatedDiv");
+    divElement.innerText = text;
+
+    return divElement;
   }
 
   addNotes.addEventListener("click", addTextArea);

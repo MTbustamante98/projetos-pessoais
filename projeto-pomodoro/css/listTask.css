@@ -22,9 +22,17 @@
 }
 
 .activatedParagraph {
-  font: 600 0.925rem "Roboto", Arial, sans-serif;
+  font: 600 1rem "Roboto", Arial, sans-serif;
   color: var(--medium-dark);
   max-width: 32ch;
+}
+
+.activatedDiv {
+  background: #f5f7f5;
+  margin-top: 10px;
+  padding: 8px;
+  border-radius: 5px;
+  font: 500 0.925rem "Inter", Arial, sans-serif;
 }
 
 @media (max-width: 1440px) {

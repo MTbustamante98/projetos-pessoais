@@ -180,19 +180,7 @@
   top: 0;
   left: 0;
   background: var(--khaki);
-  display: none;
-  overflow-y: auto;
-  overflow-x: hidden;
-}
-
-.add-list-tasks {
-  position: fixed;
-  width: 400px;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  background: var(--khaki);
-  display: none;
+  display: block;
   overflow-y: auto;
   overflow-x: hidden;
 }

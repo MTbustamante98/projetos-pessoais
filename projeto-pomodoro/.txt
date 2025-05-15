@@ -1,37 +1,35 @@
-function initTasks() {
-  const inputDescriptionTask = document.getElementById("task");
-  const textArea = document.querySelector("textarea");
+const arrayList = JSON.parse(localStorage.getItem("inputTask")) || [];
+  const arrayListTextArea =
+    JSON.parse(localStorage.getItem("ValueTextArea")) || [];
 
-  const addNotes = document.querySelector("[data-notes");
-  const buttonAddTasks = document.querySelector("[data-add-tasks");
-  const tasksContainer = document.querySelector(".add-list-tasks");
+  for (let i = 0; i < arrayList.length; i++) {
+    const para = createElementParagraph(arrayList[i]);
+    const div = createElementDiv(arrayListTextArea[i]);
+    const span = createElementSpan();
 
-  const arrayList = JSON.parse(localStorage.getItem("inputTask")) || [];
-
-  arrayList.forEach((el) => {
-    const span = createElementSpan(el);
+    span.appendChild(para);
+    if (arrayListTextArea[i]) span.appendChild(div);
     tasksContainer.appendChild(span);
-  });
-
-  function addTextArea() {
-    textArea.classList.toggle("ativo");
   }
 
-  function addTasksAndNotes(e) {
+  function addTasksAndNotes() {
     const valueInputTask = inputDescriptionTask.value.trim();
+    const valueTextArea = textArea.value.trim();
+
     if (!valueInputTask) return;
 
     arrayList.push(valueInputTask);
+    arrayListTextArea.push(valueTextArea);
 
-    const span = createElementSpan(valueInputTask);
+    const span = createElementSpan();
     tasksContainer.appendChild(span);
 
+    const para = createElementParagraph(valueInputTask);
+    span.appendChild(para);
+
+    const div = createElementDiv(valueTextArea);
+    if (valueTextArea) span.appendChild(div);
+
+    localStorage.setItem("ValueTextArea", JSON.stringify(arrayListTextArea));
     localStorage.setItem("inputTask", JSON.stringify(arrayList));
-  }
-
-  function createElementSpan(text) {
-    const spanElement = document.createElement("span");
-    spanElement.classList.add("activatedSpan");
-
-    return spanElement;
   }
