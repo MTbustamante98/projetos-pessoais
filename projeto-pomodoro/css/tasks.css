@@ -378,7 +378,7 @@
   }
 
   .add-list-tasks {
-    width: 340px;
+    width: 370px;
     height: 100vh;
   }
 
@@ -421,7 +421,7 @@
   .add-notes-tasks {
     bottom: 18px;
     left: 35px;
-    gap: 40px;
+    gap: 70px;
   }
 
   .add-notes-tasks .btn-add-tasks {

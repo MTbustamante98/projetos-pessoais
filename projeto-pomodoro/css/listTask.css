@@ -24,7 +24,18 @@
 .activatedParagraph {
   font: 600 1rem "Roboto", Arial, sans-serif;
   color: var(--medium-dark);
-  max-width: 32ch;
+  max-width: 30ch;
+}
+
+.activatedEditeAndSave {
+  position: absolute;
+  top: 500px;
+  right: 20px;
+  padding: 3px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.1);
 }
 
 .activatedDiv {
@@ -35,14 +46,43 @@
   font: 500 0.925rem "Inter", Arial, sans-serif;
 }
 
+.activatedBtnDelete {
+  position: absolute;
+}
+
 @media (max-width: 1440px) {
   .activatedSpan {
-    background: lightgray;
-    width: 80%;
-    height: auto;
-    margin: 5px 0 0 10px;
-    padding: 24px 10px;
-    box-sizing: border-box;
-    display: block;
+    width: 91%;
+    padding: 18px 10px;
+  }
+
+  .activatedParagraph {
+    margin-left: 5px;
+  }
+
+  .activatedDiv {
+    margin-left: 5px;
+  }
+
+  .activatedEditeAndSave {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    padding: 1px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid var(--white);
+  }
+
+  .activedDivDropDown {
+    position: absolute;
+    right: 5px;
+    top: 40px;
+    width: 160px;
+    height: 100px;
+    background: var(--white);
+    z-index: 2;
   }
 }

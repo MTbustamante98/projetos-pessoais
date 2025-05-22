@@ -167,7 +167,6 @@ initPomodoros();
 function initTasks() {
   const inputDescriptionTask = document.getElementById("task");
   const textArea = document.querySelector("textarea");
-
   const addNotes = document.querySelector("[data-notes");
   const buttonAddTasks = document.querySelector("[data-add-tasks");
   const tasksContainer = document.querySelector(".add-list-tasks");
@@ -178,45 +177,57 @@ function initTasks() {
 
   const tasks = JSON.parse(localStorage.getItem("tasksData")) || [];
 
-  tasks.forEach(({ task, note }) => {
-    const para = createElementParagraph(task);
-    const span = createElementSpan();
-
-    span.appendChild(para);
-
-    if (note) {
-      const div = createElementDiv(note);
-      span.appendChild(div);
-    }
-
-    tasksContainer.appendChild(span);
+  tasks.forEach(task => {
+    const taskElement = createTaskElement(task.title, task.note)
+    tasksContainer.appendChild(taskElement)
   });
 
   function addTasksAndNotes() {
-    const valueInputTask = inputDescriptionTask.value.trim();
-    const valueTextArea = textArea.value.trim();
+    const title = inputDescriptionTask.value.trim();
+    const note = textArea.value.trim();
 
-    if (!valueInputTask) return;
+    if (!title) return;
 
     const newTask = {
-      task: valueInputTask,
-      note: valueTextArea,
+      title,
+      note,
     };
-
     tasks.push(newTask);
 
-    const para = createElementParagraph(newTask.task);
-    const span = createElementSpan();
-    span.appendChild(para)
-
-    if (newTask.note) {
-      const div = createElementDiv(newTask.note);
-      span.appendChild(div);
-    }
-
-    tasksContainer.appendChild(span);
+    const taskElement = createTaskElement(title, note);
+    tasksContainer.appendChild(taskElement);
 
     localStorage.setItem("tasksData", JSON.stringify(tasks));
+  }
+
+  function createTaskElement(title, note) {
+    const span = createElementSpan();
+    const para = createElementParagraph(title);
+    const div = createElementDiv(note);
+    const btnEditSave = createElementEditAndSave()
+    addDropDownEvent(btnEditSave)
+    span.appendChild(para);
+    span.appendChild(btnEditSave);
+    
+    if (note) span.appendChild(div)
+    return span;
+  }
+
+  function addDropDownEvent(btnDropDown) {
+    btnDropDown.addEventListener("click", (e) => {
+      const exists = Array.from(btnDropDown.children).some(child => 
+        child.classList.contains("activedDivDropDown")
+    );
+
+    if (exists) {
+      const childrenBtn = btnDropDown.querySelector(".activedDivDropDown");
+      childrenBtn.remove();
+    } else {
+      const divDropDown = document.createElement("div");
+      divDropDown.classList.add("activedDivDropDown");
+      e.currentTarget.appendChild(divDropDown);
+    }
+    });
   }
 
   function createElementSpan() {
@@ -240,6 +251,17 @@ function initTasks() {
     divElement.innerText = text;
 
     return divElement;
+  }
+
+  function createElementEditAndSave() {
+    const btnEditSave = document.createElement("button");
+    btnEditSave.classList.add("activatedEditeAndSave");
+    const imgDropDown = document.createElement("img");
+    imgDropDown.src = "./imagens/three-points.svg";
+    imgDropDown.style.marginTop = "2px";
+    btnEditSave.appendChild(imgDropDown);
+
+    return btnEditSave;
   }
 
   addNotes.addEventListener("click", addTextArea);
