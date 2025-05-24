@@ -177,9 +177,9 @@ function initTasks() {
 
   const tasks = JSON.parse(localStorage.getItem("tasksData")) || [];
 
-  tasks.forEach(task => {
-    const taskElement = createTaskElement(task.title, task.note)
-    tasksContainer.appendChild(taskElement)
+  tasks.forEach((task) => {
+    const taskElement = createTaskElement(task.title, task.note);
+    tasksContainer.appendChild(taskElement);
   });
 
   function addTasksAndNotes() {
@@ -204,29 +204,50 @@ function initTasks() {
     const span = createElementSpan();
     const para = createElementParagraph(title);
     const div = createElementDiv(note);
-    const btnEditSave = createElementEditAndSave()
-    addDropDownEvent(btnEditSave)
+    const btnEditSave = createElementEditAndSave();
+    addDropDownEvent(btnEditSave);
     span.appendChild(para);
     span.appendChild(btnEditSave);
-    
-    if (note) span.appendChild(div)
+
+    if (note) span.appendChild(div);
     return span;
   }
 
   function addDropDownEvent(btnDropDown) {
     btnDropDown.addEventListener("click", (e) => {
-      const exists = Array.from(btnDropDown.children).some(child => 
+      const exists = Array.from(btnDropDown.children).some((child) =>
         child.classList.contains("activedDivDropDown")
-    );
+      );
 
-    if (exists) {
-      const childrenBtn = btnDropDown.querySelector(".activedDivDropDown");
-      childrenBtn.remove();
-    } else {
-      const divDropDown = document.createElement("div");
-      divDropDown.classList.add("activedDivDropDown");
-      e.currentTarget.appendChild(divDropDown);
-    }
+      btnDropDown.classList.toggle("scale-effect");
+      let divDropDown;
+
+      if (exists) {
+        const childrenBtn = btnDropDown.querySelector(".activedDivDropDown");
+        childrenBtn.remove();
+      } else {
+        divDropDown = document.createElement("div");
+        divDropDown.classList.add("activedDivDropDown");
+        e.currentTarget.appendChild(divDropDown);
+      }
+
+      const divRemove = document.createElement("div");
+      divRemove.classList.add("divListRemove");
+      const divEdit = document.createElement("div");
+      divEdit.classList.add("divListEdit");
+
+      const edit = document.createElement("span");
+      edit.classList.add("edit");
+      edit.innerText = "Editar";
+
+      const remove = document.createElement("span");
+      remove.classList.add("remove");
+      remove.innerText = "Remover";
+
+      divEdit.appendChild(edit);
+      divRemove.appendChild(remove);
+      divDropDown.appendChild(divEdit);
+      divDropDown.appendChild(divRemove);
     });
   }
 
@@ -255,7 +276,7 @@ function initTasks() {
 
   function createElementEditAndSave() {
     const btnEditSave = document.createElement("button");
-    btnEditSave.classList.add("activatedEditeAndSave");
+    btnEditSave.classList.add("activatedEditAndSave");
     const imgDropDown = document.createElement("img");
     imgDropDown.src = "./imagens/three-points.svg";
     imgDropDown.style.marginTop = "2px";
