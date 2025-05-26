@@ -181,9 +181,8 @@
   left: 0;
   background: var(--khaki);
   display: block;
-  overflow: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
-  z-index: 0;
 }
 
 .add-list-tasks::-webkit-scrollbar {

@@ -167,8 +167,8 @@ initPomodoros();
 function initTasks() {
   const inputDescriptionTask = document.getElementById("task");
   const textArea = document.querySelector("textarea");
-  const addNotes = document.querySelector("[data-notes");
-  const buttonAddTasks = document.querySelector("[data-add-tasks");
+  const addNotes = document.querySelector("[data-notes]");
+  const buttonAddTasks = document.querySelector("[data-add-tasks]");
   const tasksContainer = document.querySelector(".add-list-tasks");
 
   function addTextArea() {
@@ -177,8 +177,8 @@ function initTasks() {
 
   const tasks = JSON.parse(localStorage.getItem("tasksData")) || [];
 
-  tasks.forEach((task) => {
-    const taskElement = createTaskElement(task.title, task.note);
+  tasks.forEach((task, index) => {
+    const taskElement = createTaskElement(task.title, task.note, index);
     tasksContainer.appendChild(taskElement);
   });
 
@@ -187,25 +187,29 @@ function initTasks() {
     const note = textArea.value.trim();
 
     if (!title) return;
-
+    
     const newTask = {
       title,
       note,
     };
+
     tasks.push(newTask);
 
     const taskElement = createTaskElement(title, note);
     tasksContainer.appendChild(taskElement);
 
     localStorage.setItem("tasksData", JSON.stringify(tasks));
+
+    inputDescriptionTask.value = "";
+    textArea.value = "";
   }
 
-  function createTaskElement(title, note) {
+  function createTaskElement(title, note, index) {
     const span = createElementSpan();
     const para = createElementParagraph(title);
     const div = createElementDiv(note);
     const btnEditSave = createElementEditAndSave();
-    addDropDownEvent(btnEditSave);
+    addDropDownEvent(btnEditSave, index, para, div);
     span.appendChild(para);
     span.appendChild(btnEditSave);
 
@@ -213,42 +217,81 @@ function initTasks() {
     return span;
   }
 
-  function addDropDownEvent(btnDropDown) {
-    btnDropDown.addEventListener("click", (e) => {
-      const exists = Array.from(btnDropDown.children).some((child) =>
-        child.classList.contains("activedDivDropDown")
-      );
+  function addDropDownEvent(btnDropDown, index, para, div) {
+    document.addEventListener("click", (e) => {
+      const divDropDown = document.querySelector(".activedDivDropDown");
+      const target = e.target;
 
-      btnDropDown.classList.toggle("scale-effect");
-      let divDropDown;
+      if (!divDropDown) return
 
-      if (exists) {
-        const childrenBtn = btnDropDown.querySelector(".activedDivDropDown");
-        childrenBtn.remove();
-      } else {
-        divDropDown = document.createElement("div");
-        divDropDown.classList.add("activedDivDropDown");
-        e.currentTarget.appendChild(divDropDown);
+      if (!divDropDown.contains(target)) {
+        divDropDown.remove();
       }
+    })
 
-      const divRemove = document.createElement("div");
-      divRemove.classList.add("divListRemove");
-      const divEdit = document.createElement("div");
-      divEdit.classList.add("divListEdit");
+    btnDropDown.addEventListener("click", (e) => {
+      e.stopPropagation();
+      btnDropDown.classList.toggle("scale-effect");
+      const divDropDown = document.querySelector(".activedDivDropDown");
 
-      const edit = document.createElement("span");
-      edit.classList.add("edit");
-      edit.innerText = "Editar";
+      if (divDropDown) {
+        divDropDown.remove();
+        return
+      } else {
+        const newDivDropDown = document.createElement("div");
+        newDivDropDown.classList.add("activedDivDropDown");
+        
+        const rect = btnDropDown.getBoundingClientRect();
 
-      const remove = document.createElement("span");
-      remove.classList.add("remove");
-      remove.innerText = "Remover";
+        newDivDropDown.style.position = "absolute";
+        newDivDropDown.style.top = `${rect.bottom + window.scrollY}px`;
 
-      divEdit.appendChild(edit);
-      divRemove.appendChild(remove);
-      divDropDown.appendChild(divEdit);
-      divDropDown.appendChild(divRemove);
+        const [edit, divEdit] = createElementEdit(index, para, div)
+        newDivDropDown.append(divEdit, createElementRemove());
+        document.body.appendChild(newDivDropDown);
+      }
     });
+  }
+
+  function createElementEdit(index, para, div) {
+    const edit = document.createElement("span");
+    edit.classList.add("edit");
+    edit.innerText = "Editar";
+
+    const divEdit = document.createElement("div");
+    divEdit.classList.add("divListEdit");
+
+    divEdit.appendChild(edit);
+
+    divEdit.addEventListener("click", () => {
+      const inputEditTask = document.createElement("input");
+      inputEditTask.type = "text";
+      inputEditTask.classList.add("activatedInputTasks");
+      inputEditTask.value = tasks[index].title;
+
+      const inputEditNote = document.createElement("input");
+      inputEditNote.type = "text";
+      inputEditNote.classList.add("activatedInputNote");
+      inputEditNote.value = tasks[index].note;
+
+      para.replaceWith(inputEditTask);
+      div.replaceWith(inputEditNote);
+    });
+
+    return [edit, divEdit];
+  }
+
+  function createElementRemove() {
+    const remove = document.createElement("span");
+    remove.classList.add("remove");
+    remove.innerText = "Remover";
+
+    const divRemove = document.createElement("div");
+    divRemove.classList.add("divListRemove");
+
+    divRemove.appendChild(remove);
+
+    return remove, divRemove;
   }
 
   function createElementSpan() {

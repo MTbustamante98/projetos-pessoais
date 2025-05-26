@@ -1,5 +1,5 @@
 .activatedSpan {
-  width: 90%;
+  width: 92%;
   height: auto;
   margin: 0.313rem 0 0 0.938rem;
   padding: 20px;
@@ -8,7 +8,6 @@
   background: var(--paleGoldenRod);
   position: relative;
   display: block;
-  z-index: 0;
 }
 
 .activatedSpan::before {
@@ -48,15 +47,13 @@
 }
 
 .activedDivDropDown {
-  position: absolute;
-  right: 5px;
-  top: 40px;
+  margin-top: 5px;
+  left: 230px;
   width: 140px;
   height: 100px;
   background: var(--paleGoldenRod);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 5px;
-  z-index: 999;
   animation: showDropDown ease 0.6s forwards;
 }
 
@@ -77,6 +74,7 @@
   width: 140px;
   position: relative;
   border-radius: 5px 5px 0 0;
+  cursor: pointer;
 }
 
 .divListRemove {
@@ -86,6 +84,7 @@
   width: 140px;
   position: relative;
   border-radius: 0 0 5px 5px;
+  cursor: pointer;
 }
 
 .divListRemove:hover {
@@ -105,13 +104,13 @@
 .edit,
 .remove {
   font: 500 1rem "Inter", Arial, sans-serif;
-  margin-left: 18px;
+  margin-left: 40px;
 }
 
 .divListEdit::before {
   content: "";
   position: absolute;
-  background: url("/imagens/edit.png") no-repeat;
+  background: url("../imagens/edit.png") no-repeat;
   width: 24px;
   height: 24px;
   top: 18px;
@@ -126,7 +125,7 @@
 .divListRemove::before {
   content: "";
   position: absolute;
-  background: url("/imagens/delete.png") no-repeat;
+  background: url("../imagens/delete.png") no-repeat;
   width: 24px;
   height: 24px;
   top: 18px;
@@ -147,55 +146,13 @@
     margin-left: 0.313rem;
   }
 
-  .activatedEditeAndSave {
+  .activatedEditAndSave {
     top: 10px;
     right: 5px;
   }
 
-  .activedDivDropDown {
-    right: 5px;
-    top: 40px;
-  }
-
-  .ulList {
-    list-style: none;
-    position: absolute;
-  }
-
-  /* .edit {
-    font: 500 0.925rem "Inter", Arial, sans-serif;
-    position: absolute;
-    left: 45px;
-    top: 20px;
-  }
-
-  .remove {
-    font: 500 0.925rem "Inter", Arial, sans-serif;
-    position: absolute;
-    left: 45px;
-    top: 65px;
+  /* .activedDivDropDown {
+    left: 170px;
+    top: 350px;
   } */
-
-  /* .edit:hover,
-  .remove:hover {
-    
-  } */
-
-  .edit::before {
-    content: "";
-    position: absolute;
-    background: url("/imagens/edit.png") no-repeat;
-    width: 24px;
-    height: 24px;
-    left: -25px;
-  }
-
-  .remove::before {
-    content: "";
-    position: absolute;
-    background: url("/imagens/delete.png") no-repeat;
-    width: 24px;
-    height: 24px;
-    left: -25px;
-  }
 }
