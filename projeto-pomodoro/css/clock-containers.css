@@ -57,11 +57,6 @@
   color: var(--khaki);
 }
 
-[data-type="pomodoro"].ativo {
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: 3px;
-}
-
 .secao-frase {
   width: 600px;
   position: absolute;

@@ -118,18 +118,6 @@ function initAddTasks() {
 }
 initAddTasks();
 
-// function InitAddNotesAndTasks() {
-//   const textarea = document.querySelector("textarea");
-//   const notes = document.querySelector(".notes");
-
-//   function addTextArea() {
-//     textarea.classList.toggle("ativo");
-//   }
-
-//   notes.addEventListener("click", addTextArea);
-// }
-// InitAddNotesAndTasks();
-
 function initPomodoros() {
   const pomodoros = document.querySelectorAll(
     ".div-clocks [data-type='pomodoro']"
@@ -164,30 +152,35 @@ function initPomodoros() {
 }
 initPomodoros();
 
+const tasks = JSON.parse(localStorage.getItem("tasksData")) || [];
+
 function initTasks() {
   const inputDescriptionTask = document.getElementById("task");
   const textArea = document.querySelector("textarea");
   const addNotes = document.querySelector("[data-notes]");
   const buttonAddTasks = document.querySelector("[data-add-tasks]");
   const tasksContainer = document.querySelector(".add-list-tasks");
+  const divInputTasks = document.querySelector(".inputTasks");
 
   function addTextArea() {
     textArea.classList.toggle("ativo");
   }
 
-  const tasks = JSON.parse(localStorage.getItem("tasksData")) || [];
 
-  tasks.forEach((task, index) => {
-    const taskElement = createTaskElement(task.title, task.note, index);
-    tasksContainer.appendChild(taskElement);
-  });
+  function renderTasks(elementTasks = tasks) {
+    divInputTasks.innerHTML = "";
+    elementTasks.forEach((task, index) => {
+      const taskElement = createTaskElement(task.title, task.note, index);
+      divInputTasks.appendChild(taskElement);
+    });
+  }
 
   function addTasksAndNotes() {
     const title = inputDescriptionTask.value.trim();
     const note = textArea.value.trim();
 
     if (!title) return;
-    
+
     const newTask = {
       title,
       note,
@@ -195,10 +188,8 @@ function initTasks() {
 
     tasks.push(newTask);
 
-    const taskElement = createTaskElement(title, note);
-    tasksContainer.appendChild(taskElement);
-
     localStorage.setItem("tasksData", JSON.stringify(tasks));
+    renderTasks();
 
     inputDescriptionTask.value = "";
     textArea.value = "";
@@ -209,7 +200,7 @@ function initTasks() {
     const para = createElementParagraph(title);
     const div = createElementDiv(note);
     const btnEditSave = createElementEditAndSave();
-    addDropDownEvent(btnEditSave, index, para, div);
+    addDropDownEvent(btnEditSave, index, para, div, span);
     span.appendChild(para);
     span.appendChild(btnEditSave);
 
@@ -217,49 +208,62 @@ function initTasks() {
     return span;
   }
 
-  function addDropDownEvent(btnDropDown, index, para, div) {
+  function addDropDownEvent(btnDropDown, index, para, div, span) {
     document.addEventListener("click", (e) => {
       const divDropDown = document.querySelector(".activedDivDropDown");
       const target = e.target;
 
-      if (!divDropDown) return
+      if (!divDropDown) return;
 
       if (!divDropDown.contains(target)) {
-        divDropDown.remove();
+        removeElementsUI(divDropDown);
       }
-    })
+    });
 
     btnDropDown.addEventListener("click", (e) => {
+      const divDropDown = document.querySelector(".activedDivDropDown");
       e.stopPropagation();
       btnDropDown.classList.toggle("scale-effect");
-      const divDropDown = document.querySelector(".activedDivDropDown");
 
       if (divDropDown) {
-        divDropDown.remove();
-        return
+        removeElementsUI(divDropDown);
+        return;
       } else {
         const newDivDropDown = document.createElement("div");
         newDivDropDown.classList.add("activedDivDropDown");
-        
+
         const rect = btnDropDown.getBoundingClientRect();
 
         newDivDropDown.style.position = "absolute";
         newDivDropDown.style.top = `${rect.bottom + window.scrollY}px`;
 
-        const [edit, divEdit] = createElementEdit(index, para, div)
-        newDivDropDown.append(divEdit, createElementRemove());
+        const [edit, divEdit, save] = createElementEdit(
+          index,
+          para,
+          div,
+          btnDropDown,
+          newDivDropDown,
+          span
+        );
+        const [remove, divRemove] = createElementRemove(index, newDivDropDown);
+        newDivDropDown.append(divEdit, divRemove);
         document.body.appendChild(newDivDropDown);
       }
     });
   }
 
-  function createElementEdit(index, para, div) {
+  function createElementEdit(index, para, div, btnDropDown, divDropDown, span) {
     const edit = document.createElement("span");
     edit.classList.add("edit");
     edit.innerText = "Editar";
 
     const divEdit = document.createElement("div");
     divEdit.classList.add("divListEdit");
+
+    const save = document.createElement("button");
+    save.type = "button";
+    save.classList.add("activatedButtonSave");
+    save.innerText = "Salvar";
 
     divEdit.appendChild(edit);
 
@@ -276,12 +280,33 @@ function initTasks() {
 
       para.replaceWith(inputEditTask);
       div.replaceWith(inputEditNote);
+      span.insertAdjacentElement("beforeend", save);
+      
+      removeElementsUI(divDropDown, btnDropDown);
+
+      save.addEventListener("click", () => {
+        tasks[index].title = inputEditTask.value;
+        tasks[index].note = inputEditNote.value;
+        localStorage.setItem("tasksData", JSON.stringify(tasks));
+        const updateTaskElements = createTaskElement(
+          tasks[index].title,
+          tasks[index].note,
+          index
+        );
+        span.replaceWith(updateTaskElements);
+        renderTasks();
+      });
     });
 
-    return [edit, divEdit];
+    return [edit, divEdit, save];
   }
 
-  function createElementRemove() {
+  function removeElementsUI(dropDown, button) {
+    dropDown?.remove();
+    button?.remove();
+  }
+
+  function createElementRemove(index, newDivDropDown) {
     const remove = document.createElement("span");
     remove.classList.add("remove");
     remove.innerText = "Remover";
@@ -291,7 +316,14 @@ function initTasks() {
 
     divRemove.appendChild(remove);
 
-    return remove, divRemove;
+    divRemove.addEventListener("click", () => {
+      tasks.splice(index, 1);
+      removeElementsUI(newDivDropDown);
+      localStorage.setItem("tasksData", JSON.stringify(tasks));
+      renderTasks();
+    });
+
+    return [remove, divRemove];
   }
 
   function createElementSpan() {
@@ -319,6 +351,7 @@ function initTasks() {
 
   function createElementEditAndSave() {
     const btnEditSave = document.createElement("button");
+    btnEditSave.type = "button";
     btnEditSave.classList.add("activatedEditAndSave");
     const imgDropDown = document.createElement("img");
     imgDropDown.src = "./imagens/three-points.svg";
@@ -330,5 +363,6 @@ function initTasks() {
 
   addNotes.addEventListener("click", addTextArea);
   buttonAddTasks.addEventListener("click", addTasksAndNotes);
+  renderTasks();
 }
 initTasks();
