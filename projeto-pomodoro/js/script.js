@@ -201,9 +201,9 @@ function initTasks() {
     const para = createElementParagraph(title);
     const div = createElementDiv(note);
     const btnEditSave = createElementEditAndSave();
+    const checkbox = createElementCheckBox(para);
     addDropDownEvent(btnEditSave, index, para, div, span);
-    span.appendChild(para);
-    span.appendChild(btnEditSave);
+    span.append(para, btnEditSave, checkbox);
 
     if (note) span.appendChild(div);
 
@@ -332,6 +332,18 @@ function initTasks() {
   function addCounter() {
     const count = document.querySelector("[data-count]");
     count.innerText = tasks.length;
+  }
+
+  function createElementCheckBox(para) {
+    const checkbox = document.createElement("div");
+    checkbox.classList.add("activatedDivCheckBox");
+
+    checkbox.addEventListener("click", () => {
+      checkbox.classList.toggle("alternateStateCheckbox");
+      para.classList.toggle("alternateStateParagraph");
+    });
+
+    return checkbox;
   }
 
   function createElementSpan() {

@@ -22,6 +22,14 @@
   display: block;
 }
 
+.activatedDivCheckBox.alternateStateCheckbox {
+  background: var(--tomato);
+}
+
+.activatedParagraph.alternateStateParagraph {
+  text-decoration: line-through;
+}
+
 /* Clock container */
 [data-type="pomodoro"].ativo {
   background: rgba(0, 0, 0, 0.1);
