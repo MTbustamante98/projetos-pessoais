@@ -159,13 +159,12 @@ function initTasks() {
   const textArea = document.querySelector("textarea");
   const addNotes = document.querySelector("[data-notes]");
   const buttonAddTasks = document.querySelector("[data-add-tasks]");
-  const tasksContainer = document.querySelector(".add-list-tasks");
+  // const tasksContainer = document.querySelector(".add-list-tasks");
   const divInputTasks = document.querySelector(".inputTasks");
 
   function addTextArea() {
     textArea.classList.toggle("ativo");
   }
-
 
   function renderTasks(elementTasks = tasks) {
     divInputTasks.innerHTML = "";
@@ -173,6 +172,7 @@ function initTasks() {
       const taskElement = createTaskElement(task.title, task.note, index);
       divInputTasks.appendChild(taskElement);
     });
+    addCounter();
   }
 
   function addTasksAndNotes() {
@@ -184,6 +184,7 @@ function initTasks() {
     const newTask = {
       title,
       note,
+      done: false,
     };
 
     tasks.push(newTask);
@@ -205,6 +206,7 @@ function initTasks() {
     span.appendChild(btnEditSave);
 
     if (note) span.appendChild(div);
+
     return span;
   }
 
@@ -281,7 +283,7 @@ function initTasks() {
       para.replaceWith(inputEditTask);
       div.replaceWith(inputEditNote);
       span.insertAdjacentElement("beforeend", save);
-      
+
       removeElementsUI(divDropDown, btnDropDown);
 
       save.addEventListener("click", () => {
@@ -321,9 +323,15 @@ function initTasks() {
       removeElementsUI(newDivDropDown);
       localStorage.setItem("tasksData", JSON.stringify(tasks));
       renderTasks();
+      addCounter();
     });
 
     return [remove, divRemove];
+  }
+
+  function addCounter() {
+    const count = document.querySelector("[data-count]");
+    count.innerText = tasks.length;
   }
 
   function createElementSpan() {
