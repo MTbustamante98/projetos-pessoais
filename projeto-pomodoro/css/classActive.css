@@ -1,24 +1,53 @@
-/* List Tasks ativo */
-.tasks.ativo {
+/* List Tasks active */
+.tasks.active {
   display: block;
 }
 
-.menu.ativo {
+.menu.active {
   display: block;
   animation: showMenu ease 0.5s forwards;
 }
 
-.add-list-tasks.ativo {
+@keyframes showMenu {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.add-list-tasks.active {
   display: block;
   animation: showTasks ease 0.6s forwards;
 }
 
-[data-img-close="tasks"].ativo {
+@keyframes showTasks {
+  from {
+    opacity: 0;
+    transform: translate(-300px, 0);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+[data-img-close="tasks"].active {
   display: block;
   animation: showArrow ease 0.6s forwards;
 }
 
-.container-task textarea.ativo {
+@keyframes showArrow {
+  from {
+    opacity: 0;
+    transform: translate(20px, 0);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.container-task textarea.active {
   display: block;
 }
 
@@ -31,18 +60,48 @@
 }
 
 /* Clock container */
-[data-type="pomodoro"].ativo {
+[data-type="pomodoro"].active {
   background: rgba(0, 0, 0, 0.1);
   border-radius: 3px;
 }
 
+/* modal */
+.modal.active {
+  display: flex;
+  animation: showModal ease 0.6s forwards;
+}
+
+@keyframes showModal {
+  from {
+    opacity: 0;
+    transform: translate(0, -20px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.configs.active {
+  display: flex;
+}
+
 @media (max-width: 1440px) {
-  .menu.ativo {
+  .menu.active {
     display: block;
   }
 
-  .add-list-tasks.ativo {
+  .add-list-tasks.active {
     display: block;
     animation: showTasks ease 0.6s forwards;
+  }
+
+  @keyframes showTasks {
+    from {
+      opacity: 0;
+      transform: translate(-200px, 0);
+    }
+    to {
+      opacity: 1;
+    }
   }
 }

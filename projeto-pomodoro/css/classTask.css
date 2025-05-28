@@ -218,10 +218,6 @@
     max-width: 24ch;
   }
 
-  .activedDivDropDown {
-    left: 200px;
-  }
-
   .activatedInputTasks {
     margin-left: 0.313rem;
   }
@@ -229,6 +225,14 @@
   .activatedInputNote {
     margin-left: 0.313rem;
     padding-right: 3px;
+  }
+
+  .activatedEditAndSave {
+    right: 0.75rem;
+  }
+  
+  .activatedButtonSave {
+    margin-left: 1rem;
   }
 
   .activatedDivCheckBox {

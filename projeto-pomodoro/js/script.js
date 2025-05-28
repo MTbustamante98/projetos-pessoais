@@ -10,7 +10,7 @@ function initModals() {
   );
   const imgClose = document.querySelectorAll("[data-img-close]");
 
-  const ativo = "ativo";
+  const active = "active";
   const closeModals = [modal, configs, menu];
 
   function openModal(e) {
@@ -20,15 +20,15 @@ function initModals() {
     const target = e.target;
 
     if (target.hasAttribute("data-modal")) {
-      modal.classList.add(ativo);
+      modal.classList.add(active);
     }
 
     if (target.hasAttribute("data-config")) {
-      configs.classList.add(ativo);
+      configs.classList.add(active);
     }
 
     if (target.closest("[data-menu]")) {
-      menu.classList.toggle(ativo);
+      menu.classList.toggle(active);
       modalLinks[2].classList.toggle("scale-effect");
     }
   }
@@ -36,21 +36,21 @@ function initModals() {
   function closeModal(e) {
     const target = e.target;
     closeModals.forEach((modal, index) => {
-      if (target === modal && index < 2) modal.classList.remove(ativo);
+      if (target === modal && index < 2) modal.classList.remove(active);
 
-      if (index === 2 && !modal.contains(target)) modal.classList.remove(ativo);
+      if (index === 2 && !modal.contains(target)) modal.classList.remove(active);
     });
   }
 
   function imgCloseModalAndConfigs(event) {
     const type = event.target.dataset.imgClose;
     if (type === "modal") {
-      modal.classList.remove(ativo);
+      modal.classList.remove(active);
     } else if (type === "configs") {
-      configs.classList.remove(ativo);
+      configs.classList.remove(active);
     } else {
-      tasks.classList.remove(ativo);
-      arrowClose.classList.toggle(ativo);
+      tasks.classList.remove(active);
+      arrowClose.classList.toggle(active);
     }
   }
 
@@ -93,7 +93,7 @@ initModals();
 //       setTimeout(() => {
 //         paragraphMessage.textContent = "";
 //         if (index === frases.length - 1) {
-//           tasks.classList.add("ativo");
+//           tasks.classList.add("active");
 //         } else {
 //           executarFrases(index + 1);
 //         }
@@ -104,14 +104,16 @@ initModals();
 // }
 // starTyping();
 
+
+
 function initAddTasks() {
   const divAddTasks = document.querySelector(".tasks");
   const containerTasks = document.querySelector(".add-list-tasks");
   const arrowClose = document.querySelector("[data-img-close='tasks']");
 
   function addTasks() {
-    containerTasks.classList.toggle("ativo");
-    arrowClose.classList.toggle("ativo");
+    containerTasks.classList.toggle("active");
+    arrowClose.classList.toggle("active");
   }
 
   divAddTasks.addEventListener("click", addTasks);
@@ -125,11 +127,11 @@ function initPomodoros() {
   const dataTimer = document.querySelector("[data-timer]");
   const documentBody = document.body;
 
-  if (pomodoros.length) pomodoros[0].classList.add("ativo");
+  if (pomodoros.length) pomodoros[0].classList.add("active");
 
   function choosePomodoro(e) {
-    pomodoros.forEach((el) => el.classList.remove("ativo"));
-    e.target.classList.add("ativo");
+    pomodoros.forEach((el) => el.classList.remove("active"));
+    e.target.classList.add("active");
 
     if (e.target.classList.contains("pomodoro-clock")) {
       dataTimer.innerText = "25:00";
@@ -160,7 +162,7 @@ function initTasks() {
   const divInputTasks = document.querySelector(".inputTasks");
 
   function addTextArea() {
-    textArea.classList.toggle("ativo");
+    textArea.classList.toggle("active");
   }
 
   function renderTasks(elementTasks = tasks) {
@@ -301,6 +303,9 @@ function initTasks() {
       save.addEventListener("click", () => {
         tasks[index].title = inputEditTask.value;
         tasks[index].note = inputEditNote.value;
+
+        if (!tasks[index].title) return;
+
         localStorage.setItem("tasksData", JSON.stringify(tasks));
         const updateTaskElements = createTaskElement(
           tasks[index].title,

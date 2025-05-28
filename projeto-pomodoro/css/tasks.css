@@ -104,15 +104,6 @@
   transform: scale(0.9);
 }
 
-@keyframes showMenu {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 .menu ul {
   margin-top: 0.313rem;
   position: relative;
@@ -199,26 +190,6 @@
   cursor: pointer;
   z-index: 1;
   display: none;
-}
-
-@keyframes showTasks {
-  from {
-    opacity: 0;
-    transform: translate(-300px, 0);
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes showArrow {
-  from {
-    opacity: 0;
-    transform: translate(20px, 0);
-  }
-  to {
-    opacity: 1;
-  }
 }
 
 .container-task {
@@ -358,16 +329,6 @@
   .add-list-tasks {
     width: 370px;
     height: 100vh;
-  }
-
-  @keyframes showTasks {
-    from {
-      opacity: 0;
-      transform: translate(-200px, 0);
-    }
-    to {
-      opacity: 1;
-    }
   }
 
   [data-img-close="tasks"] {
