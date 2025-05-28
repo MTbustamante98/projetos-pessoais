@@ -354,6 +354,8 @@ function initTasks() {
   function createElementCheckBox(index, para) {
     const checkbox = document.createElement("div");
     checkbox.classList.add("activatedDivCheckBox");
+    checkbox.setAttribute("role", "checkbox");
+    checkbox.setAttribute("aria-checked", tasks[index]?.done)
 
     if (tasks[index]?.done) {
       checkbox.classList.add("alternateStateCheckbox");
@@ -364,7 +366,7 @@ function initTasks() {
       checkbox.classList.toggle("alternateStateCheckbox");
       para.classList.toggle("alternateStateParagraph");
 
-      tasks[index].done = checkbox.classList.contains("alternateStateCheckbox");
+      tasks[index].done = checkbox.setAttribute("aria-checked", checkbox.classList.contains("alternateStateCheckbox"));
       localStorage.setItem("tasksData", JSON.stringify(tasks));
     });
 
