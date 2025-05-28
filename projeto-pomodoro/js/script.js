@@ -125,9 +125,7 @@ function initPomodoros() {
   const dataTimer = document.querySelector("[data-timer]");
   const documentBody = document.body;
 
-  if (pomodoros.length) {
-    pomodoros[0].classList.add("ativo");
-  }
+  if (pomodoros.length) pomodoros[0].classList.add("ativo");
 
   function choosePomodoro(e) {
     pomodoros.forEach((el) => el.classList.remove("ativo"));
@@ -159,7 +157,6 @@ function initTasks() {
   const textArea = document.querySelector("textarea");
   const addNotes = document.querySelector("[data-notes]");
   const buttonAddTasks = document.querySelector("[data-add-tasks]");
-  // const tasksContainer = document.querySelector(".add-list-tasks");
   const divInputTasks = document.querySelector(".inputTasks");
 
   function addTextArea() {
@@ -169,7 +166,12 @@ function initTasks() {
   function renderTasks(elementTasks = tasks) {
     divInputTasks.innerHTML = "";
     elementTasks.forEach((task, index) => {
-      const taskElement = createTaskElement(task.title, task.note, index);
+      const taskElement = createTaskElement(
+        task.title,
+        task.note,
+        index,
+        task.done
+      );
       divInputTasks.appendChild(taskElement);
     });
     addCounter();
@@ -202,7 +204,7 @@ function initTasks() {
     const div = createElementDiv(note);
     const btnEditSave = createElementEditAndSave();
     const wrapper = createElementWrapper();
-    const checkbox = createElementCheckBox(para);
+    const checkbox = createElementCheckBox(index, para);
     addDropDownEvent(btnEditSave, index, para, div, span, wrapper);
     wrapper.append(checkbox, para, btnEditSave);
     span.append(wrapper);
@@ -256,7 +258,15 @@ function initTasks() {
     });
   }
 
-  function createElementEdit(index, para, div, btnDropDown, divDropDown, span, wrapper) {
+  function createElementEdit(
+    index,
+    para,
+    div,
+    btnDropDown,
+    divDropDown,
+    span,
+    wrapper
+  ) {
     const edit = document.createElement("span");
     edit.classList.add("edit");
     edit.innerText = "Editar";
@@ -285,7 +295,6 @@ function initTasks() {
       para.replaceWith(inputEditTask);
       div.replaceWith(inputEditNote);
       wrapper.insertAdjacentElement("beforeend", save);
-      console.log(wrapper)
 
       removeElementsUI(divDropDown, btnDropDown);
 
@@ -337,13 +346,21 @@ function initTasks() {
     count.innerText = tasks.length;
   }
 
-  function createElementCheckBox(para) {
+  function createElementCheckBox(index, para) {
     const checkbox = document.createElement("div");
     checkbox.classList.add("activatedDivCheckBox");
+
+    if (tasks[index]?.done) {
+      checkbox.classList.add("alternateStateCheckbox");
+      para.classList.add("alternateStateParagraph");
+    }
 
     checkbox.addEventListener("click", () => {
       checkbox.classList.toggle("alternateStateCheckbox");
       para.classList.toggle("alternateStateParagraph");
+
+      tasks[index].done = checkbox.classList.contains("alternateStateCheckbox");
+      localStorage.setItem("tasksData", JSON.stringify(tasks));
     });
 
     return checkbox;
