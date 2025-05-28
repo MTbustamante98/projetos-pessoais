@@ -257,7 +257,7 @@
 
 .container-task textarea {
   width: 95%;
-  height: 70px;
+  height: 65px;
   margin: 0.875rem 0.625rem 0 0.625rem;
   padding: 0.625rem;
   background: var(--white-less-clear);
@@ -283,9 +283,9 @@
   display: flex;
   align-items: center;
   position: absolute;
-  bottom: 16px;
-  left: 50px;
-  gap: 80px;
+  bottom: 15px;
+  left: 40px;
+  gap: 100px;
 }
 
 .add-notes-tasks .btn-add-tasks {
@@ -447,7 +447,7 @@
   .add-notes-tasks {
     top: 160px;
     left: 35px;
-    gap: 40px;
+    gap: 75px;
   }
 
   .add-notes-tasks .btn-add-tasks {
