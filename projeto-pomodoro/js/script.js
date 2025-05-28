@@ -201,16 +201,17 @@ function initTasks() {
     const para = createElementParagraph(title);
     const div = createElementDiv(note);
     const btnEditSave = createElementEditAndSave();
+    const wrapper = createElementWrapper();
     const checkbox = createElementCheckBox(para);
-    addDropDownEvent(btnEditSave, index, para, div, span);
-    span.append(para, btnEditSave, checkbox);
-
+    addDropDownEvent(btnEditSave, index, para, div, span, wrapper);
+    wrapper.append(checkbox, para, btnEditSave);
+    span.append(wrapper);
     if (note) span.appendChild(div);
 
     return span;
   }
 
-  function addDropDownEvent(btnDropDown, index, para, div, span) {
+  function addDropDownEvent(btnDropDown, index, para, div, span, wrapper) {
     document.addEventListener("click", (e) => {
       const divDropDown = document.querySelector(".activedDivDropDown");
       const target = e.target;
@@ -245,7 +246,8 @@ function initTasks() {
           div,
           btnDropDown,
           newDivDropDown,
-          span
+          span,
+          wrapper
         );
         const [remove, divRemove] = createElementRemove(index, newDivDropDown);
         newDivDropDown.append(divEdit, divRemove);
@@ -254,7 +256,7 @@ function initTasks() {
     });
   }
 
-  function createElementEdit(index, para, div, btnDropDown, divDropDown, span) {
+  function createElementEdit(index, para, div, btnDropDown, divDropDown, span, wrapper) {
     const edit = document.createElement("span");
     edit.classList.add("edit");
     edit.innerText = "Editar";
@@ -282,7 +284,8 @@ function initTasks() {
 
       para.replaceWith(inputEditTask);
       div.replaceWith(inputEditNote);
-      span.insertAdjacentElement("beforeend", save);
+      wrapper.insertAdjacentElement("beforeend", save);
+      console.log(wrapper)
 
       removeElementsUI(divDropDown, btnDropDown);
 
@@ -344,6 +347,13 @@ function initTasks() {
     });
 
     return checkbox;
+  }
+
+  function createElementWrapper() {
+    const elementWrapper = document.createElement("div");
+    elementWrapper.classList.add("wrapper");
+
+    return elementWrapper;
   }
 
   function createElementSpan() {

@@ -2,7 +2,7 @@
   width: 92%;
   height: auto;
   margin: 0.313rem 0 0 0.938rem;
-  padding: 20px;
+  padding: 1.25rem;
   box-sizing: border-box;
   border-radius: 5px;
   background: var(--paleGoldenRod);
@@ -22,7 +22,7 @@
 }
 
 .activatedParagraph {
-  font: 600 1rem "Roboto", Arial, sans-serif;
+  font: 600 1rem/1.3 "Roboto", Arial, sans-serif;
   color: var(--medium-dark);
   max-width: 30ch;
 }
@@ -36,14 +36,13 @@
 }
 
 .activatedEditAndSave {
-  position: absolute;
-  top: 10px;
-  right: 10px;
   padding: 0.188rem;
   cursor: pointer;
   border: none;
   border-radius: 4px;
   background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  right: 0.625rem;
 }
 
 .activedDivDropDown {
@@ -71,7 +70,7 @@
   box-sizing: border-box;
   height: 48px;
   width: 140px;
-  padding: 16px 0;
+  padding: 1rem 0;
   position: relative;
   border-radius: 5px 5px 0 0;
   cursor: pointer;
@@ -81,7 +80,7 @@
   box-sizing: border-box;
   height: 50px;
   width: 140px;
-  padding: 16px 0;
+  padding: 1rem 0;
   position: relative;
   border-radius: 0 0 5px 5px;
   cursor: pointer;
@@ -98,13 +97,13 @@
 }
 
 .edit {
-  margin-right: 20px;
+  margin-right: 1.25rem;
 }
 
 .edit,
 .remove {
   font: 500 1rem "Inter", Arial, sans-serif;
-  margin-left: 40px;
+  margin-left: 2.5rem;
 }
 
 .divListEdit::before {
@@ -127,8 +126,7 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  position: absolute;
-  right: 15px;
+  margin-left: 2.5rem;
 }
 
 .divListEdit:hover::before,
@@ -152,7 +150,7 @@
   background: var(--very-light-gray);
   max-width: 30ch;
   border-radius: 5px;
-  padding: 5px;
+  padding: 0.313rem;
   border: none;
 }
 
@@ -169,11 +167,10 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: #ECECEC;
-  position: absolute;
-  left: 120px;
-  top: 15px;
+  background: #ececec;
   cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
 }
 
 .activatedDivCheckBox::after {
@@ -184,6 +181,12 @@
   position: absolute;
   left: 2px;
   top: 2px;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
 @media (max-width: 1440px) {
@@ -211,8 +214,12 @@
 }
 
 @media (max-width: 1280px) {
+  .activatedParagraph {
+    max-width: 24ch;
+  }
+
   .activedDivDropDown {
-    left: 175px;
+    left: 200px;
   }
 
   .activatedInputTasks {
@@ -222,5 +229,13 @@
   .activatedInputNote {
     margin-left: 0.313rem;
     padding-right: 3px;
+  }
+
+  .activatedDivCheckBox {
+    margin-left: 0.625rem;
+  }
+
+  .wrapper {
+    gap: 0.5rem;
   }
 }
