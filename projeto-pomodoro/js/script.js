@@ -1,13 +1,14 @@
-function initModals() {
-  const modal = document.querySelector(".modal");
-  const configs = document.querySelector(".configs");
-  const tasks = document.querySelector(".add-list-tasks");
-  const menu = document.querySelector(".menu");
-  const arrowClose = document.querySelector("[data-img-close='tasks']");
+const modal = document.querySelector(".modal");
+const configs = document.querySelector(".configs");
+const containerTasks = document.querySelector(".add-list-tasks");
+const menu = document.querySelector(".menu");
+const arrowClose = document.querySelector("[data-img-close='tasks']");
+const modalLinks = document.querySelectorAll(
+  "[data-modal], [data-config], [data-menu='button']"
+);
+const divAddTasks = document.querySelector(".tasks");
 
-  const modalLinks = document.querySelectorAll(
-    "[data-modal], [data-config], [data-menu='button']"
-  );
+function initModals() {
   const imgClose = document.querySelectorAll("[data-img-close]");
 
   const active = "active";
@@ -38,7 +39,8 @@ function initModals() {
     closeModals.forEach((modal, index) => {
       if (target === modal && index < 2) modal.classList.remove(active);
 
-      if (index === 2 && !modal.contains(target)) modal.classList.remove(active);
+      if (index === 2 && !modal.contains(target))
+        modal.classList.remove(active);
     });
   }
 
@@ -49,7 +51,7 @@ function initModals() {
     } else if (type === "configs") {
       configs.classList.remove(active);
     } else {
-      tasks.classList.remove(active);
+      containerTasks.classList.remove(active);
       arrowClose.classList.toggle(active);
     }
   }
@@ -63,7 +65,6 @@ function initModals() {
 initModals();
 
 // function starTyping() {
-//   const tasks = document.querySelector(".tasks")
 //   const paragraphMessage = document.querySelector(".message");
 //   const frases = [
 //     "Bem-vindo(a) ao PomoClock.",
@@ -104,11 +105,7 @@ initModals();
 // }
 // starTyping();
 
-
-
 function initAddTasks() {
-  const divAddTasks = document.querySelector(".tasks");
-  const containerTasks = document.querySelector(".add-list-tasks");
   const arrowClose = document.querySelector("[data-img-close='tasks']");
 
   function addTasks() {
@@ -152,7 +149,14 @@ function initPomodoros() {
 }
 initPomodoros();
 
-const tasks = JSON.parse(localStorage.getItem("tasksData")) || [];
+let tasks = [];
+
+try {
+  const stored = JSON.parse(localStorage.getItem("tasksData")) || [];
+  if (Array.isArray(stored)) tasks = stored;
+} catch (e) {
+  console.error("Erro ao ler taskData", e);
+}
 
 function initTasks() {
   const inputDescriptionTask = document.getElementById("task");
@@ -355,10 +359,10 @@ function initTasks() {
     const checkbox = document.createElement("div");
     checkbox.classList.add("activatedDivCheckBox");
     checkbox.setAttribute("role", "checkbox");
-    checkbox.setAttribute("aria-checked", tasks[index]?.done)
+    checkbox.setAttribute("aria-checked", tasks[index]?.done);
 
     if (tasks[index]?.done) {
-      checkbox.classList.add("alternateStateCheckbox");
+      checkbox.setAttribute("aria-checked", checkbox.classList.add("alternateStateCheckbox"));
       para.classList.add("alternateStateParagraph");
     }
 
@@ -366,11 +370,49 @@ function initTasks() {
       checkbox.classList.toggle("alternateStateCheckbox");
       para.classList.toggle("alternateStateParagraph");
 
-      tasks[index].done = checkbox.setAttribute("aria-checked", checkbox.classList.contains("alternateStateCheckbox"));
+      tasks[index].done = checkbox.classList.contains("alternateStateCheckbox");
       localStorage.setItem("tasksData", JSON.stringify(tasks));
     });
 
     return checkbox;
+  }
+
+  function removeAllCompletedTasks() {
+    const removeCompletedTasks = document.querySelector(
+      ".menu [data-completed]"
+    );
+
+    removeCompletedTasks.addEventListener("click", () => {
+      const taskCompleted = tasks.filter((el) => !el.done);
+      localStorage.setItem("tasksData", JSON.stringify(taskCompleted));
+
+      tasks.length = 0;
+      tasks.push(...taskCompleted);
+
+      removeMenuUI(menu);
+      renderTasks();
+    });
+  }
+  removeAllCompletedTasks();
+
+  function removeAllTasks() {
+    const removeAllTasks = document.querySelector(".menu [data-remove-all]");
+
+    removeAllTasks.addEventListener("click", () => {
+      tasks.length = 0;
+      localStorage.setItem("tasksData", JSON.stringify(tasks));
+
+      removeMenuUI(menu);
+      renderTasks();
+    });
+  }
+  removeAllTasks();
+
+  function removeMenuUI(menu) {
+    const isVisible = menu.classList.contains("active");
+
+    menu.classList.toggle("active", !isVisible);
+    menu.classList.toggle("removeMenu", isVisible);
   }
 
   function createElementWrapper() {
