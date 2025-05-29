@@ -362,7 +362,10 @@ function initTasks() {
     checkbox.setAttribute("aria-checked", tasks[index]?.done);
 
     if (tasks[index]?.done) {
-      checkbox.setAttribute("aria-checked", checkbox.classList.add("alternateStateCheckbox"));
+      checkbox.setAttribute(
+        "aria-checked",
+        checkbox.classList.add("alternateStateCheckbox")
+      );
       para.classList.add("alternateStateParagraph");
     }
 
@@ -371,6 +374,7 @@ function initTasks() {
       para.classList.toggle("alternateStateParagraph");
 
       tasks[index].done = checkbox.classList.contains("alternateStateCheckbox");
+      allTasksCompleted();
       localStorage.setItem("tasksData", JSON.stringify(tasks));
     });
 
@@ -393,7 +397,6 @@ function initTasks() {
       renderTasks();
     });
   }
-  removeAllCompletedTasks();
 
   function removeAllTasks() {
     const removeAllTasks = document.querySelector(".menu [data-remove-all]");
@@ -406,7 +409,16 @@ function initTasks() {
       renderTasks();
     });
   }
-  removeAllTasks();
+
+  function allTasksCompleted() {
+    const completedTask = tasks.every((el) => el.done);
+    
+    if (tasks.length > 0 && completedTask) {
+      setTimeout(() => {
+        alert("Tarefas concluídas!")
+      }, 1000)
+    }
+  }
 
   function removeMenuUI(menu) {
     const isVisible = menu.classList.contains("active");
@@ -459,6 +471,8 @@ function initTasks() {
 
   addNotes.addEventListener("click", addTextArea);
   buttonAddTasks.addEventListener("click", addTasksAndNotes);
+  removeAllCompletedTasks();
+  removeAllTasks();
   renderTasks();
 }
 initTasks();

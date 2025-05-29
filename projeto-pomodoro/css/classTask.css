@@ -199,21 +199,24 @@
     padding: 1.125rem 0.625rem;
   }
 
-  .activatedParagraph {
-    margin-left: 0.313rem;
-  }
-
   .activatedDiv {
     margin-left: 0.313rem;
   }
 
   .activatedEditAndSave {
-    top: 10px;
-    right: 5px;
+    right: 10px;
   }
 
   .activedDivDropDown {
-    left: 205px;
+    left: 200px;
+  }
+
+  .activatedDivCheckBox {
+    margin-left: 0.625rem;
+  }
+
+  .activatedButtonSave {
+    margin-left: 0.938rem;
   }
 }
 

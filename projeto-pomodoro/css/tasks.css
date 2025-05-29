@@ -182,7 +182,7 @@
 }
 
 [data-img-close="tasks"] {
-  position: fixed;
+  position: absolute;
   left: 420px;
   top: 20px;
   height: 32px;
@@ -229,7 +229,7 @@
 .container-task textarea {
   width: 95%;
   height: 65px;
-  margin: 0.875rem 0.625rem 0 0.625rem;
+  margin: 0.938rem 0.625rem 0 0.625rem;
   padding: 0.625rem;
   background: var(--white-less-clear);
   color: rgba(0, 0, 0, 0.8);
@@ -303,7 +303,7 @@
 @media (max-width: 1440px) {
   .tasks {
     bottom: -100px;
-    right: 440px;
+    right: 410px;
   }
 
   .dec-line {
@@ -326,6 +326,10 @@
     top: 9px;
   }
 
+  .menu {
+    right: 16px;
+  }
+
   .add-list-tasks {
     width: 370px;
     height: 100vh;
@@ -336,7 +340,7 @@
   }
 
   .container-task {
-    height: 200px;
+    height: 175px;
   }
 
   .container-task input {
@@ -353,11 +357,12 @@
   }
 
   .container-task textarea {
-    margin: 0.938rem 0 0 0.5rem;
+    height: 60px;
+    margin: 0.5rem 0 0 0.5rem;
   }
 
   .add-notes-tasks {
-    bottom: 18px;
+    bottom: 10px;
     left: 35px;
     gap: 70px;
   }
