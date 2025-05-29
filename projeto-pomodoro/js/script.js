@@ -324,9 +324,10 @@ function initTasks() {
     return [edit, divEdit, save];
   }
 
-  function removeElementsUI(dropDown, button) {
+  function removeElementsUI(dropDown, button, wrapper) {
     dropDown?.remove();
     button?.remove();
+    wrapper?.remove();
   }
 
   function createElementRemove(index, newDivDropDown) {
@@ -375,7 +376,7 @@ function initTasks() {
 
       tasks[index].done = checkbox.classList.contains("alternateStateCheckbox");
       allTasksCompleted();
-      localStorage.setItem("tasksData", JSON.stringify(tasks));
+      localStorage.setItem("tasksData", JSON.stringify(tasks)); 
     });
 
     return checkbox;
@@ -398,7 +399,7 @@ function initTasks() {
     });
   }
 
-  function removeAllTasks() {
+  function handleRemoveAllTasks() {
     const removeAllTasks = document.querySelector(".menu [data-remove-all]");
 
     removeAllTasks.addEventListener("click", () => {
@@ -410,13 +411,19 @@ function initTasks() {
     });
   }
 
+  function removeAllTasks() {
+    tasks.length = 0;
+    localStorage.setItem("tasksData", JSON.stringify([]));
+    renderTasks();
+  }
+
   function allTasksCompleted() {
     const completedTask = tasks.every((el) => el.done);
-    
     if (tasks.length > 0 && completedTask) {
       setTimeout(() => {
-        alert("Tarefas concluídas!")
-      }, 1000)
+        alert("Parabéns, você concluiu todas as tarefas!");
+        removeAllTasks()
+      }, 500);
     }
   }
 
@@ -472,7 +479,7 @@ function initTasks() {
   addNotes.addEventListener("click", addTextArea);
   buttonAddTasks.addEventListener("click", addTasksAndNotes);
   removeAllCompletedTasks();
-  removeAllTasks();
+  handleRemoveAllTasks();
   renderTasks();
 }
 initTasks();
