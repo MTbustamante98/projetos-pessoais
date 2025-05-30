@@ -7,7 +7,6 @@ const modalLinks = document.querySelectorAll(
   "[data-modal], [data-config], [data-menu='button']"
 );
 const divAddTasks = document.querySelector(".tasks");
-console.log("modalLinks")
 
 function initModals() {
   const imgClose = document.querySelectorAll("[data-img-close]");
