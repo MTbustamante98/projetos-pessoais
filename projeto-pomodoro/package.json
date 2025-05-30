@@ -91,8 +91,8 @@
     "wildcard": "^2.0.1"
   },
   "scripts": {
-    "dev": "webpack --mode development --watch --entry ./js/script.js -o ./dist/main.js",
-    "build": "webpack --mode production --entry ./js/script.js -o ./dist/main.js"
+    "dev": "webpack --mode development --watch --entry ./js/script.js -o ./dist/script.js",
+    "build": "webpack --mode production --entry ./js/script.js -o ./dist/script.js"
   },
   "author": "",
   "license": "ISC",
