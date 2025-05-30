@@ -324,10 +324,9 @@ function initTasks() {
     return [edit, divEdit, save];
   }
 
-  function removeElementsUI(dropDown, button, wrapper) {
+  function removeElementsUI(dropDown, button) {
     dropDown?.remove();
     button?.remove();
-    wrapper?.remove();
   }
 
   function createElementRemove(index, newDivDropDown) {
@@ -376,12 +375,23 @@ function initTasks() {
 
       tasks[index].done = checkbox.classList.contains("alternateStateCheckbox");
       allTasksCompleted();
-      localStorage.setItem("tasksData", JSON.stringify(tasks)); 
+      reOrder();
+      localStorage.setItem("tasksData", JSON.stringify(tasks));
     });
 
     return checkbox;
   }
 
+  function reOrder() {
+    const reorder = [...tasks].sort((a,b) => a.done - b.done);
+
+    tasks.length = 0;
+    tasks.push(...reorder);
+    localStorage.setItem("tasksData", JSON.stringify(tasks));
+    
+    renderTasks();
+  }
+  
   function removeAllCompletedTasks() {
     const removeCompletedTasks = document.querySelector(
       ".menu [data-completed]"
@@ -422,7 +432,7 @@ function initTasks() {
     if (tasks.length > 0 && completedTask) {
       setTimeout(() => {
         alert("Parabéns, você concluiu todas as tarefas!");
-        removeAllTasks()
+        removeAllTasks();
       }, 500);
     }
   }
