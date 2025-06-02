@@ -7,13 +7,11 @@ const modalLinks = document.querySelectorAll(
   "[data-modal], [data-config], [data-menu='button']"
 );
 const divAddTasks = document.querySelector(".tasks");
+const imgClose = document.querySelectorAll("[data-img-close]");
+const closeModals = [modal, configs, menu];
+const active = "active";
 
 function initModals() {
-  const imgClose = document.querySelectorAll("[data-img-close]");
-
-  const active = "active";
-  const closeModals = [modal, configs, menu];
-
   function openModal(e) {
     if (e) e.preventDefault();
     e.stopPropagation();
@@ -39,8 +37,10 @@ function initModals() {
     closeModals.forEach((modal, index) => {
       if (target === modal && index < 2) modal.classList.remove(active);
 
-      if (index === 2 && !modal.contains(target))
+      if (index === 2 && !modal.contains(target)) {
         modal.classList.remove(active);
+        modalLinks[2].classList.remove("scale-effect");
+      }
     });
   }
 
@@ -226,8 +226,9 @@ function initTasks() {
 
       if (!divDropDown) return;
 
-      if (!divDropDown.contains(target)) {
+      if (divDropDown && !divDropDown.contains(target)) {
         removeElementsUI(divDropDown);
+        removeScaleEffectAllElements();
       }
     });
 
@@ -383,15 +384,15 @@ function initTasks() {
   }
 
   function reOrder() {
-    const reorder = [...tasks].sort((a,b) => a.done - b.done);
+    const reorder = [...tasks].sort((a, b) => a.done - b.done);
 
     tasks.length = 0;
     tasks.push(...reorder);
     localStorage.setItem("tasksData", JSON.stringify(tasks));
-    
+
     renderTasks();
   }
-  
+
   function removeAllCompletedTasks() {
     const removeCompletedTasks = document.querySelector(
       ".menu [data-completed]"
@@ -405,6 +406,7 @@ function initTasks() {
       tasks.push(...taskCompleted);
 
       removeMenuUI(menu);
+      removeScaleEffectAllElements();
       renderTasks();
     });
   }
@@ -417,6 +419,7 @@ function initTasks() {
       localStorage.setItem("tasksData", JSON.stringify(tasks));
 
       removeMenuUI(menu);
+      removeScaleEffectAllElements();
       renderTasks();
     });
   }
@@ -435,6 +438,12 @@ function initTasks() {
         removeAllTasks();
       }, 500);
     }
+  }
+
+  function removeScaleEffectAllElements() {
+    document.querySelectorAll(".scale-effect").forEach((btn) => {
+      btn.classList.remove("scale-effect");
+    });
   }
 
   function removeMenuUI(menu) {

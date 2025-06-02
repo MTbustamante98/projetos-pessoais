@@ -47,7 +47,7 @@
 
 .activedDivDropDown {
   margin-top: 0.313rem;
-  left: 230px;
+  left: 225px;
   width: 140px;
   height: 100px;
   background: var(--paleGoldenRod);
@@ -199,12 +199,22 @@
     padding: 1.125rem 0.625rem;
   }
 
+  .activatedParagraph {
+    font-size: 0.938rem;
+    max-width: 29ch;
+  }
+
   .activatedDiv {
     margin-left: 0.313rem;
   }
 
   .activatedEditAndSave {
     right: 10px;
+  }
+
+  .activatedInputNote {
+    margin-left: 0.313rem;
+    padding-right: 3px;
   }
 
   .activedDivDropDown {
@@ -237,7 +247,7 @@
   .activatedEditAndSave {
     right: 0.75rem;
   }
-  
+
   .activatedButtonSave {
     margin-left: 1rem;
   }

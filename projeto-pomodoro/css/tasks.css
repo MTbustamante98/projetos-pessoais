@@ -95,7 +95,7 @@
   border-radius: 5px;
   background: var(--white-smoke);
   position: absolute;
-  right: 30px;
+  right: 19px;
   z-index: 1;
   display: none;
 }
@@ -161,9 +161,9 @@
 }
 
 .add-list-tasks {
-  position: absolute;
   width: 400px;
   height: 100vh;
+  position: absolute;
   top: 0;
   left: 0;
   background: var(--khaki);
@@ -172,11 +172,17 @@
   overflow-x: hidden;
 }
 
-.add-list-tasks::-webkit-scrollbar {
+.inputTasks {
+  max-height: 550px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.inputTasks::-webkit-scrollbar {
   width: 6px;
 }
 
-.add-list-tasks::-webkit-scrollbar-thumb {
+.inputTasks::-webkit-scrollbar-thumb {
   background: var(--medium-dark);
   border-radius: 4px;
 }
@@ -194,18 +200,17 @@
 
 .container-task {
   margin: 1.25rem 0.938rem;
-  width: 90%;
-  height: 200px;
   position: relative;
+  width: 90%;
+  height: 170px;
   border: 3px solid var(--white);
   border-radius: 6px;
   background: var(--paleGoldenRod);
-  position: relative;
 }
 
 .container-task input {
   width: 100%;
-  padding: 1.25rem 0.625rem;
+  padding: 1rem 0.625rem;
   box-sizing: border-box;
   border: none;
   font-size: 1.25rem;
@@ -229,7 +234,7 @@
 .container-task textarea {
   width: 95%;
   height: 65px;
-  margin: 0.938rem 0.625rem 0 0.625rem;
+  margin: 0 0.625rem 0 0.625rem;
   padding: 0.625rem;
   background: var(--white-less-clear);
   color: rgba(0, 0, 0, 0.8);
@@ -254,7 +259,7 @@
   display: flex;
   align-items: center;
   position: absolute;
-  bottom: 15px;
+  bottom: 10px;
   left: 40px;
   gap: 100px;
 }
@@ -332,7 +337,10 @@
 
   .add-list-tasks {
     width: 370px;
-    height: 100vh;
+  }
+
+  .inputTasks {
+    max-height: 420px;
   }
 
   [data-img-close="tasks"] {
@@ -340,7 +348,7 @@
   }
 
   .container-task {
-    height: 175px;
+    height: 160px;
   }
 
   .container-task input {
@@ -395,7 +403,7 @@
   }
 
   .container-task input {
-    padding: 1.25rem 0.5rem;
+    padding: 1rem 0.5rem;
   }
 
   .container-task input::placeholder {
@@ -403,15 +411,20 @@
   }
 
   .container-task textarea {
-    height: 60px;
+    height: 55px;
+    margin: 0 0.625rem 0 0.625rem;
   }
 
   .add-list-tasks {
     width: 370px;
   }
 
+  .inputTasks {
+    max-height: 500px;
+  }
+
   .add-notes-tasks {
-    top: 130px;
+    top: 120px;
     left: 35px;
     gap: 75px;
   }
