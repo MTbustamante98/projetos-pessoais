@@ -109,7 +109,7 @@
 .divListEdit::before {
   content: "";
   position: absolute;
-  background: url("../imagens/edit.png") no-repeat;
+  background: url("../images/edit.png") no-repeat;
   width: 24px;
   height: 24px;
   top: 18px;
@@ -137,7 +137,7 @@
 .divListRemove::before {
   content: "";
   position: absolute;
-  background: url("../imagens/delete.png") no-repeat;
+  background: url("../images/delete.png") no-repeat;
   width: 24px;
   height: 24px;
   top: 18px;
@@ -175,7 +175,7 @@
 
 .activatedDivCheckBox::after {
   content: "";
-  background: url("../imagens/check.svg");
+  background: url("../images/check.svg");
   width: 24px;
   height: 24px;
   position: absolute;

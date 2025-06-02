@@ -488,7 +488,7 @@ function initTasks() {
     btnEditSave.type = "button";
     btnEditSave.classList.add("activatedEditAndSave");
     const imgDropDown = document.createElement("img");
-    imgDropDown.src = "./imagens/three-points.svg";
+    imgDropDown.src = "./images/three-points.svg";
     imgDropDown.style.marginTop = "2px";
     btnEditSave.appendChild(imgDropDown);
 

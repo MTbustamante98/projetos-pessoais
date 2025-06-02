@@ -20,7 +20,7 @@
   <main class="container">
     <header class="header">
       <div class="image">
-        <img src="./imagens/logo-1-center-pomoclock.png" alt="" />
+        <img src="./images/logo-1-center-pomoclock.png" alt="" />
       </div>
       <nav>
         <ul>
@@ -32,7 +32,7 @@
     <section class="watches">
       <div class="clock-pomodoro">
         <span data-timer>25:00</span>
-        <button type="button">START</button>
+        <button type="button">COMEÇAR</button>
       </div>
       <section class="div-clocks">
         <div>
@@ -56,7 +56,7 @@
     <section class="modal">
       <div class="on-pomodoro">
         <div class="img-close">
-          <img data-img-close="modal" src="./imagens/icon-close.svg" alt="representation of an icon to close modal">
+          <img data-img-close="modal" src="./images/icon-close.svg" alt="representation of an icon to close modal">
         </div>
         <div class="faq-lista">
           <h1>O que é o PomoClock?</h1>
@@ -106,18 +106,37 @@
       <div class="menu-configs">
         <div class="title-and-close-configs">
           <h1>Configurações</h1>
-          <img data-img-close="configs" src="./imagens/icon-close-configs.svg" alt="">
+          <img data-img-close="configs" src="./images/icon-close-configs.svg" alt="">
         </div>
         <div class="dec"></div>
-      </div>
+          <div class="icon-title-temp">
+            <img src="./images/icon-clock.svg" alt="">
+            <h1>Temporizador</h1>
+          </div>
+          <p class="paragraph-time">Tempo (minutos)</p>
+          <div class="select-time">
+              <div>
+                <label>Pomodoro</label>
+                <input type="number" name="pomodoroTimer" id="pomodoroTimer">
+              </div>
+              <div>
+                <label>Pausa curta</label>
+                <input type="number" name="shortTimer" id="shortTimer">
+              </div>
+              <div>
+                <label>Pausa longa</label>
+                <input type="number" name="longTimer" id="longTimer">
+              </div>
+          </div>
+        </div>
     </section>
-    <img data-img-close="tasks" src="./imagens/arrow-back-close.svg" alt="">
+    <img data-img-close="tasks" src="./images/arrow-back-close.svg" alt="">
     <aside class="add-list-tasks">
       <div class="title-task">
         <h1>Tarefas</h1>
           <span data-count>0</span>
           <button data-menu="button" aria-expanded="false" aria-controls="menu">
-            <img data-menu-img src="./imagens/three-points.svg" alt="">
+            <img data-menu-img src="./images/three-points.svg" alt="">
           </button>
         <div class="menu">
           <nav>

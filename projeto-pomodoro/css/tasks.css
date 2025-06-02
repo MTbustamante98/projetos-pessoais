@@ -43,7 +43,7 @@
   position: absolute;
   top: 5px;
   left: 125px;
-  background: url("../imagens/add-task.svg");
+  background: url("../images/add-task.svg");
 }
 
 .dec-line {
@@ -144,7 +144,7 @@
   content: "";
   display: inline-block;
   margin-right: 0.188rem;
-  background: url("../imagens/clear.svg");
+  background: url("../images/clear.svg");
   width: 20px;
   height: 20px;
   vertical-align: middle;
@@ -154,7 +154,7 @@
   content: "";
   display: inline-block;
   margin-right: 0.188rem;
-  background: url("../imagens/clear-all.svg");
+  background: url("../images/clear-all.svg");
   width: 20px;
   height: 20px;
   vertical-align: middle;
@@ -293,7 +293,7 @@
 .add-notes-tasks span::before {
   content: "";
   display: inline-block;
-  background: url("../imagens/add-more-icon.svg");
+  background: url("../images/add-more-icon.svg");
   width: 16px;
   height: 16px;
   position: absolute;
