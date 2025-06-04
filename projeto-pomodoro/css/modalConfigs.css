@@ -14,7 +14,7 @@
 .menu-configs {
   background: var(--white);
   height: auto;
-  width: 370px;
+  width: 430px;
   border-radius: 5px;
 }
 
@@ -61,19 +61,20 @@
 
 .paragraph-time {
   padding: 0 0.75rem;
-  font: 600 0.938rem "Roboto", Arial, sans-serif;
+  font: 600 1rem "Inter", Arial, sans-serif;
   color: var(--medium-dark);
 }
 
 .select-time {
   display: flex;
+  gap: 1.25rem;
   padding: 0.5rem 0.75rem;
 }
 
 .select-time input {
-  width: 55%;
-  margin-left: 0.125rem;
-  padding: 0.5rem 0.75rem;
+  width: 60%;
+  margin: 0.313rem 0 0 0.125rem;
+  padding: 10px 0.75rem;
   border-radius: 5px;
   border: none;
   background: var(--more-less-light-gray);
@@ -84,6 +85,124 @@
   color: var(--saturated-gray);
   margin-left: 0.125rem;
 }
+
+.auto-start-break {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.paragraph-auto-start {
+  padding: 1.25rem 0.75rem;
+  font: 600 1rem "Roboto", Arial, sans-serif;
+  color: var(--medium-dark);
+}
+
+.activate-break {
+  padding: 1rem 2rem;
+  background: var(--saturated-gray);
+  margin-right: 2rem;
+  border-radius: 50px;
+}
+
+.choose-option {
+  padding: 0.938rem;
+  background: var(--white);
+  border-radius: 50%;
+  position: absolute;
+  right: 64px;
+  cursor: pointer;
+}
+
+.sound-container {
+  display: flex;
+  align-items: center;
+  padding: 1.25rem 0.5rem;
+}
+
+.sound-container h1 {
+  font: 600 1rem "Sansation", Arial, sans-serif;
+  text-transform: uppercase;
+  color: var(--saturated-gray);
+  letter-spacing: 1px;
+  margin-left: 3px;
+}
+
+.paragraph-sound {
+  padding: 0 0.75rem;
+  font: 600 1rem "Roboto", Arial, sans-serif;
+  color: var(--medium-dark);
+}
+
+.alarm-sound {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 2rem;
+}
+
+.activeDropDownChooseAlarm {
+  border: none;
+  padding: 1.125rem 3.5rem;
+  background: var(--more-less-light-gray);
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+}
+
+.activeDropDownChooseAlarm:focus {
+  outline: none;
+}
+
+.activeDropDownChooseAlarm img {
+  position: absolute;
+  top: 6px;
+  right: 5px;
+}
+
+.volume-sound {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.938rem 1.875rem;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  background: var(--gainsboro);
+  border-radius: 5px;
+  height: 8px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  background: var(--white);
+  height: 24px;
+  width: 24px;
+  -webkit-appearance: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  margin-top: -7px;
+}
+
+input[type="range"]::-moz-range-track {
+  background: var(--gainsboro);
+  border-radius: 5px;
+  height: 8px;
+}
+
+input[type="range"]::-moz-range-thumb {
+  background: var(--white);
+  height: 24px;
+  width: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  margin-top: -7px;
+}
+
 
 @media (max-width: 1440px) {
   .menu-configs {

@@ -117,17 +117,38 @@
           <div class="select-time">
               <div>
                 <label>Pomodoro</label>
-                <input type="number" name="pomodoroTimer" id="pomodoroTimer">
+                <input type="number" name="pomodoroTimer" id="pomodoroTimer" min="0" max="100">
               </div>
               <div>
                 <label>Pausa curta</label>
-                <input type="number" name="shortTimer" id="shortTimer">
+                <input type="number" name="shortTimer" id="shortTimer" min="0" max="100">
               </div>
               <div>
                 <label>Pausa longa</label>
-                <input type="number" name="longTimer" id="longTimer">
+                <input type="number" name="longTimer" id="longTimer" min="0" max="100">
               </div>
-          </div>
+            </div>
+            <div class="auto-start-break">
+              <p class="paragraph-auto-start">Intervalos de Inicío Automático</p>
+              <div class="choose-option"></div>
+              <div class="activate-break">
+              </div>
+            </div>
+            <div class="dec"></div>
+              <div class="sound-container">
+                  <img src="./images/sound-config.svg" alt="">
+                  <h1>Som</h1>
+              </div>
+              <div class="alarm-sound">
+                <p class="paragraph-sound">Som alarme</p>
+                <div class="activeDropDownChooseAlarm">
+                  <img src="/images/arrow-dropdown-alarm.svg" alt="">
+                </div>
+              </div>
+              <div class="volume-sound">
+                <input type="range" name="volume" id="volume">
+              </div>  
+              <div class="dec"></div>
         </div>
     </section>
     <img data-img-close="tasks" src="./images/arrow-back-close.svg" alt="">
