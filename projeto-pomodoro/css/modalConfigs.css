@@ -14,7 +14,7 @@
 .menu-configs {
   background: var(--white);
   height: auto;
-  width: 430px;
+  width: 400px;
   border-radius: 5px;
 }
 
@@ -45,23 +45,23 @@
   opacity: 0.3;
 }
 
-.icon-title-temp {
+.icon-title {
   display: flex;
   gap: 0.3rem;
   align-items: center;
   padding: 1.25rem 0.5rem;
 }
 
-.icon-title-temp h1 {
+.icon-title .title-utilities-config {
   font: 600 1rem "Sansation", Arial, sans-serif;
   text-transform: uppercase;
   color: var(--saturated-gray);
   letter-spacing: 1px;
 }
 
-.paragraph-time {
+.paragraph-description {
   padding: 0 0.75rem;
-  font: 600 1rem "Inter", Arial, sans-serif;
+  font: 600 1rem "Roboto", Arial, sans-serif;
   color: var(--medium-dark);
 }
 
@@ -72,7 +72,7 @@
 }
 
 .select-time input {
-  width: 60%;
+  width: 70%;
   margin: 0.313rem 0 0 0.125rem;
   padding: 10px 0.75rem;
   border-radius: 5px;
@@ -100,49 +100,30 @@
 }
 
 .activate-break {
-  padding: 1rem 2rem;
+  padding: 1rem 1.875rem;
   background: var(--saturated-gray);
-  margin-right: 2rem;
+  margin-right: 1rem;
   border-radius: 50px;
-}
-
-.choose-option {
-  padding: 0.938rem;
-  background: var(--white);
-  border-radius: 50%;
-  position: absolute;
-  right: 64px;
   cursor: pointer;
 }
 
-.sound-container {
-  display: flex;
-  align-items: center;
-  padding: 1.25rem 0.5rem;
-}
-
-.sound-container h1 {
-  font: 600 1rem "Sansation", Arial, sans-serif;
-  text-transform: uppercase;
-  color: var(--saturated-gray);
-  letter-spacing: 1px;
-  margin-left: 3px;
-}
-
-.paragraph-sound {
-  padding: 0 0.75rem;
-  font: 600 1rem "Roboto", Arial, sans-serif;
-  color: var(--medium-dark);
+.choose-option {
+  padding: 0.875rem;
+  background: var(--white);
+  border-radius: 50%;
+  position: absolute;
+  right: 46px;
+  cursor: pointer;
 }
 
 .alarm-sound {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-right: 2rem;
+  margin-right: 1rem;
 }
 
-.activeDropDownChooseAlarm {
+.activeDropDownChoose {
   border: none;
   padding: 1.125rem 3.5rem;
   background: var(--more-less-light-gray);
@@ -151,11 +132,11 @@
   position: relative;
 }
 
-.activeDropDownChooseAlarm:focus {
+.activeDropDownChoose:focus {
   outline: none;
 }
 
-.activeDropDownChooseAlarm img {
+.activeDropDownChoose img {
   position: absolute;
   top: 6px;
   right: 5px;
@@ -164,7 +145,13 @@
 .volume-sound {
   display: flex;
   justify-content: flex-end;
-  padding: 0.938rem 1.875rem;
+  padding: 1.5rem 1rem;
+}
+
+.volume-sound [data-count-volume] {
+  font: 600 1rem "Roboto", Arial, sans-serif;
+  margin-right: 0.625rem;
+  color: var(--gainsboro);
 }
 
 input[type="range"] {
@@ -203,6 +190,106 @@ input[type="range"]::-moz-range-thumb {
   margin-top: -7px;
 }
 
+.repetition {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+  padding: 0 1rem;
+}
+
+.repetition p {
+  font: 400 0.938rem "Roboto", Arial, sans-serif;
+  color: var(--medium-dark);
+}
+
+.repetition input[type="number"] {
+  width: 15%;
+  padding: 0.625rem 0;
+  border-radius: 5px;
+  border: none;
+  background: var(--more-less-light-gray);
+}
+
+.alarm-ticking {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 1rem;
+  padding: 1.5rem 0;
+}
+
+.volume-ticking {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 1rem 1.25rem 0;
+}
+
+.volume-ticking [data-count-ticking] {
+  font: 600 1rem "Roboto", Arial, sans-serif;
+  margin-right: 0.625rem;
+  color: var(--gainsboro);
+}
+
+#special-padding-style {
+  padding: 0 0.75rem 0 0.75rem;
+}
+
+.flex-container-hours {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.paragraph-hours {
+  padding: 15px 0.75rem;
+  font: 600 1rem "Roboto", Arial, sans-serif;
+  color: var(--medium-dark);
+}
+
+.container-backgrounds {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.choose-background {
+  background: black;
+  width: 28px;
+  height: 28px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.choose-background:nth-child(1) {
+  background: var(--tomato);
+}
+
+.choose-background:nth-child(2) {
+  background: var(--backgroundShortBreak);
+}
+
+.choose-background:nth-child(3) {
+  background: var(--backgroundLongBreak);
+}
+
+.activate-light-dark {
+  padding: 1rem 1.875rem;
+  background: var(--saturated-gray);
+  margin-right: 1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  position: relative;
+}
+
+.choose-light-dark {
+  padding: 0.875rem;
+  background: var(--white);
+  border-radius: 50%;
+  position: absolute;
+  left: 10px;
+  cursor: pointer;
+}
 
 @media (max-width: 1440px) {
   .menu-configs {

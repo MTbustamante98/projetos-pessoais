@@ -129,6 +129,12 @@
   margin-left: 2.5rem;
 }
 
+@-moz-document url-prefix() {
+  .activatedButtonSave {
+    margin-left: 1.7rem;
+  }
+}
+
 .divListEdit:hover::before,
 .divListRemove:hover::before {
   filter: brightness(0) invert(1);

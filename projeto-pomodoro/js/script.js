@@ -132,17 +132,17 @@ function initPomodoros() {
 
     if (e.target.classList.contains("pomodoro-clock")) {
       dataTimer.innerText = "25:00";
-      documentBody.style.backgroundColor = "#f3615c";
+      documentBody.style.backgroundColor = "var(--tomato)";
     }
 
     if (e.target.classList.contains("short-pause-pomodoro")) {
       dataTimer.innerText = "05:00";
-      documentBody.style.backgroundColor = "#38858A";
+      documentBody.style.backgroundColor = "var(--backgroundShortBreak)";
     }
 
     if (e.target.classList.contains("long-pause-pomodoro")) {
       dataTimer.innerText = "15:00";
-      documentBody.style.backgroundColor = "#397097";
+      documentBody.style.backgroundColor = "var(--backgroundLongBreak)";
     }
   }
   pomodoros.forEach((el) => el.addEventListener("click", choosePomodoro));
