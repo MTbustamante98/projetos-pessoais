@@ -10,6 +10,12 @@ const divAddTasks = document.querySelector(".tasks");
 const imgClose = document.querySelectorAll("[data-img-close]");
 const closeModals = [modal, configs, menu];
 const active = "active";
+const documentBody = document.body;
+
+const matchMedia = (media) => {
+  const small = window.matchMedia(media);
+  return small;
+}
 
 function initModals() {
   function openModal(e) {
@@ -24,8 +30,10 @@ function initModals() {
 
     if (target.hasAttribute("data-config")) {
       configs.classList.add(active);
+      const small = matchMedia("(max-width: 1440px)");      
+      configs.style.overflowY = small.matches ? "scroll" : "hidden";
     }
-
+    
     if (target.closest("[data-menu]")) {
       menu.classList.toggle(active);
       modalLinks[2].classList.toggle("scale-effect");
