@@ -167,7 +167,7 @@
   top: 0;
   left: 0;
   background: var(--khaki);
-  display: block;
+  display: none;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -260,13 +260,12 @@
   align-items: center;
   position: absolute;
   bottom: 10px;
-  left: 40px;
-  gap: 100px;
+  left: 30px;
+  gap: 95px;
 }
 
 .add-notes-tasks .btn-add-tasks {
-  font-family: "Inter", Arial, sans-serif;
-  font-weight: 600;
+  font: 600 1rem "Inter", Arial, sans-serif;
   letter-spacing: 0.8px;
   color: var(--white);
   background: var(--dark-gray);
@@ -297,7 +296,7 @@
   width: 16px;
   height: 16px;
   position: absolute;
-  top: 6px;
+  top: 8px;
   left: -20px;
 }
 
@@ -353,7 +352,6 @@
 
   .container-task input {
     padding: 0.938rem 0.5rem;
-    
   }
 
   .container-task input::placeholder {
@@ -373,7 +371,7 @@
   .add-notes-tasks {
     bottom: 10px;
     left: 30px;
-    gap: 85px;
+    gap: 65px;
   }
 
   .add-notes-tasks .btn-add-tasks {
@@ -445,5 +443,43 @@
 
   .menu {
     right: 13px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container-task {
+    height: 140px;
+  }
+
+  .container-task input {
+    padding: 0.75rem 0.3rem;
+  }
+
+  .add-notes-tasks .btn-add-tasks {
+    padding: 0.5rem 8px;
+    font-size: 0.75rem;
+  }
+
+  .add-notes-tasks {
+    top: 100px;
+    left: 30px;
+    gap: 60px;
+  }
+
+  .tasks {
+    display: none;
+  }
+
+  .add-list-tasks {
+    width: 320px;
+    display: block !important;
+  }
+
+  .inputTasks {
+    max-height: 400px;
+  }
+
+  [data-img-close="tasks"] {
+    display: none !important;
   }
 }

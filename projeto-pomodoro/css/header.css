@@ -82,3 +82,13 @@
     padding-top: 1.875rem;
   }
 }
+
+@media (max-width: 1024px) {
+  header {
+    display: flex !important;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 18.75rem;
+    padding-top: 1rem !important;
+  }
+}

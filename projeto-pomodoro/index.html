@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta name="description" content="Cronômetro pomodoro" />
   <meta charset="UTF-8" />
@@ -16,6 +17,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
   <main class="container">
     <header class="header">
@@ -109,109 +111,109 @@
           <img data-img-close="configs" src="./images/icon-close-configs.svg" alt="">
         </div>
         <div class="dec"></div>
-          <article id="special-padding-style">
-            <div class="icon-title">
-              <img src="./images/icon-clock.svg" alt="">
-              <h1 class="title-utilities-config">Temporizador</h1>
+        <article id="special-padding-style">
+          <div class="icon-title">
+            <img src="./images/icon-clock.svg" alt="">
+            <h1 class="title-utilities-config">Temporizador</h1>
+          </div>
+          <p class="paragraph-description">Tempo (minutos)</p>
+          <div class="select-time">
+            <div>
+              <label>Pomodoro</label>
+              <input type="number" name="pomodoroTimer" id="pomodoroTimer" min="0" max="100">
             </div>
-            <p class="paragraph-description">Tempo (minutos)</p>
-              <div class="select-time">
-                <div>
-                  <label>Pomodoro</label>
-                  <input type="number" name="pomodoroTimer" id="pomodoroTimer" min="0" max="100">
-                </div>
-                <div>
-                  <label>Pausa curta</label>
-                  <input type="number" name="shortTimer" id="shortTimer" min="0" max="100">
-                </div>
-                <div>
-                  <label>Pausa longa</label>
-                  <input type="number" name="longTimer" id="longTimer" min="0" max="100">
-                </div>
-              </div>
-              <div class="auto-start-break">
-                <p class="paragraph-auto-start">Intervalos de Inicío Automático</p>
-                <div class="activate-break"></div>
-                <div data-choose-automatic-range class="choose-option"></div>
-              </div>
-          </article>
-            <div class="dec"></div>
-              <article id="special-padding-style">
-                <div class="icon-title">
-                    <img src="./images/sound-config.svg" alt="">
-                    <h1 class="title-utilities-config">Som</h1>
-                </div>
-                <div class="alarm-sound">
-                  <p class="paragraph-description">Som alarme</p>
-                  <div data-choose-alarm class="activeDropDownChoose">
-                    <img src="/images/arrow-dropdown-alarm.svg" alt="">
-                  </div>
-                </div>
-                <div class="volume-sound">
-                  <span data-count-volume>0</span>
-                  <input type="range" name="volume" id="volume">
-                </div>
-                <div class="repetition">
-                  <p>Repetir</p>
-                  <input type="number" name="repeat" id="repeat">
-                </div>
-                <div class="alarm-ticking">
-                  <p class="paragraph-description">Ticking Som</p>
-                  <div data-choose-ticking class="activeDropDownChoose">
-                    <img src="/images/arrow-dropdown-alarm.svg" alt="">
-                  </div>
-                </div>
-                <div class="volume-ticking">
-                  <span data-count-ticking>0</span>
-                  <input type="range" name="volume" id="volume">
-                </div>
-              </article>
-              <div class="dec"></div>
-              <article id="special-padding-style">
-              <div class="icon-title">
-                  <img src="./images/theme-config2.png" alt="">
-                  <h1 class="title-utilities-config">Tema</h1>
-              </div>
-                <div class="flex-container-hours">
-                 <p id="unique-formatting" class="paragraph-hours">Temas de cores</p>
-                  <div class="container-backgrounds">
-                   <div data-choose-bg-pomodoro class="choose-background"></div>
-                  <div data-choose-bg-short class="choose-background"></div>
-                  <div data-choose-bg-long class="choose-background"></div>
-                  </div>
-                </div>
-                 <div class="flex-container-hours">
-                  <p class="paragraph-hours">Formato hora</p>
-                 <div class="choose-hours">
-                  <div data-choose-format-hours class="activeDropDownChoose">
-                  <img src="/images/arrow-dropdown-alarm.svg" alt="">
-                  </div>
-                </div>
-              </div>
-               <div class="flex-container-hours">
-                  <p class="paragraph-hours">Modo escuro quando em execução</p>
-                  <div class="activate-light-dark">
-                    <div data-choose-light-and-dark class="choose-light-dark"></div>
-                  </div>
-                </div>
-              </article>
-              <div class="footer-configs">
-              <div class="footer-button-close">
-                <button type="button" data-button-close class="button-footer-configs">OK</button>
-              </div>
-              <div class="bottom-padding"></div>
+            <div>
+              <label>Pausa curta</label>
+              <input type="number" name="shortTimer" id="shortTimer" min="0" max="100">
             </div>
+            <div>
+              <label>Pausa longa</label>
+              <input type="number" name="longTimer" id="longTimer" min="0" max="100">
             </div>
+          </div>
+          <div class="auto-start-break">
+            <p class="paragraph-auto-start">Intervalos de Inicío Automático</p>
+            <div class="activate-break"></div>
+            <div data-choose-automatic-range class="choose-option"></div>
+          </div>
+        </article>
+        <div class="dec"></div>
+        <article id="special-padding-style">
+          <div class="icon-title">
+            <img src="./images/sound-config.svg" alt="">
+            <h1 class="title-utilities-config">Som</h1>
+          </div>
+          <div class="alarm-sound">
+            <p class="paragraph-description">Som alarme</p>
+            <div data-choose-alarm class="activeDropDownChoose">
+              <img src="/images/arrow-dropdown-alarm.svg" alt="">
+            </div>
+          </div>
+          <div class="volume-sound">
+            <span data-count-volume>0</span>
+            <input type="range" name="volume" id="volume">
+          </div>
+          <div class="repetition">
+            <p>Repetir</p>
+            <input type="number" name="repeat" id="repeat">
+          </div>
+          <div class="alarm-ticking">
+            <p class="paragraph-description">Ticking Som</p>
+            <div data-choose-ticking class="activeDropDownChoose">
+              <img src="/images/arrow-dropdown-alarm.svg" alt="">
+            </div>
+          </div>
+          <div class="volume-ticking">
+            <span data-count-ticking>0</span>
+            <input type="range" name="volume" id="volume">
+          </div>
+        </article>
+        <div class="dec"></div>
+        <article id="special-padding-style">
+          <div class="icon-title">
+            <img src="./images/theme-config2.png" alt="">
+            <h1 class="title-utilities-config">Tema</h1>
+          </div>
+          <div class="flex-container-hours">
+            <p id="unique-formatting" class="paragraph-hours">Temas de cores</p>
+            <div class="container-backgrounds">
+              <div data-choose-bg-pomodoro class="choose-background"></div>
+              <div data-choose-bg-short class="choose-background"></div>
+              <div data-choose-bg-long class="choose-background"></div>
+            </div>
+          </div>
+          <div class="flex-container-hours">
+            <p class="paragraph-hours">Formato hora</p>
+            <div class="choose-hours">
+              <div data-choose-format-hours class="activeDropDownChoose">
+                <img src="/images/arrow-dropdown-alarm.svg" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="flex-container-hours">
+            <p class="paragraph-hours">Modo escuro quando em execução</p>
+            <div class="activate-light-dark">
+              <div data-choose-light-and-dark class="choose-light-dark"></div>
+            </div>
+          </div>
+        </article>
+        <div class="footer-configs">
+          <div class="footer-button-close">
+            <button type="button" data-button-close class="button-footer-configs">OK</button>
+          </div>
+          <div class="bottom-padding"></div>
+        </div>
+      </div>
       </div>
     </section>
     <img data-img-close="tasks" src="./images/arrow-back-close.svg" alt="">
     <aside class="add-list-tasks">
       <div class="title-task">
         <h1>Tarefas</h1>
-          <span data-count>0</span>
-          <button data-menu="button" aria-expanded="false" aria-controls="menu">
-            <img data-menu-img src="./images/three-points.svg" alt="">
-          </button>
+        <span data-count>0</span>
+        <button data-menu="button" aria-expanded="false" aria-controls="menu">
+          <img data-menu-img src="./images/three-points.svg" alt="">
+        </button>
         <div class="menu">
           <nav>
             <ul>
@@ -234,4 +236,5 @@
   </main>
   <script src="./dist/script.js"></script>
 </body>
+
 </html>
