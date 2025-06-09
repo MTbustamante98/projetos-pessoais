@@ -340,7 +340,7 @@
   }
 
   .inputTasks {
-    max-height: 420px;
+    max-height: 295px;
   }
 
   [data-img-close="tasks"] {
@@ -353,6 +353,7 @@
 
   .container-task input {
     padding: 0.938rem 0.5rem;
+    
   }
 
   .container-task input::placeholder {
@@ -365,14 +366,14 @@
   }
 
   .container-task textarea {
-    height: 60px;
-    margin: 0.5rem 0 0 0.5rem;
+    height: 55px;
+    margin: 0.3rem 0 0 0.5rem;
   }
 
   .add-notes-tasks {
     bottom: 10px;
-    left: 35px;
-    gap: 70px;
+    left: 30px;
+    gap: 85px;
   }
 
   .add-notes-tasks .btn-add-tasks {
