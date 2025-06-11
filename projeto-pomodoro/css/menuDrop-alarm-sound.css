@@ -1,0 +1,55 @@
+.utilitarian-style {
+  background: var(--white);
+  border-radius: 5px;
+  z-index: 999;
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.2);
+  display: none;
+}
+
+.alarm-sound-menu {
+  height: 200px;
+  width: 121px;
+  position: absolute;
+  right: 1px;
+  top: 40px;
+}
+
+.alarm-ticking-menu {
+  height: 120px;
+  width: 121px;
+  position: absolute;
+  right: 1px;
+  top: 65px;
+}
+
+.format-hours-menu {
+  height: 80px;
+  width: 121px;
+  position: absolute;
+  right: 16px;
+  top: 48px;
+}
+
+.alarm-sound-menu ul,
+.alarm-ticking-menu ul,
+.format-hours-menu ul {
+  list-style: none;
+}
+
+.alarm-sound-menu li,
+.alarm-ticking-menu li,
+.format-hours-menu li {
+  margin: 0.3rem 0;
+  padding: 0.5rem 0.625rem;
+  color: var(--gray);
+  cursor: pointer;
+}
+
+.alarm-sound-menu li:hover,
+.alarm-ticking-menu li:hover,
+.format-hours-menu li:hover {
+  background: var(--saturated-gray);
+  color: var(--medium-dark);
+  width: 100%;
+  box-sizing: border-box;
+}
