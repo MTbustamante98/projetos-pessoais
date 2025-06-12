@@ -28,7 +28,7 @@
 }
 
 .activatedDiv {
-  font: 500 0.925rem "Inter", Arial, sans-serif;
+  font: 500 0.925rem "Roboto", Arial, sans-serif;
   background: var(--white-smoke);
   margin-top: 1.25rem;
   padding: 0.5rem;
@@ -102,7 +102,7 @@
 
 .edit,
 .remove {
-  font: 500 1rem "Inter", Arial, sans-serif;
+  font: 500 1rem "Roboto", Arial, sans-serif;
   margin-left: 2.5rem;
 }
 
@@ -117,7 +117,7 @@
 }
 
 .activatedButtonSave {
-  font-family: "Inter", Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
   font-weight: 600;
   letter-spacing: 0.8px;
   color: var(--white);
@@ -161,7 +161,7 @@
 }
 
 .activatedInputNote {
-  font: 500 0.925rem "Inter", Arial, sans-serif;
+  font: 500 0.925rem "Roboto", Arial, sans-serif;
   background: var(--very-light-gray);
   margin-top: 1.25rem;
   padding: 0.5rem;

@@ -48,7 +48,7 @@
 .div-clocks p {
   color: var(--white-less-clear);
   padding: 0.375rem 0.75rem;
-  font-family: "Inter", Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
   font-weight: 600;
   cursor: pointer;
 }

@@ -6,7 +6,7 @@
   right: 0;
   top: 0;
   z-index: 1;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
 }
@@ -310,7 +310,7 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .button-footer-configs {
-  font-family: "Inter", Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
   font-weight: 600;
   letter-spacing: 0.8px;
   color: var(--white);

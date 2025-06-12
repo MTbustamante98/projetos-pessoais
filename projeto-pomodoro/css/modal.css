@@ -47,25 +47,22 @@
 }
 
 .faq-lista p {
-  display: block;
-  font-family: "Roboto", Arial, sans-serif;
+  font: 500 0.975rem "Roboto", Arial, sans-serif;
   text-align: justify;
-  font-size: 0.975rem;
   margin-bottom: 1.25rem;
   line-height: 1.5;
 }
 
 .faq-lista p a {
   color: red;
-  font-family: "Inter", Arial, sans-serif;
   font-weight: 600;
   text-decoration: none;
 }
 
 .faq-lista ul {
+  font-family: "Roboto", Arial, sans-serif;
   padding: 0 20px;
   list-style-type: decimal;
-  font-family: "Roboto", Arial, sans-serif;
 }
 
 .faq-lista ul li {

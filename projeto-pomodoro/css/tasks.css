@@ -238,7 +238,7 @@
   padding: 0.625rem;
   background: var(--white-less-clear);
   color: rgba(0, 0, 0, 0.8);
-  font-family: "Inter", Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
   border: none;
   border-radius: 6px;
   box-sizing: border-box;
@@ -247,7 +247,7 @@
 }
 
 .container-task textarea::placeholder {
-  font-family: "Inter", Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
   opacity: 0.4;
 }
 
@@ -265,7 +265,7 @@
 }
 
 .add-notes-tasks .btn-add-tasks {
-  font: 600 1rem "Inter", Arial, sans-serif;
+  font: 600 1rem "Roboto", Arial, sans-serif;
   letter-spacing: 0.8px;
   color: var(--white);
   background: var(--dark-gray);
@@ -280,7 +280,7 @@
 }
 
 .add-notes-tasks span {
-  font-family: "Inter", Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
   color: var(--medium-dark);
   cursor: pointer;
 }

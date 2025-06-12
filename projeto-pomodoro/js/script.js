@@ -1,21 +1,23 @@
 const modal = document.querySelector(".modal");
 const configs = document.querySelector(".configs");
-const containerTasks = document.querySelector(".add-list-tasks");
 const menu = document.querySelector(".menu");
+
+const containerTasks = document.querySelector(".add-list-tasks");
+const divAddTasks = document.querySelector(".tasks");
+
+const imgClose = document.querySelectorAll("[data-img-close]");
 const arrowClose = document.querySelector("[data-img-close='tasks']");
 const modalLinks = document.querySelectorAll(
   "[data-modal], [data-config], [data-menu='button']"
 );
-const divAddTasks = document.querySelector(".tasks");
-const imgClose = document.querySelectorAll("[data-img-close]");
+
 const closeModals = [modal, configs, menu];
 const active = "active";
-const documentBody = document.body;
 
 const matchMedia = (media) => {
   const small = window.matchMedia(media);
   return small;
-}
+};
 
 function initModals() {
   function openModal(e) {
@@ -30,11 +32,12 @@ function initModals() {
 
     if (target.hasAttribute("data-config")) {
       configs.classList.add(active);
-      const small = matchMedia("(max-width: 1440px)");      
+      dataCloseConfigs();
+      const small = matchMedia("(max-width: 1440px)");
       configs.style.overflowY = small.matches ? "scroll" : "hidden";
     }
-    
-    if (target.closest("[data-menu]")) {
+
+    if (target.closest("data-menu")) {
       menu.classList.toggle(active);
       modalLinks[2].classList.toggle("scale-effect");
     }
@@ -52,8 +55,8 @@ function initModals() {
     });
   }
 
-  function imgCloseModalAndConfigs(event) {
-    const type = event.target.dataset.imgClose;
+  function imgCloseModalAndConfigs(e) {
+    const type = e.target.dataset.imgClose;
     if (type === "modal") {
       modal.classList.remove(active);
     } else if (type === "configs") {
@@ -63,6 +66,17 @@ function initModals() {
       arrowClose.classList.toggle(active);
     }
   }
+
+  const dataCloseConfigs = () => {
+    const buttonConfigs = document.querySelector("[data-close-configs]");
+    buttonConfigs.addEventListener(
+      "click",
+      () => {
+        configs.classList.remove(active);
+      },
+      { once: true }
+    );
+  };
 
   modalLinks.forEach((el) => el.addEventListener("click", openModal));
   document.addEventListener("click", closeModal);
@@ -333,10 +347,10 @@ function initTasks() {
     return [edit, divEdit, save];
   }
 
-  function removeElementsUI(dropDown, button) {
+  const removeElementsUI = (dropDown, button) => {
     dropDown?.remove();
     button?.remove();
-  }
+  };
 
   function createElementRemove(index, newDivDropDown) {
     const remove = document.createElement("span");
