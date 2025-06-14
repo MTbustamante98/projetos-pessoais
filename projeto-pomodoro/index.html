@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
   <meta name="description" content="Cronômetro pomodoro" />
   <meta charset="UTF-8" />
@@ -12,7 +11,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./css/style.css">
 </head>
-
 <body>
   <main class="container">
     <header class="header">
@@ -30,7 +28,9 @@
     </header>
     <section class="watches">
       <div class="clock-pomodoro">
-        <span data-timer>25:00</span>
+        <span data-timer data-timer-type="pomodoro">25:00</span>
+        <span data-timer data-timer-type="short" class="hidden">5:00</span>
+        <span data-timer data-timer-type="long" class="hidden">15:00</span>
         <button type="button">COMEÇAR</button>
       </div>
       <section class="div-clocks">
@@ -38,10 +38,10 @@
           <p data-type="pomodoro" class="pomodoro-clock">Pomodoro</p>
         </div>
         <div>
-          <p data-type="pomodoro" class="short-pause-pomodoro">Pausa curta</p>
+          <p data-type="short" class="short-pause-pomodoro">Pausa curta</p>
         </div>
         <div>
-          <p data-type="pomodoro" class="long-pause-pomodoro">Pausa longa</p>
+          <p data-type="long" class="long-pause-pomodoro">Pausa longa</p>
         </div>
       </section>
       <div class="dec-line"></div>
@@ -62,7 +62,8 @@
           <p>
             PomoClock é um marcador de tempo personalizável que funciona em
             diversos tipos de dispositivos móveis. O objetivo desta aplicação
-            é ajudá-lo a concentrar-se em qualquer tarefa em que você esteja
+            é ajudá-lo a concentrar-se em qual
+            quer tarefa em que você esteja
             trabalhando. Aplicativo que obteve inspiração pela
             <a href="https://www.pomodorotechnique.com/">Técnica Pomodoro</a>
             que é um método de gestão do tempo desenvolvido por Francesco
@@ -76,7 +77,8 @@
             melhorar produtividade e a qualidade do trabalho e descansar entre
             os ciclos para não sobrecarregar o cerébro.
           </p>
-          <h1>Como usar o Temporizador Pomodoro?</h1>
+          <h
+          1>Como usar o Temporizador Pomodoro?</h1>
           <p>
           <ul>
             <li>Adicionar tarefas que irá trabalhar hoje</li>
@@ -117,15 +119,15 @@
           <div class="select-time">
             <div>
               <label>Pomodoro</label>
-              <input type="number" name="pomodoroTimer" id="pomodoroTimer" min="0" max="100">
+              <input data-value="pomodoroTimer" type="number" name="pomodoroTimer" id="pomodoroTimer" min="0" max="100">
             </div>
             <div>
               <label>Pausa curta</label>
-              <input type="number" name="shortTimer" id="shortTimer" min="0" max="100">
+              <input data-value="shortTimer" type="number" name="shortTimer" id="shortTimer" min="0" max="100">
             </div>
             <div>
               <label>Pausa longa</label>
-              <input type="number" name="longTimer" id="longTimer" min="0" max="100">
+              <input data-value="longTimer" type="number" name="longTimer" id="longTimer" min="0" max="100">
             </div>
           </div>
           <div class="auto-start-break">

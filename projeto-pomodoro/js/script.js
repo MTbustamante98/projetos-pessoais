@@ -140,17 +140,50 @@ function initAddTasks() {
 initAddTasks();
 
 function initPomodoros() {
-  const pomodoros = document.querySelectorAll(
-    ".div-clocks [data-type='pomodoro']"
-  );
+  function changeTimerWhenModifyValue() {
+    const selectTimeInputs = document.querySelectorAll(
+      ".select-time [data-value]"
+    );
+
+    selectTimeInputs.forEach((el) => {
+      el.addEventListener("input", (e) => {
+        const type = e.target.dataset.value;
+        const value = e.target.value;
+        const typeWithoutSuffix = type.replace("Timer", "");
+        document.querySelectorAll("[data-timer]").forEach((el) => {
+          el.classList.add("hidden");
+        });
+        const targetTimer = document.querySelector(
+          `[data-timer-type="${typeWithoutSuffix}"]`
+        );
+
+        console.log(
+          "type:",
+          type,
+          "| typeWithoutSuffix:",
+          typeWithoutSuffix,
+          "| value:",
+          value
+        );
+
+        if (targetTimer) {
+          targetTimer.classList.remove("hidden");
+          targetTimer.innerText = `${value.toString().padStart(2, "0")}:00`;
+        }
+      });
+    });
+  }
+  changeTimerWhenModifyValue();
+
+  const pomodoros = document.querySelectorAll(".div-clocks [data-type]");
   const dataTimer = document.querySelector("[data-timer]");
-  const documentBody = document.body;
 
   if (pomodoros.length) pomodoros[0].classList.add("active");
 
   function choosePomodoro(e) {
     pomodoros.forEach((el) => el.classList.remove("active"));
     e.target.classList.add("active");
+    const documentBody = document.body;
 
     if (e.target.classList.contains("pomodoro-clock")) {
       dataTimer.innerText = "25:00";

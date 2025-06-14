@@ -60,7 +60,7 @@
 }
 
 /* Clock container */
-[data-type="pomodoro"].active {
+[data-type].active {
   background: rgba(0, 0, 0, 0.1);
   border-radius: 3px;
 }
@@ -83,6 +83,10 @@
 
 .configs.active {
   display: flex;
+}
+
+.hidden {
+  display: none;
 }
 
 @media (max-width: 1440px) {
