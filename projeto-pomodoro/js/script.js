@@ -10,7 +10,7 @@ const arrowClose = document.querySelector("[data-img-close='tasks']");
 const modalLinks = document.querySelectorAll(
   "[data-modal], [data-config], [data-menu='button']"
 );
-
+const documentBody = document.body;
 const closeModals = [modal, configs, menu];
 const active = "active";
 
@@ -140,6 +140,17 @@ function initAddTasks() {
 initAddTasks();
 
 function initPomodoros() {
+  const pomodoros = document.querySelectorAll(".div-clocks [data-type]");
+  const hidden = "hidden";
+
+  const tempoPersonalizado = {
+    pomodoro: "25:00",
+    short: "05:00",
+    long: "15:00"
+  };
+
+  if (pomodoros.length) pomodoros[0].classList.add("active");
+
   function changeTimerWhenModifyValue() {
     const selectTimeInputs = document.querySelectorAll(
       ".select-time [data-value]"
@@ -150,54 +161,47 @@ function initPomodoros() {
         const type = e.target.dataset.value;
         const value = e.target.value;
         const typeWithoutSuffix = type.replace("Timer", "");
-        document.querySelectorAll("[data-timer]").forEach((el) => {
-          el.classList.add("hidden");
-        });
+
+        tempoPersonalizado[typeWithoutSuffix] = `${value
+          .toString()
+          .padStart(2, "0")}:00`;
+
         const targetTimer = document.querySelector(
           `[data-timer-type="${typeWithoutSuffix}"]`
         );
 
-        console.log(
-          "type:",
-          type,
-          "| typeWithoutSuffix:",
-          typeWithoutSuffix,
-          "| value:",
-          value
-        );
-
         if (targetTimer) {
-          targetTimer.classList.remove("hidden");
-          targetTimer.innerText = `${value.toString().padStart(2, "0")}:00`;
+          targetTimer.innerText = tempoPersonalizado[typeWithoutSuffix];
         }
       });
     });
   }
   changeTimerWhenModifyValue();
 
-  const pomodoros = document.querySelectorAll(".div-clocks [data-type]");
-  const dataTimer = document.querySelector("[data-timer]");
-
-  if (pomodoros.length) pomodoros[0].classList.add("active");
-
   function choosePomodoro(e) {
+    const type = e.target.dataset.type;
+    const targetTimer = document.querySelector(
+      `[data-timer-type="${type}"]`
+    );
+
     pomodoros.forEach((el) => el.classList.remove("active"));
     e.target.classList.add("active");
-    const documentBody = document.body;
 
-    if (e.target.classList.contains("pomodoro-clock")) {
-      dataTimer.innerText = "25:00";
-      documentBody.style.backgroundColor = "var(--tomato)";
-    }
+    document.querySelectorAll("[data-timer]").forEach((el) => {
+      el.classList.add(hidden);
+    });
 
-    if (e.target.classList.contains("short-pause-pomodoro")) {
-      dataTimer.innerText = "05:00";
-      documentBody.style.backgroundColor = "var(--backgroundShortBreak)";
-    }
+    if (targetTimer) {
+      targetTimer.classList.remove(hidden);
+      targetTimer.innerText = tempoPersonalizado[type];
 
-    if (e.target.classList.contains("long-pause-pomodoro")) {
-      dataTimer.innerText = "15:00";
-      documentBody.style.backgroundColor = "var(--backgroundLongBreak)";
+      if (type === "pomodoro") {
+        documentBody.style.backgroundColor = "var(--tomato)";
+      } else if (type === "short") {
+        documentBody.style.backgroundColor = "var(--backgroundShortBreak)";
+      } else if (type === "long") {
+        documentBody.style.backgroundColor = "var(--backgroundLongBreak)";
+      }
     }
   }
   pomodoros.forEach((el) => el.addEventListener("click", choosePomodoro));
