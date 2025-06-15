@@ -140,13 +140,19 @@ function initAddTasks() {
 initAddTasks();
 
 function initPomodoros() {
+  let InnerTextTimers = JSON.parse(localStorage.getItem("timers")) || [];
+
+  InnerTextTimers.forEach((el) => {
+    
+  });
+
   const pomodoros = document.querySelectorAll(".div-clocks [data-type]");
   const hidden = "hidden";
 
   const tempoPersonalizado = {
     pomodoro: "25:00",
     short: "05:00",
-    long: "15:00"
+    long: "15:00",
   };
 
   if (pomodoros.length) pomodoros[0].classList.add("active");
@@ -169,10 +175,13 @@ function initPomodoros() {
         const targetTimer = document.querySelector(
           `[data-timer-type="${typeWithoutSuffix}"]`
         );
-
-        if (targetTimer) {
+        
+        if (targetTimer && !targetTimer.classList.contains(hidden)) {
           targetTimer.innerText = tempoPersonalizado[typeWithoutSuffix];
         }
+
+        InnerTextTimers.push({ ...tempoPersonalizado });
+        localStorage.setItem("timers", JSON.stringify(InnerTextTimers));
       });
     });
   }
@@ -180,9 +189,7 @@ function initPomodoros() {
 
   function choosePomodoro(e) {
     const type = e.target.dataset.type;
-    const targetTimer = document.querySelector(
-      `[data-timer-type="${type}"]`
-    );
+    const targetTimer = document.querySelector(`[data-timer-type="${type}"]`);
 
     pomodoros.forEach((el) => el.classList.remove("active"));
     e.target.classList.add("active");
