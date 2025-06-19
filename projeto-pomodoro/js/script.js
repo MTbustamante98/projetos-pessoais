@@ -129,7 +129,6 @@ initModals();
 
 function initAddTasks() {
   const arrowClose = document.querySelector("[data-img-close='tasks']");
-
   function addTasks() {
     containerTasks.classList.toggle("active");
     arrowClose.classList.toggle("active");
@@ -140,22 +139,37 @@ function initAddTasks() {
 initAddTasks();
 
 function initPomodoros() {
-  let InnerTextTimers = JSON.parse(localStorage.getItem("timers")) || [];
-
-  InnerTextTimers.forEach((el) => {
-    
-  });
-
+  const buttonStartTimer = document.querySelector("[data-start-timer]");
   const pomodoros = document.querySelectorAll(".div-clocks [data-type]");
   const hidden = "hidden";
 
+  let InnerTextTimers = JSON.parse(localStorage.getItem("timers")) || [];
   const tempoPersonalizado = {
     pomodoro: "25:00",
     short: "05:00",
     long: "15:00",
   };
 
+  const lastItem = InnerTextTimers[InnerTextTimers.length - 1];
+  for (let key in lastItem) {
+    const timerElement = document.querySelector(`[data-timer-type="${key}"]`);
+    if (timerElement) {
+      timerElement.innerText = lastItem[key];
+      tempoPersonalizado[key] = lastItem[key];
+    }
+  }
+
   if (pomodoros.length) pomodoros[0].classList.add("active");
+
+  function startCountDown() {
+    const currentTimer = document.querySelector("[data-timer]:not(.hidden)");
+    const type = currentTimer.dataset.timerType;
+    const tempo = tempoPersonalizado[type];
+    const [minutes, seconds] = currentTimer.innerText.split(":").map(Number);
+    let totalSeconds = minutes * 60 + seconds;
+    console.log(type)
+  }
+  startCountDown()
 
   function changeTimerWhenModifyValue() {
     const selectTimeInputs = document.querySelectorAll(
@@ -167,6 +181,7 @@ function initPomodoros() {
         const type = e.target.dataset.value;
         const value = e.target.value;
         const typeWithoutSuffix = type.replace("Timer", "");
+        if (!value.trim()) return false;
 
         tempoPersonalizado[typeWithoutSuffix] = `${value
           .toString()
@@ -175,13 +190,13 @@ function initPomodoros() {
         const targetTimer = document.querySelector(
           `[data-timer-type="${typeWithoutSuffix}"]`
         );
-        
-        if (targetTimer && !targetTimer.classList.contains(hidden)) {
-          targetTimer.innerText = tempoPersonalizado[typeWithoutSuffix];
-        }
 
         InnerTextTimers.push({ ...tempoPersonalizado });
         localStorage.setItem("timers", JSON.stringify(InnerTextTimers));
+
+        if (targetTimer && !targetTimer.classList.contains(hidden)) {
+          targetTimer.innerText = tempoPersonalizado[typeWithoutSuffix];
+        }
       });
     });
   }
@@ -212,6 +227,7 @@ function initPomodoros() {
     }
   }
   pomodoros.forEach((el) => el.addEventListener("click", choosePomodoro));
+  buttonStartTimer.addEventListener("click", startCountDown);
 }
 initPomodoros();
 
