@@ -159,17 +159,50 @@ function initPomodoros() {
     }
   }
 
-  if (pomodoros.length) pomodoros[0].classList.add("active");
+  let isRunning = false;
+  let interval;
 
   function startCountDown() {
-    const currentTimer = document.querySelector("[data-timer]:not(.hidden)");
-    const type = currentTimer.dataset.timerType;
-    const tempo = tempoPersonalizado[type];
+    const progressBar = document.querySelector("[data-progress-bar]");
+    const currentTimer = document.querySelector("[data-timer]:not(.hidden)"); //Pega o timer visivel na tela
+    const type = currentTimer.dataset.timerType; //Lendo o valor do data-timer-type no HTML.
+    const tempo = tempoPersonalizado[type]; // O objeto tempoPersonalizado guarda os valores personalizados de tempo de cada tipo de timer.
     const [minutes, seconds] = currentTimer.innerText.split(":").map(Number);
     let totalSeconds = minutes * 60 + seconds;
-    console.log(type)
+    const tempoInicial = totalSeconds;
+
+    if (!isRunning) {
+      isRunning = true;
+      buttonStartTimer.innerText = "PAUSAR";
+      buttonStartTimer.classList.add(active);
+
+      interval = setInterval(() => {
+        if (totalSeconds <= 0) {
+          clearInterval(interval);
+          isRunning = false;
+          buttonStartTimer.innerText = "INICIAR";
+          progressBar.style.width = "0";
+          currentTimer.innerText = tempo;
+          return;
+        }
+
+        const progress = ((tempoInicial - totalSeconds) / tempoInicial) * 100;
+        progressBar.style.width = `${progress}%`;
+
+        totalSeconds--;
+        const min = Math.floor(totalSeconds / 60);
+        const sec = totalSeconds % 60;
+        currentTimer.innerText = `${min.toString().padStart(2, "0")}:${sec
+          .toString()
+          .padStart(2, "0")}`;
+      }, 50);
+    } else {
+      isRunning = false;
+      clearInterval(interval);
+      buttonStartTimer.innerText = "INICIAR";
+      buttonStartTimer.classList.remove(active);
+    }
   }
-  startCountDown()
 
   function changeTimerWhenModifyValue() {
     const selectTimeInputs = document.querySelectorAll(
@@ -201,6 +234,8 @@ function initPomodoros() {
     });
   }
   changeTimerWhenModifyValue();
+
+  if (pomodoros.length) pomodoros[0].classList.add(active);
 
   function choosePomodoro(e) {
     const type = e.target.dataset.type;

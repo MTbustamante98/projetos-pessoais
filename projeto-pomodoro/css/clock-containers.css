@@ -71,6 +71,23 @@
   text-align: center;
 }
 
+.dec-line {
+  position: absolute;
+  bottom: -50px;
+  left: 470px;
+  width: 500px;
+  height: 4px;
+  background: var(--very-light-gray);
+  border-radius: 5px;
+}
+
+[data-progress-bar] {
+  height: 4px;
+  width: 0;
+  background: var(--red);
+  transition: width 0.2 linear;
+}
+
 @media (max-width: 1440px) {
   .watches {
     padding-top: 0.625rem;
@@ -78,13 +95,6 @@
 
   .div-clocks {
     top: 45px;
-  }
-
-  .dec {
-    width: 100%;
-    height: 1px;
-    background: var(--saturated-gray);
-    opacity: 0.3;
   }
 
   .secao-frase {
@@ -96,6 +106,11 @@
     font-size: 2rem;
     max-width: 25ch;
     position: relative;
+  }
+
+  .dec-line {
+    bottom: -20px;
+    left: 415px;
   }
 }
 

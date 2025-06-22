@@ -89,6 +89,11 @@
   display: none;
 }
 
+[data-start-timer].active {
+  transform: translateY(2px);
+  box-shadow: none;
+}
+
 @media (max-width: 1440px) {
   .menu.active {
     display: block;

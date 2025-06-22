@@ -46,16 +46,6 @@
   background: url("../images/add-task.svg");
 }
 
-.dec-line {
-  position: absolute;
-  bottom: -50px;
-  left: 470px;
-  width: 500px;
-  height: 2px;
-  background: var(--saturated-gray);
-  opacity: 0.4;
-}
-
 .title-task {
   position: relative;
 }
@@ -309,11 +299,7 @@
     bottom: -100px;
     right: 410px;
   }
-
-  .dec-line {
-    display: none;
-  }
-
+  
   [data-menu="button"] {
     top: 2px;
     right: 14px;
