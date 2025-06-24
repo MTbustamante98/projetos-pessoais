@@ -94,6 +94,15 @@
   box-shadow: none;
 }
 
+.activate-pomodoro.active {
+  background: var(--green-auto-pomodoro);
+}
+
+[data-choose].active {
+  right: 2px;
+  left: auto;
+}
+
 @media (max-width: 1440px) {
   .menu.active {
     display: block;

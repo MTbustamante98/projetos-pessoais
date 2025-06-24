@@ -10,9 +10,12 @@ const arrowClose = document.querySelector("[data-img-close='tasks']");
 const modalLinks = document.querySelectorAll(
   "[data-modal], [data-config], [data-menu='button']"
 );
+const pomodoros = document.querySelectorAll(".div-clocks [data-type]");
+
 const documentBody = document.body;
 const closeModals = [modal, configs, menu];
 const active = "active";
+const hidden = "hidden";
 
 const matchMedia = (media) => {
   const small = window.matchMedia(media);
@@ -139,10 +142,6 @@ function initAddTasks() {
 initAddTasks();
 
 function initPomodoros() {
-  const buttonStartTimer = document.querySelector("[data-start-timer]");
-  const pomodoros = document.querySelectorAll(".div-clocks [data-type]");
-  const hidden = "hidden";
-
   let InnerTextTimers = JSON.parse(localStorage.getItem("timers")) || [];
   const tempoPersonalizado = {
     pomodoro: "25:00",
@@ -150,55 +149,69 @@ function initPomodoros() {
     long: "15:00",
   };
 
-  const lastItem = InnerTextTimers[InnerTextTimers.length - 1];
-  for (let key in lastItem) {
-    const timerElement = document.querySelector(`[data-timer-type="${key}"]`);
-    if (timerElement) {
-      timerElement.innerText = lastItem[key];
-      tempoPersonalizado[key] = lastItem[key];
+  function SaveTimersLocalStorage() {
+    const lastItem = InnerTextTimers[InnerTextTimers.length - 1];
+    for (let key in lastItem) {
+      const timerElement = document.querySelector(`[data-timer-type="${key}"]`);
+      if (timerElement) {
+        timerElement.innerText = lastItem[key];
+        tempoPersonalizado[key] = lastItem[key];
+      }
     }
   }
 
-  let isRunning = false;
-  let interval;
+  const currentTimer = document.querySelector("[data-timer]:not(.hidden)"); //Pega o timer visivel na tela
+  const buttonStartTimer = document.querySelector("[data-start-timer]");
+  const timerElements = {
+    totalSeconds: 0,
+    tempoInicial: 0,
+    isRunning: false,
+    interval: null,
+  };
 
-  function startCountDown() {
+  function startCountDown(e) {
     const progressBar = document.querySelector("[data-progress-bar]");
-    const currentTimer = document.querySelector("[data-timer]:not(.hidden)"); //Pega o timer visivel na tela
     const type = currentTimer.dataset.timerType; //Lendo o valor do data-timer-type no HTML.
     const tempo = tempoPersonalizado[type]; // O objeto tempoPersonalizado guarda os valores personalizados de tempo de cada tipo de timer.
-    const [minutes, seconds] = currentTimer.innerText.split(":").map(Number);
-    let totalSeconds = minutes * 60 + seconds;
-    const tempoInicial = totalSeconds;
 
-    if (!isRunning) {
-      isRunning = true;
+    if (!timerElements.isRunning && timerElements.totalSeconds === 0) {
+      const [minutes, seconds] = currentTimer.innerText.split(":").map(Number);
+      timerElements.totalSeconds = minutes * 60 + seconds;
+      timerElements.tempoInicial = timerElements.totalSeconds;
+    }
+
+    if (!timerElements.isRunning) {
+      timerElements.isRunning = true;
       buttonStartTimer.innerText = "PAUSAR";
       buttonStartTimer.classList.add(active);
 
-      interval = setInterval(() => {
-        if (totalSeconds <= 0) {
-          clearInterval(interval);
-          isRunning = false;
+      timerElements.interval = setInterval(() => {
+        if (timerElements.totalSeconds <= 0) {
+          timerElements.isRunning = false;
           buttonStartTimer.innerText = "INICIAR";
           progressBar.style.width = "0";
           currentTimer.innerText = tempo;
+          clearInterval(timerElements.interval);
+          autoStartPomodorosLogic();
           return;
         }
 
-        const progress = ((tempoInicial - totalSeconds) / tempoInicial) * 100;
+        const progress =
+          ((timerElements.tempoInicial - timerElements.totalSeconds) /
+            timerElements.tempoInicial) *
+          100;
         progressBar.style.width = `${progress}%`;
 
-        totalSeconds--;
-        const min = Math.floor(totalSeconds / 60);
-        const sec = totalSeconds % 60;
+        timerElements.totalSeconds--;
+        const min = Math.floor(timerElements.totalSeconds / 60);
+        const sec = timerElements.totalSeconds % 60;
         currentTimer.innerText = `${min.toString().padStart(2, "0")}:${sec
           .toString()
           .padStart(2, "0")}`;
       }, 50);
     } else {
-      isRunning = false;
-      clearInterval(interval);
+      timerElements.isRunning = false;
+      clearInterval(timerElements.interval);
       buttonStartTimer.innerText = "INICIAR";
       buttonStartTimer.classList.remove(active);
     }
@@ -231,18 +244,48 @@ function initPomodoros() {
           targetTimer.innerText = tempoPersonalizado[typeWithoutSuffix];
         }
       });
+      SaveTimersLocalStorage();
     });
   }
   changeTimerWhenModifyValue();
 
+  const divChoose = document.querySelector(".activate-pomodoro");
+  const cycle = ["pomodoro", "short"];
+  let currentIndex = 0;
+
+  function autoStartPomodorosLogic() {
+    if (divChoose.classList.contains(active)) {
+      currentIndex++;
+      if (currentIndex >= cycle.length) currentIndex = 0;
+      choosePomodoro(cycle[currentIndex]);
+      startCountDown();
+    }
+  }
+
+  function autoStartPomodorosUI(e) {
+    const choose = document.querySelector("[data-choose]");
+    if (e.target) {
+      divChoose.classList.toggle(active);
+      choose.classList.toggle(active);
+    }
+  }
+
+  divChoose.addEventListener("click", autoStartPomodorosUI);
+
   if (pomodoros.length) pomodoros[0].classList.add(active);
 
   function choosePomodoro(e) {
-    const type = e.target.dataset.type;
+    const type = typeof e === "string" ? e : e.target.dataset.type;
     const targetTimer = document.querySelector(`[data-timer-type="${type}"]`);
 
-    pomodoros.forEach((el) => el.classList.remove("active"));
-    e.target.classList.add("active");
+    pomodoros.forEach((el) => el.classList.remove(active));
+    
+    if (typeof e !== "string") {
+      e.target.classList.add(active);
+    } else {
+      const targetButton = document.querySelector(`[data-type=${type}]`);
+      if (targetButton) targetButton.classList.add(active);
+    }
 
     document.querySelectorAll("[data-timer]").forEach((el) => {
       el.classList.add(hidden);
@@ -283,7 +326,7 @@ function initTasks() {
   const divInputTasks = document.querySelector(".inputTasks");
 
   function addTextArea() {
-    textArea.classList.toggle("active");
+    textArea.classList.toggle(active);
   }
 
   function renderTasks(elementTasks = tasks) {
