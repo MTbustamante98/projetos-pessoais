@@ -160,7 +160,6 @@ function initPomodoros() {
     }
   }
 
-  const currentTimer = document.querySelector("[data-timer]:not(.hidden)"); //Pega o timer visivel na tela
   const buttonStartTimer = document.querySelector("[data-start-timer]");
   const timerElements = {
     totalSeconds: 0,
@@ -170,6 +169,7 @@ function initPomodoros() {
   };
 
   function startCountDown(e) {
+     const currentTimer = document.querySelector("[data-timer]:not(.hidden)"); //Pega o timer visivel na tela
     const progressBar = document.querySelector("[data-progress-bar]");
     const type = currentTimer.dataset.timerType; //Lendo o valor do data-timer-type no HTML.
     const tempo = tempoPersonalizado[type]; // O objeto tempoPersonalizado guarda os valores personalizados de tempo de cada tipo de timer.
@@ -249,17 +249,21 @@ function initPomodoros() {
   }
   changeTimerWhenModifyValue();
 
+  let statePomodoros = JSON.parse(localStorage.getItem("stateOfThepomodoros")) || [];
   const divChoose = document.querySelector(".activate-pomodoro");
   const cycle = ["pomodoro", "short"];
   let currentIndex = 0;
 
+  
+
   function autoStartPomodorosLogic() {
     if (divChoose.classList.contains(active)) {
       currentIndex++;
-      if (currentIndex >= cycle.length) currentIndex = 0;
+      currentIndex = currentIndex >= cycle.length ? 0 : currentIndex
       choosePomodoro(cycle[currentIndex]);
-      startCountDown();
     }
+
+    localStorage.setItem("state", JSON.stringify("stateOfThepomodoros"))
   }
 
   function autoStartPomodorosUI(e) {
@@ -294,7 +298,7 @@ function initPomodoros() {
     if (targetTimer) {
       targetTimer.classList.remove(hidden);
       targetTimer.innerText = tempoPersonalizado[type];
-
+      console.log(targetTimer)
       if (type === "pomodoro") {
         documentBody.style.backgroundColor = "var(--tomato)";
       } else if (type === "short") {
