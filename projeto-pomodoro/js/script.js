@@ -188,7 +188,7 @@ function initPomodoros() {
       timerElements.interval = setInterval(() => {
         if (timerElements.totalSeconds <= 0) {
           timerElements.isRunning = false;
-          buttonStartTimer.innerText = "INICIAR";
+          buttonStartTimer.innerText = "COMEÇAR";
           progressBar.style.width = "0";
           currentTimer.innerText = tempo;
           clearInterval(timerElements.interval);
@@ -212,7 +212,7 @@ function initPomodoros() {
     } else {
       timerElements.isRunning = false;
       clearInterval(timerElements.interval);
-      buttonStartTimer.innerText = "INICIAR";
+      buttonStartTimer.innerText = "COMEÇAR";
       buttonStartTimer.classList.remove(active);
     }
   }
@@ -249,12 +249,22 @@ function initPomodoros() {
   }
   changeTimerWhenModifyValue();
 
-  let statePomodoros = JSON.parse(localStorage.getItem("stateOfThepomodoros")) || [];
   const divChoose = document.querySelector(".activate-pomodoro");
   const cycle = ["pomodoro", "short"];
   let currentIndex = 0;
 
-  
+  function loadAutoStartState() {
+    const choose = autoStartPomodorosUI()
+    let statePomodoros = JSON.parse(localStorage.getItem("state"));
+    if (statePomodoros) {
+      divChoose.classList.add(active)
+      choose.classList.add(active)
+    } else {
+      divChoose.classList.remove(active)
+      choose.classList.remove(active)
+    }
+  }
+   loadAutoStartState()
 
   function autoStartPomodorosLogic() {
     if (divChoose.classList.contains(active)) {
@@ -262,16 +272,17 @@ function initPomodoros() {
       currentIndex = currentIndex >= cycle.length ? 0 : currentIndex
       choosePomodoro(cycle[currentIndex]);
     }
-
-    localStorage.setItem("state", JSON.stringify("stateOfThepomodoros"))
   }
 
-  function autoStartPomodorosUI(e) {
+  function autoStartPomodorosUI() {
     const choose = document.querySelector("[data-choose]");
-    if (e.target) {
-      divChoose.classList.toggle(active);
-      choose.classList.toggle(active);
-    }
+    divChoose.classList.toggle(active);
+    choose.classList.toggle(active);
+
+    const isActive = divChoose.classList.contains(active)
+    localStorage.setItem("state", JSON.stringify(isActive));
+
+    return choose;
   }
 
   divChoose.addEventListener("click", autoStartPomodorosUI);
