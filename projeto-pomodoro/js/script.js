@@ -169,7 +169,7 @@ function initPomodoros() {
   };
 
   function startCountDown(e) {
-     const currentTimer = document.querySelector("[data-timer]:not(.hidden)"); //Pega o timer visivel na tela
+    const currentTimer = document.querySelector("[data-timer]:not(.hidden)"); //Pega o timer visivel na tela
     const progressBar = document.querySelector("[data-progress-bar]");
     const type = currentTimer.dataset.timerType; //Lendo o valor do data-timer-type no HTML.
     const tempo = tempoPersonalizado[type]; // O objeto tempoPersonalizado guarda os valores personalizados de tempo de cada tipo de timer.
@@ -184,7 +184,8 @@ function initPomodoros() {
       timerElements.isRunning = true;
       buttonStartTimer.innerText = "PAUSAR";
       buttonStartTimer.classList.add(active);
-
+      buttonStartTimer.classList.remove("special-class");
+      
       timerElements.interval = setInterval(() => {
         if (timerElements.totalSeconds <= 0) {
           timerElements.isRunning = false;
@@ -250,39 +251,40 @@ function initPomodoros() {
   changeTimerWhenModifyValue();
 
   const divChoose = document.querySelector(".activate-pomodoro");
+  const choose = document.querySelector("[data-choose]");
   const cycle = ["pomodoro", "short"];
   let currentIndex = 0;
 
   function loadAutoStartState() {
-    const choose = autoStartPomodorosUI()
-    let statePomodoros = JSON.parse(localStorage.getItem("state"));
-    if (statePomodoros) {
-      divChoose.classList.add(active)
-      choose.classList.add(active)
-    } else {
-      divChoose.classList.remove(active)
-      choose.classList.remove(active)
+    const state = JSON.parse(localStorage.getItem("state"));
+    if (state) {
+      if (state.divChooseActive) divChoose.classList.add(active);
+      else divChoose.classList.remove(active);
+
+      if (state.chooseActive) choose.classList.add(active);
+      else choose.classList.remove(active);
     }
   }
-   loadAutoStartState()
+  loadAutoStartState();
 
   function autoStartPomodorosLogic() {
     if (divChoose.classList.contains(active)) {
       currentIndex++;
-      currentIndex = currentIndex >= cycle.length ? 0 : currentIndex
+      currentIndex = currentIndex >= cycle.length ? 0 : currentIndex;
       choosePomodoro(cycle[currentIndex]);
+      buttonStartTimer.classList.add("special-class");
     }
   }
 
   function autoStartPomodorosUI() {
-    const choose = document.querySelector("[data-choose]");
     divChoose.classList.toggle(active);
     choose.classList.toggle(active);
 
-    const isActive = divChoose.classList.contains(active)
-    localStorage.setItem("state", JSON.stringify(isActive));
-
-    return choose;
+    const state = {
+      divChooseActive: divChoose.classList.contains(active),
+      chooseActive: choose.classList.contains(active),
+    };
+    localStorage.setItem("state", JSON.stringify(state));
   }
 
   divChoose.addEventListener("click", autoStartPomodorosUI);
@@ -294,7 +296,7 @@ function initPomodoros() {
     const targetTimer = document.querySelector(`[data-timer-type="${type}"]`);
 
     pomodoros.forEach((el) => el.classList.remove(active));
-    
+
     if (typeof e !== "string") {
       e.target.classList.add(active);
     } else {
@@ -309,7 +311,7 @@ function initPomodoros() {
     if (targetTimer) {
       targetTimer.classList.remove(hidden);
       targetTimer.innerText = tempoPersonalizado[type];
-      console.log(targetTimer)
+      console.log(targetTimer);
       if (type === "pomodoro") {
         documentBody.style.backgroundColor = "var(--tomato)";
       } else if (type === "short") {
