@@ -54,3 +54,9 @@
   width: 100%;
   box-sizing: border-box;
 }
+
+[data-drop].active {
+  display: block;
+}
+
+
