@@ -265,6 +265,17 @@ input[type="range"]::-moz-range-thumb {
   color: var(--medium-dark);
 }
 
+.format-innerText {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  color: var(--gray);
+}
+
+/* .align-left {
+  right: 105px !important;
+} */
+
 .container-backgrounds {
   display: flex;
   justify-content: flex-end;
