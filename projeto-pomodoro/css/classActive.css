@@ -3,7 +3,7 @@
   display: block;
 }
 
-.menu.active {
+.menu-clean-tasks.active {
   display: block;
   animation: showMenu ease 0.5s forwards;
 }
@@ -108,7 +108,7 @@
 }
 
 @media (max-width: 1440px) {
-  .menu.active {
+  .menu-clean-tasks.active {
     display: block;
   }
 

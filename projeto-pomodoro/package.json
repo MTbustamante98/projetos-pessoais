@@ -1,5 +1,8 @@
 {
   "devDependencies": {
+    "@babel/core": "^7.28.0",
+    "@babel/preset-env": "^7.28.0",
+    "babel-loader": "^10.0.0",
     "webpack": "^5.99.9",
     "webpack-cli": "^6.0.1"
   },
@@ -91,8 +94,8 @@
     "wildcard": "^2.0.1"
   },
   "scripts": {
-    "dev": "webpack --mode development --watch --entry ./js/script.js --output-path ./dist --output-filename script.js",
-    "build": "webpack --mode production --entry ./js/script.js --output-path ./dist --output-filename script.js"
+    "dev": "webpack --mode development --watch",
+    "build": "webpack --mode production"
   },
   "author": "",
   "license": "ISC",

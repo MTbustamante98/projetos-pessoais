@@ -1,0 +1,11 @@
+export const inputDescriptionTask = document.getElementById("task");
+export const textArea = document.querySelector("textarea");
+export const addNotes = document.querySelector("[data-notes]");
+export const buttonAddTasks = document.querySelector("[data-add-tasks]");
+export const divInputTasks = document.querySelector(".inputTasks");
+export const menu = document.querySelector(".menu-clean-tasks");
+export const countElement = document.querySelector("[data-count]");
+export const removeAllTasksBtn = document.querySelector(".menu-clean-tasks [data-remove-all]");
+export const removeCompletedTasksBtn = document.querySelector(".menu-clean-tasks [data-completed]");
+export const divDropDown = document.querySelector(".activedDivDropDown");
+export const count = document.querySelector("[data-count]");

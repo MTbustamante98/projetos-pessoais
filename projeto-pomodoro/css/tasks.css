@@ -77,7 +77,7 @@
   margin-top: 2px;
 }
 
-.menu {
+.menu-clean-tasks {
   width: 200px;
   height: 110px;
   margin-top: 0.625rem;
@@ -94,17 +94,17 @@
   transform: scale(0.9);
 }
 
-.menu ul {
+.menu-clean-tasks ul {
   margin-top: 0.313rem;
   position: relative;
   list-style-type: none;
 }
 
-.menu ul li:first-child {
+.menu-clean-tasks ul li:first-child {
   margin-bottom: 1.5rem;
 }
 
-.menu ul li:first-child::after {
+.menu-clean-tasks ul li:first-child::after {
   content: "";
   position: absolute;
   left: 0;
@@ -114,23 +114,23 @@
   background: rgba(0, 0, 0, 0.1);
 }
 
-.menu li {
+.menu-clean-tasks li {
   cursor: pointer;
   padding: 0.5rem;
 }
 
-.menu ul li a {
+.menu-clean-tasks ul li a {
   font: 500 0.825rem "Roboto", Arial, sans-serif;
   color: var(--medium-dark);
   position: relative;
   vertical-align: middle;
 }
 
-.menu ul li:hover {
+.menu-clean-tasks ul li:hover {
   background: rgba(0, 0, 0, 0.1);
 }
 
-.menu ul li:first-child a::before {
+.menu-clean-tasks ul li:first-child a::before {
   content: "";
   display: inline-block;
   margin-right: 0.188rem;
@@ -140,7 +140,7 @@
   vertical-align: middle;
 }
 
-.menu ul li:last-child a::before {
+.menu-clean-tasks ul li:last-child a::before {
   content: "";
   display: inline-block;
   margin-right: 0.188rem;
@@ -316,7 +316,7 @@
     top: 7px;
   }
 
-  .menu {
+  .menu-clean-tasks {
     right: 16px;
   }
 
@@ -427,7 +427,7 @@
     left: 370px;
   }
 
-  .menu {
+  .menu-clean-tasks {
     right: 13px;
   }
 }
