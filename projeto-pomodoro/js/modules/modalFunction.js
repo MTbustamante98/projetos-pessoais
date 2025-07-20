@@ -1,7 +1,7 @@
-import { modal, configs, menu, modalLinks } from "./modalElements.js";
+import { modal, configs, menuCleanTasks, modalLinks } from "./modalElements.js";
 import { active, hidden } from "./utilitaries.js";
 
-const closeModals = [modal, configs, menu];
+const closeModals = [modal, configs, menuCleanTasks];
 const matchMedia = (media) => window.matchMedia(media);
 
 const openModal = (e) => {
@@ -21,7 +21,7 @@ const openModal = (e) => {
   }
 
   if (target.closest("[data-menu]")) {
-    menu.classList.toggle(active);
+    menuCleanTasks.classList.toggle(active);
     modalLinks[2].classList.toggle("scale-effect");
   }
 };

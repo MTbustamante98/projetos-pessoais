@@ -1,14 +1,23 @@
 import {
+  addTextArea,
+  addTasksAndNotes,
+  handleRemoveAllTasks,
+  removeAllCompletedTasks,
+} from "./tasks.js"
+
+import {
+  buttonAddTasks,
+  addNotes,
   removeAllTasksBtn,
   removeCompletedTasksBtn,
-  menu,
+  menuCleanTasks,
 } from "./tasksElements.js";
 
 export default function registerTaskEvents() {
   addNotes.addEventListener("click", addTextArea);
   buttonAddTasks.addEventListener("click", addTasksAndNotes);
-  removeAllTasksBtn.addEventListener("click", () => handleRemoveAllTasks(menu));
+  removeAllTasksBtn.addEventListener("click", () => handleRemoveAllTasks(menuCleanTasks));
   removeCompletedTasksBtn.addEventListener("click", () =>
-    removeAllCompletedTasks(menu)
+    removeAllCompletedTasks(menuCleanTasks)
   );
 }

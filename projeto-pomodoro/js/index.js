@@ -1,4 +1,3 @@
-import initModals from "./modules/modals.js";
 import initAddTasks from "./modules/addTasks.js";
 import initPomodoros from "./modules/pomodoros.js";
 import initDropConfig from "./modules/dropConfig.js";

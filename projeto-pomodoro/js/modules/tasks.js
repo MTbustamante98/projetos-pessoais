@@ -1,304 +1,330 @@
-import {
-  inputDescriptionTask,
-  textArea,
-  divInputTasks,
-  count,
-  divDropDown,
-} from "./tasksElements.js";
+// import {
+//   inputDescriptionTask,
+//   textArea,
+//   divInputTasks,
+//   count,
+//   divDropDown,
+//   menuCleanTasks,
+// } from "./tasksElements.js";
 
-let tasks = [];
+// import { active } from "./utilitaries.js";
 
-try {
-  const stored = JSON.parse(localStorage.getItem("tasksData")) || [];
-  if (Array.isArray(stored)) tasks = stored;
-} catch (e) {
-  console.error("Erro ao ler taskData", e);
-}
+// let tasks = [];
 
-export default function initTasks() {
-  renderTasks();
-}
+// try {
+//   const stored = JSON.parse(localStorage.getItem("tasksData")) || [];
+//   if (Array.isArray(stored)) tasks = stored;
+// } catch (e) {
+//   console.error("Erro ao ler taskData", e);
+// }
 
-export function renderTasks(elementTasks = tasks) {
-  divInputTasks.innerHTML = "";
-  elementTasks.forEach((task, index) => {
-    const taskElement = createTaskElement(
-      task.title,
-      task.note,
-      index,
-      task.done
-    );
-    divInputTasks.appendChild(taskElement);
-  });
-  addCounter();
-}
+// export default function initTasks() {
+//   renderTasks();
+// }
 
-export function addTasksAndNotes() {
-  const title = inputDescriptionTask.value.trim();
-  const note = textArea.value.trim();
+// export function renderTasks(elementTasks = tasks) {
+//   divInputTasks.innerHTML = "";
+//   elementTasks.forEach((task, index) => {
+//     const taskElement = createTaskElement(
+//       task.title,
+//       task.note,
+//       index,
+//       task.done
+//     );
+//     divInputTasks.appendChild(taskElement);
+//   });
+//   addCounter();
+// }
 
-  if (!title) return;
+// export function addTasksAndNotes() {
+//   const title = inputDescriptionTask.value.trim();
+//   const note = textArea.value.trim();
 
-  const newTask = {
-    title,
-    note,
-    done: false,
-  };
+//   if (!title) return;
 
-  tasks.push(newTask);
+//   const newTask = {
+//     title,
+//     note,
+//     done: false,
+//   };
 
-  localStorage.setItem("tasksData", JSON.stringify(tasks));
-  renderTasks();
+//   tasks.push(newTask);
 
-  inputDescriptionTask.value = "";
-  textArea.value = "";
-}
+//   localStorage.setItem("tasksData", JSON.stringify(tasks));
+//   renderTasks();
 
-export function createTaskElement(title, note, index) {
-  const span = createElementSpan();
-  const para = createElementParagraph(title);
-  const div = createElementDiv(note);
-  const btnEditSave = createElementEditAndSave();
-  const wrapper = createElementWrapper();
-  const checkbox = createElementCheckBox(index, para);
-  addDropDownEvent(btnEditSave, index, para, div, span, wrapper);
-  wrapper.append(checkbox, para, btnEditSave);
-  span.append(wrapper);
-  if (note) span.appendChild(div);
-  return span;
-}
+//   inputDescriptionTask.value = "";
+//   textArea.value = "";
+// }
 
-export function createElementSpan() {
-  const spanElement = document.createElement("span");
-  spanElement.classList.add("activatedSpan");
-  return spanElement;
-}
+// export function createTaskElement(title, note, index) {
+//   const span = createElementSpan();
+//   const para = createElementParagraph(title);
+//   const div = createElementDiv(note);
+//   const btnEditSave = createElementEditAndSave();
+//   const wrapper = createElementWrapper();
+//   const checkbox = createElementCheckBox(index, para);
+//   addDropDownEvent(btnEditSave, index, para, div, span, wrapper);
+//   wrapper.append(checkbox, para, btnEditSave);
+//   span.append(wrapper);
+//   if (note) span.appendChild(div);
+//   return span;
+// }
 
-export function createElementParagraph(text) {
-  const paragraphElement = document.createElement("p");
-  paragraphElement.classList.add("activatedParagraph");
-  paragraphElement.innerText = text;
-  return paragraphElement;
-}
+// export function createElementSpan() {
+//   const spanElement = document.createElement("span");
+//   spanElement.classList.add("activatedSpan");
+//   return spanElement;
+// }
 
-export function createElementDiv(text) {
-  const divElement = document.createElement("div");
-  divElement.classList.add("activatedDiv");
-  divElement.innerText = text;
-  return divElement;
-}
+// export function createElementParagraph(text) {
+//   const paragraphElement = document.createElement("p");
+//   paragraphElement.classList.add("activatedParagraph");
+//   paragraphElement.innerText = text;
+//   return paragraphElement;
+// }
 
-export function createElementEditAndSave() {
-  const btnEditSave = document.createElement("button");
-  btnEditSave.type = "button";
-  btnEditSave.classList.add("activatedEditAndSave");
-  const imgDropDown = document.createElement("img");
-  imgDropDown.src = "./images/three-points.svg";
-  imgDropDown.style.marginTop = "2px";
-  btnEditSave.appendChild(imgDropDown);
-  return btnEditSave;
-}
+// export function createElementDiv(text) {
+//   const divElement = document.createElement("div");
+//   divElement.classList.add("activatedDiv");
+//   divElement.innerText = text;
+//   return divElement;
+// }
 
-export function createElementWrapper() {
-  const elementWrapper = document.createElement("div");
-  elementWrapper.classList.add("wrapper");
-  return elementWrapper;
-}
+// export function createElementEditAndSave() {
+//   const btnEditSave = document.createElement("button");
+//   btnEditSave.type = "button";
+//   btnEditSave.classList.add("activatedEditAndSave");
+//   const imgDropDown = document.createElement("img");
+//   imgDropDown.src = "./images/three-points.svg";
+//   imgDropDown.style.marginTop = "2px";
+//   btnEditSave.appendChild(imgDropDown);
+//   return btnEditSave;
+// }
 
-export function createElementCheckBox(index, para) {
-  const checkbox = document.createElement("div");
-  checkbox.classList.add("activatedDivCheckBox");
-  checkbox.setAttribute("role", "checkbox");
-  checkbox.setAttribute("aria-checked", tasks[index]?.done);
+// export function createElementWrapper() {
+//   const elementWrapper = document.createElement("div");
+//   elementWrapper.classList.add("wrapper");
+//   return elementWrapper;
+// }
 
-  if (tasks[index]?.done) {
-    checkbox.classList.add("alternateStateCheckbox");
-    para.classList.add("alternateStateParagraph");
-  }
+// export function createElementCheckBox(index, para) {
+//   const checkbox = document.createElement("div");
+//   checkbox.classList.add("activatedDivCheckBox");
+//   checkbox.setAttribute("role", "checkbox");
+//   checkbox.setAttribute("aria-checked", tasks[index]?.done);
 
-  checkbox.addEventListener("click", () => {
-    checkbox.classList.toggle("alternateStateCheckbox");
-    para.classList.toggle("alternateStateParagraph");
-    tasks[index].done = checkbox.classList.contains("alternateStateCheckbox");
-    allTasksCompleted();
-    reOrder();
-    localStorage.setItem("tasksData", JSON.stringify(tasks));
-  });
+//   if (tasks[index]?.done) {
+//     checkbox.classList.add("alternateStateCheckbox");
+//     para.classList.add("alternateStateParagraph");
+//   }
 
-  return checkbox;
-}
+//   checkbox.addEventListener("click", () => {
+//     checkbox.classList.toggle("alternateStateCheckbox");
+//     para.classList.toggle("alternateStateParagraph");
+//     tasks[index].done = checkbox.classList.contains("alternateStateCheckbox");
+//     allTasksCompleted();
+//     reOrder();
+//     localStorage.setItem("tasksData", JSON.stringify(tasks));
+//   });
 
-export function addDropDownEvent(btnDropDown, index, para, div, span, wrapper) {
-  document.addEventListener("click", (e) => {
-    if (!divDropDown) return;
-    if (divDropDown && !divDropDown.contains(e.target)) {
-      removeElementsUI(divDropDown);
-      removeScaleEffectAllElements();
-    }
-  });
+//   return checkbox;
+// }
 
-  btnDropDown.addEventListener("click", (e) => {
-    e.stopPropagation();
-    btnDropDown.classList.toggle("scale-effect");
+// export function addDropDownEvent(btnDropDown, index, para, div, span, wrapper) {
+//   document.addEventListener("click", (e) => {
+//     const currentDropdown = document.querySelector(".activedDivDropDown");
+//     const target = e.target;
+//     if (!currentDropdown) return;
+//     if (currentDropdown && !currentDropdown.contains(target)) {
+//       removeElementsUI(currentDropdown);
+//       removeScaleEffectAllElements();
+//     }
+//   });
 
-    if (divDropDown) {
-      removeElementsUI(divDropDown);
-      return;
-    }
+//   btnDropDown.addEventListener("click", (e) => {
+//     e.stopPropagation();
+//     btnDropDown.classList.toggle("scale-effect");
 
-    const newDivDropDown = document.createElement("div");
-    newDivDropDown.classList.add("activedDivDropDown");
-    const rect = btnDropDown.getBoundingClientRect();
-    newDivDropDown.style.position = "absolute";
-    newDivDropDown.style.top = `${rect.bottom + window.scrollY}px`;
+//     const existingDropdown = document.querySelector(".activedDivDropDown");
+//     if (existingDropdown) {
+//       removeElementsUI(existingDropdown);
+//       return;
+//     }
 
-    const [edit, divEdit, save] = createElementEdit(
-      index,
-      para,
-      div,
-      btnDropDown,
-      newDivDropDown,
-      span,
-      wrapper
-    );
-    const [remove, divRemove] = createElementRemove(index, newDivDropDown);
+//     const newDivDropDown = document.createElement("div");
+//     newDivDropDown.classList.add("activedDivDropDown");
+//     const rect = btnDropDown.getBoundingClientRect();
+//     newDivDropDown.style.position = "absolute";
+//     newDivDropDown.style.top = `${rect.bottom + window.scrollY}px`;
 
-    newDivDropDown.append(divEdit, divRemove);
-    document.body.appendChild(newDivDropDown);
-  });
-}
+//     const [edit, divEdit, save] = createElementEdit(
+//       index,
+//       para,
+//       div,
+//       btnDropDown,
+//       newDivDropDown,
+//       span,
+//       wrapper
+//     );
+//     const [remove, divRemove] = createElementRemove(index, newDivDropDown);
 
-export function createElementEdit(
-  index,
-  para,
-  div,
-  btnDropDown,
-  divDropDown,
-  span,
-  wrapper
-) {
-  const edit = document.createElement("span");
-  edit.classList.add("edit");
-  edit.innerText = "Editar";
+//     newDivDropDown.append(divEdit, divRemove);
+//     document.body.appendChild(newDivDropDown);
+//   });
+// }
 
-  const divEdit = document.createElement("div");
-  divEdit.classList.add("divListEdit");
+// export function createElementEdit(
+//   index,
+//   para,
+//   div,
+//   btnDropDown,
+//   divDropDown,
+//   span,
+//   wrapper
+// ) {
+//   const edit = document.createElement("span");
+//   edit.classList.add("edit");
+//   edit.innerText = "Editar";
 
-  const save = document.createElement("button");
-  save.type = "button";
-  save.classList.add("activatedButtonSave");
-  save.innerText = "Salvar";
+//   const divEdit = document.createElement("div");
+//   divEdit.classList.add("divListEdit");
 
-  divEdit.appendChild(edit);
+//   const save = document.createElement("button");
+//   save.type = "button";
+//   save.classList.add("activatedButtonSave");
+//   save.innerText = "Salvar";
 
-  divEdit.addEventListener("click", () => {
-    const inputEditTask = document.createElement("input");
-    inputEditTask.type = "text";
-    inputEditTask.classList.add("activatedInputTasks");
-    inputEditTask.value = tasks[index].title;
+//   divEdit.appendChild(edit);
 
-    const inputEditNote = document.createElement("input");
-    inputEditNote.type = "text";
-    inputEditNote.classList.add("activatedInputNote");
-    inputEditNote.value = tasks[index].note;
+//   divEdit.addEventListener("click", () => {
+//     const inputEditTask = document.createElement("input");
+//     inputEditTask.type = "text";
+//     inputEditTask.classList.add("activatedInputTasks");
+//     inputEditTask.value = tasks[index].title;
 
-    para.replaceWith(inputEditTask);
-    div.replaceWith(inputEditNote);
-    wrapper.insertAdjacentElement("beforeend", save);
+//     const inputEditNote = document.createElement("input");
+//     inputEditNote.type = "text";
+//     inputEditNote.classList.add("activatedInputNote");
+//     inputEditNote.value = tasks[index].note;
 
-    removeElementsUI(divDropDown, btnDropDown);
+//     para.replaceWith(inputEditTask);
+//     div.replaceWith(inputEditNote);
+//     wrapper.insertAdjacentElement("beforeend", save);
 
-    save.addEventListener("click", () => {
-      tasks[index].title = inputEditTask.value;
-      tasks[index].note = inputEditNote.value;
-      if (!tasks[index].title) return;
+//     removeElementsUI(divDropDown, btnDropDown);
 
-      localStorage.setItem("tasksData", JSON.stringify(tasks));
-      const updateTaskElements = createTaskElement(
-        tasks[index].title,
-        tasks[index].note,
-        index
-      );
-      span.replaceWith(updateTaskElements);
-      renderTasks();
-    });
-  });
+//     save.addEventListener("click", () => {
+//       tasks[index].title = inputEditTask.value;
+//       tasks[index].note = inputEditNote.value;
+//       if (!tasks[index].title) return;
 
-  return [edit, divEdit, save];
-}
+//       localStorage.setItem("tasksData", JSON.stringify(tasks));
+//       const updateTaskElements = createTaskElement(
+//         tasks[index].title,
+//         tasks[index].note,
+//         index
+//       );
+//       span.replaceWith(updateTaskElements);
+//       renderTasks();
+//     });
+//   });
 
-export function createElementRemove(index, divDropDown) {
-  const remove = document.createElement("span");
-  remove.classList.add("remove");
-  remove.innerText = "Remover";
+//   return [edit, divEdit, save];
+// }
 
-  const divRemove = document.createElement("div");
-  divRemove.classList.add("divListRemove");
-  divRemove.appendChild(remove);
+// export function createElementRemove(index, divDropDown) {
+//   const remove = document.createElement("span");
+//   remove.classList.add("remove");
+//   remove.innerText = "Remover";
 
-  divRemove.addEventListener("click", () => {
-    tasks.splice(index, 1);
-    removeElementsUI(divDropDown);
-    localStorage.setItem("tasksData", JSON.stringify(tasks));
-    renderTasks();
-    addCounter();
-  });
+//   const divRemove = document.createElement("div");
+//   divRemove.classList.add("divListRemove");
+//   divRemove.appendChild(remove);
 
-  return [remove, divRemove];
-}
+//   divRemove.addEventListener("click", () => {
+//     tasks.splice(index, 1);
+//     removeElementsUI(divDropDown);
+//     localStorage.setItem("tasksData", JSON.stringify(tasks));
+//     renderTasks();
+//     addCounter();
+//   });
 
-export function removeElementsUI(dropDown, button) {
-  dropDown?.remove();
-  button?.remove();
-}
+//   return [remove, divRemove];
+// }
 
-export function removeAllCompletedTasks() {
-  const taskCompleted = tasks.filter((el) => !el.done);
-  localStorage.setItem("tasksData", JSON.stringify(taskCompleted));
+// export function removeElementsUI(dropDown, button) {
+//   dropDown?.remove();
+//   button?.remove();
+// }
 
-  tasks.length = 0;
-  tasks.push(...taskCompleted);
+// export function allTasksCompleted() {
+//   const completedTask = tasks.every((el) => el.done);
+//   if (tasks.length > 0 && completedTask) {
+//     setTimeout(() => {
+//       alert("Parabéns, você concluiu todas as tarefas!");
+//       removeAllTasks();
+//     }, 500);
+//   }
+// }
 
-  removeMenuUI(menuCleanTasks);
-  removeScaleEffectAllElements();
-  renderTasks();
-}
+// export function removeAllCompletedTasks() {
+//   const taskCompleted = tasks.filter((el) => !el.done);
+//   localStorage.setItem("tasksData", JSON.stringify(taskCompleted));
 
-export function handleRemoveAllTasks() {
-    tasks.length = 0;
-    localStorage.setItem("tasksData", JSON.stringify(tasks));
+//   tasks.length = 0;
+//   tasks.push(...taskCompleted);
 
-    removeMenuUI(menuCleanTasks);
-    removeScaleEffectAllElements();
-    renderTasks();
-}
+//   removeMenuUI(menuCleanTasks);
+//   removeScaleEffectAllElements();
+//   renderTasks();
+// }
 
-export function removeScaleEffectAllElements() {
-  document.querySelectorAll(".scale-effect").forEach((btn) => {
-    btn.classList.remove("scale-effect");
-  });
-}
+// export function handleRemoveAllTasks() {
+//   tasks.length = 0;
+//   localStorage.setItem("tasksData", JSON.stringify(tasks));
 
-export function removeMenuUI(menu) {
-  const isVisible = menu.classList.contains("active");
-  menu.classList.toggle("active", !isVisible);
-  menu.classList.toggle("removeMenu", isVisible);
-}
+//   removeMenuUI(menuCleanTasks);
+//   removeScaleEffectAllElements();
+//   renderTasks();
+// }
 
-export function removeAllTasks() {
-  tasks.length = 0;
-  localStorage.setItem("tasksData", JSON.stringify([]));
-  renderTasks();
-}
+// export function removeScaleEffectAllElements() {
+//   document.querySelectorAll(".scale-effect").forEach((btn) => {
+//     btn.classList.remove("scale-effect");
+//   });
+// }
 
-export function addCounter() {
-  count.innerText = tasks.length;
-}
+// export function removeMenuUI(menu) {
+//   const isVisible = menu.classList.contains(active);
+//   menu.classList.toggle(active, !isVisible);
+//   menu.classList.toggle("removeMenu", isVisible);
+// }
 
-export function addTextArea() {
-  textArea.classList.toggle(active);
-}
+// export function removeAllTasks() {
+//   tasks.length = 0;
+//   localStorage.setItem("tasksData", JSON.stringify([]));
+//   renderTasks();
+// }
 
-export function getTasks() {
-  return tasks;
-}
+// function reOrder() {
+//   const reorder = [...tasks].sort((a, b) => a.done - b.done);
+
+//   tasks.length = 0;
+//   tasks.push(...reorder);
+//   localStorage.setItem("tasksData", JSON.stringify(tasks));
+
+//   renderTasks();
+// }
+
+// export function addCounter() {
+//   count.innerText = tasks.length;
+// }
+
+// export function addTextArea() {
+//   textArea.classList.toggle(active);
+// }
+
+// export function getTasks() {
+//   return tasks;
+// }
