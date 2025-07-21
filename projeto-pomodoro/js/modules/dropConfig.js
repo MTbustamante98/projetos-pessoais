@@ -1,13 +1,16 @@
 import { active } from "./utilitaries.js"
+import { toggleDrop, innerTextLiDrop, smallArrow } from "./dropConfigElements.js"
 
 export default function initDropConfig() {
-  const toggleDrop = document.querySelectorAll("[data-toggle-drop]");
-  const innerTextLiDrop = document.querySelectorAll(`[data-drop] li`);
-
   const callback = (e) => {
-    const id = e.target.getAttribute("data-toggle-drop");
+    const itemsOpenMenu = e.target.closest(".activeDropDownChoose");
+    if (!itemsOpenMenu) return;
+
+    const id = itemsOpenMenu.getAttribute("data-toggle-drop")
     const drop = document.querySelector(`[data-drop="${id}"]`);
-    if (drop) drop.classList.toggle(active);
+    if (drop) {
+      drop.classList.toggle(active);
+    }
   };
 
   innerTextLiDrop.forEach((liText) => {
@@ -44,8 +47,6 @@ export default function initDropConfig() {
       });
     }
   });
-
-  toggleDrop.forEach((div) => {
-    div.addEventListener("click", callback);
-  });
+  //DELEGAÇÃO DE EVENTOS
+  document.addEventListener("click", callback)
 }

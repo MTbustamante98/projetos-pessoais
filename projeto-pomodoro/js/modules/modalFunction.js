@@ -1,4 +1,4 @@
-import { modal, configs, menuCleanTasks, modalLinks } from "./modalElements.js";
+import { modal, configs, containerTasks, menuCleanTasks, modalLinks, arrowClose } from "./modalElements.js";
 import { active, hidden } from "./utilitaries.js";
 
 const closeModals = [modal, configs, menuCleanTasks];
