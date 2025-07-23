@@ -12,6 +12,8 @@ import {
 } from "./pomodoroTimerElements.js";
 
 import { active } from "./utilitaries.js";
+import { innerTextLiDrop } from "./dropConfigElements.js";
+import  playAudio  from "./audios.js";
 
 export default function initPomodoros() {
   let InnerTextTimers = JSON.parse(localStorage.getItem("timers")) || [];
@@ -39,11 +41,19 @@ export default function initPomodoros() {
     interval: null,
   };
 
+  let audioPathSelected = null;
+  innerTextLiDrop.forEach((li) => {
+    li.addEventListener("click", (e) => {
+      const path = e.target.dataset.music;
+      if (path) audioPathSelected = path;
+    });
+  })
+
   function startCountDown() {
     const currentTimer = visibleTimer();
     const type = currentTimer.dataset.timerType;
     const tempo = tempoPersonalizado[type];
-
+    
     if (!timerState.isRunning && timerState.totalSeconds === 0) {
       const [minutes, seconds] = currentTimer.innerText.split(":").map(Number);
       timerState.totalSeconds = minutes * 60 + seconds;
@@ -63,7 +73,11 @@ export default function initPomodoros() {
           progressBar.style.width = "0";
           currentTimer.innerText = tempo;
           clearInterval(timerState.interval);
+
           autoStartPomodorosLogic();
+        
+          if (audioPathSelected) playAudio(audioPathSelected);
+
           return;
         }
 
