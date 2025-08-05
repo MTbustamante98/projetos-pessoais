@@ -71,9 +71,9 @@
   text-align: center;
 }
 
-.dec-line {
+.progess-bar {
   position: absolute;
-  bottom: -50px;
+  bottom: -30px;
   left: 470px;
   width: 500px;
   height: 4px;
@@ -108,9 +108,9 @@
     position: relative;
   }
 
-  .dec-line {
+  .progess-bar {
     bottom: -20px;
-    left: 415px;
+    left: 440px;
   }
 }
 
@@ -121,6 +121,11 @@
 
   .watches {
     padding-top: 3.75rem;
+  }
+
+  .progess-bar {
+    bottom: -20px;
+    left: 370px;
   }
 
   .secao-frase {
