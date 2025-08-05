@@ -12,8 +12,9 @@ import {
 } from "./pomodoroTimerElements.js";
 
 import { active } from "./utilitaries.js";
-import { innerTextLiDrop } from "./dropConfigElements.js";
-import  playAudio  from "./audios.js";
+import { liAlarmSoundMenu, liTickingSoundMenu } from "./dropConfigElements.js";
+import playAudio from "./audios.js";
+import { playTickingAudio, stopTickingAudio } from "./audios.js";
 
 export default function initPomodoros() {
   let InnerTextTimers = JSON.parse(localStorage.getItem("timers")) || [];
@@ -34,6 +35,23 @@ export default function initPomodoros() {
     }
   }
 
+  let audioAlarmPathSelected = null;
+  let audioTickingPathSelected = null;
+
+  liAlarmSoundMenu.forEach((li) => {
+    li.addEventListener("click", (e) => {
+      const music = e.target.dataset.music;
+      if (music) audioAlarmPathSelected = music;
+    });
+  });
+
+  liTickingSoundMenu.forEach((li) => {
+    li.addEventListener("click", (e) => {
+      const music = e.target.dataset.music;
+      if (music) audioTickingPathSelected = music;
+    });
+  });
+
   const timerState = {
     totalSeconds: 0,
     tempoInicial: 0,
@@ -41,19 +59,11 @@ export default function initPomodoros() {
     interval: null,
   };
 
-  let audioPathSelected = null;
-  innerTextLiDrop.forEach((li) => {
-    li.addEventListener("click", (e) => {
-      const path = e.target.dataset.music;
-      if (path) audioPathSelected = path;
-    });
-  })
-
   function startCountDown() {
     const currentTimer = visibleTimer();
     const type = currentTimer.dataset.timerType;
     const tempo = tempoPersonalizado[type];
-    
+
     if (!timerState.isRunning && timerState.totalSeconds === 0) {
       const [minutes, seconds] = currentTimer.innerText.split(":").map(Number);
       timerState.totalSeconds = minutes * 60 + seconds;
@@ -66,17 +76,26 @@ export default function initPomodoros() {
       buttonStartTimer.classList.add(active);
       buttonStartTimer.classList.remove("special-class");
 
+      if (timerState.totalSeconds > 0) {
+        if (audioTickingPathSelected)
+          playTickingAudio(audioTickingPathSelected);
+      }
+
       timerState.interval = setInterval(() => {
         if (timerState.totalSeconds <= 0) {
           timerState.isRunning = false;
           buttonStartTimer.innerText = "COMEÇAR";
+          buttonStartTimer.classList.remove(active);
           progressBar.style.width = "0";
           currentTimer.innerText = tempo;
           clearInterval(timerState.interval);
 
           autoStartPomodorosLogic();
-        
-          if (audioPathSelected) playAudio(audioPathSelected);
+
+          if (audioAlarmPathSelected) {
+            playAudio(audioAlarmPathSelected, "alarm");
+          }
+          stopTickingAudio(audioTickingPathSelected);
 
           return;
         }
