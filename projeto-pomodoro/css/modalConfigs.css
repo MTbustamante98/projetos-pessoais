@@ -167,7 +167,7 @@
   padding: 1.5rem 1rem;
 }
 
-.volume-sound [data-count="volume"] {
+.volume-sound [data-count="alarm"] {
   font: 600 1rem "Roboto", Arial, sans-serif;
   margin-right: 0.625rem;
   color: var(--gainsboro);

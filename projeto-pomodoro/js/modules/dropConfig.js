@@ -7,7 +7,7 @@ import {
   volumeTicking,
 } from "./dropConfigElements.js";
 import playAudio from "./audios.js";
-import { getCurrentAudio, getCurrentGroup } from "./audios.js"
+import { getCurrentAudio, getCurrentGroup, saveVolumeUI } from "./audios.js";
 
 export default function initDropConfig() {
   const savedTexts = JSON.parse(localStorage.getItem("dropdownTexts")) || {};
@@ -113,9 +113,6 @@ export default function initDropConfig() {
   }
 
   const saved = getSavedVolumes();
-  volumeAlarm.value = saved.alarm;
-  alarmVolumeSpan.textContent = saved.alarm;
-
-  volumeTicking.value = saved.ticking;
-  tickingVolumeSpan.textContent = saved.ticking;
+  saveVolumeUI("alarm", saved.alarm);
+  saveVolumeUI("ticking", saved.ticking);
 }

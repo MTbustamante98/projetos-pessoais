@@ -92,9 +92,9 @@ export default function initPomodoros() {
 
           autoStartPomodorosLogic();
 
-          if (audioAlarmPathSelected) {
+          if (audioAlarmPathSelected)
             playAudio(audioAlarmPathSelected, "alarm");
-          }
+
           stopTickingAudio(audioTickingPathSelected);
 
           return;
@@ -118,6 +118,7 @@ export default function initPomodoros() {
       clearInterval(timerState.interval);
       buttonStartTimer.innerText = "COMEÇAR";
       buttonStartTimer.classList.remove(active);
+      stopTickingAudio(audioTickingPathSelected);
     }
   }
 

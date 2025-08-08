@@ -1,3 +1,10 @@
+import {
+  volumeAlarm,
+  volumeTicking,
+  alarmVolumeSpan,
+  tickingVolumeSpan,
+} from "./dropConfigElements.js";
+
 let currentAudio = null;
 let currentGroup = null; // "alarm" ou "ticking"
 let currentAudioTicking = null;
@@ -48,4 +55,14 @@ export function stopTickingAudio() {
 function getInitialVolume(group) {
   const input = document.querySelector(`#volume-${group}`);
   return input ? input.value / 100 : 1;
+}
+
+export function saveVolumeUI(group, value) {
+  if (group === "alarm") {
+    volumeAlarm.value = value;
+    alarmVolumeSpan.textContent = value;
+  } else if (group === "ticking") {
+    volumeTicking.value = value;
+    tickingVolumeSpan.textContent = value;
+  }
 }
