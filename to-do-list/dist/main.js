@@ -1,0 +1,1 @@
+(()=>{const e=document.querySelector(".btn"),t=document.querySelector("p");e.addEventListener("click",()=>{t.classList.toggle("active")})})();

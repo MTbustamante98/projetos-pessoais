@@ -4,6 +4,7 @@ import initDropConfig from "./modules/dropConfig.js";
 import initTasks from "./modules/tasks.js";
 import registerTaskEvents from "./modules/tasksEvents.js";
 import registerModalEvents from "./modules/modalEvents.js";
+import initDropDownSelectBg from "./modules/selectBackgrounds.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   initDropConfig();
@@ -13,3 +14,4 @@ initPomodoros();
 initTasks();
 registerTaskEvents();
 registerModalEvents();
+initDropDownSelectBg();
