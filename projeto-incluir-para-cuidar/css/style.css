@@ -1,6 +1,6 @@
 /* Componentes */
-@import "./utilidades/tipografia.css";
-@import "./utilidades/componentes.css";
+@import "utilidades/tipografia.css";
+@import "utilidades/componentes.css";
 
 /* Home */
-@import "./home/introducao.css";
+@import "home/introducao.css";
