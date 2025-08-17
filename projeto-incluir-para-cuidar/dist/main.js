@@ -15,7 +15,7 @@
   \**********************/
 /***/ (() => {
 
-eval("{console.log(\"ola\")\r\n\r\nfunction soma(a, b) {\r\n  return a + b;\r\n}\r\n\r\nconsole.log(soma(2, 2))\n\n//# sourceURL=webpack:///./js/script.js?\n}");
+eval("{if (window.SimpleAnime) {\r\n  new SimpleAnime();\r\n}\r\n\n\n//# sourceURL=webpack:///./js/script.js?\n}");
 
 /***/ })
 

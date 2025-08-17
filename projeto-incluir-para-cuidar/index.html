@@ -22,14 +22,25 @@
           /></picture>
         </div>
         <div class="flex-img-video">
-          <picture>
-            <img
-              class="img-incluir-cuidar"
-              src="./img/img-pg-inicial.png"
-              alt="Imagem ilustrativa, incluir para cuidar, soluções para o atendimento de pessoas surdas."
-            />
-          </picture>
-          <div id="container-media-video"></div>
+          <div class="container-img-pg-inicial">
+            <picture class="fadeInLeft" data-anime="200">
+              <source
+                media="(max-width: 1440px)"
+                srcset="./img/img-pg-inicial-responsivo.png"
+                type="image/png"
+              />
+              <img
+                class="img-incluir-cuidar"
+                src="./img/img-pg-inicial.png"
+                alt="Imagem ilustrativa, incluir para cuidar, soluções para o atendimento de pessoas surdas."
+              />
+            </picture>
+              <!-- <div class="container-titulo-parahraph fadeInLeft" data-anime="300">
+                <h1 class="titulo-pg-inicial">Incluir <br>para cuidar</br></h1>
+                <p class="paragraph-pg-inicial">Soluções para melhorar o atendimento de pessoas surdas</p>
+              </div> -->
+          </div>
+          <div id="container-media-video" class="fadeInRight" data-anime="300"></div>
         </div>
       </article>
     </main>
@@ -38,5 +49,7 @@
         <div class="img-proximo"></div>
       </a>
     </footer>
+    <script src="./js/simple-anime.js"></script>
+    <script type="module" src="dist/main.js"></script>
   </body>
 </html>

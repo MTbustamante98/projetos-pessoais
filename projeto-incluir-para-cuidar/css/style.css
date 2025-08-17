@@ -1,6 +1,7 @@
 /* Componentes */
 @import "utilidades/tipografia.css";
 @import "utilidades/componentes.css";
+@import "utilidades/simple-anime.css";
 
 /* Home */
 @import "home/introducao.css";

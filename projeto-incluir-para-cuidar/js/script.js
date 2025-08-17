@@ -1,7 +1,3 @@
-console.log("ola")
-
-function soma(a, b) {
-  return a + b;
+if (window.SimpleAnime) {
+  new SimpleAnime();
 }
-
-console.log(soma(2, 2))
