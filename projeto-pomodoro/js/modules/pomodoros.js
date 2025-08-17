@@ -195,13 +195,12 @@ export default function initPomodoros() {
       targetTimer.classList.remove("hidden");
       targetTimer.innerText = tempoPersonalizado[type];
 
-      const documentBody = document.body;
       if (type === "pomodoro") {
-        documentBody.style.backgroundColor = "var(--tomato)";
+        document.body.style.backgroundColor = "var(--tomato)";
       } else if (type === "short") {
-        documentBody.style.backgroundColor = "var(--backgroundShortBreak)";
+        document.body.style.backgroundColor = "var(--backgroundShortBreak)";
       } else if (type === "long") {
-        documentBody.style.backgroundColor = "var(--backgroundLongBreak)";
+        document.body.style.backgroundColor = "var(--backgroundLongBreak)";
       }
     }
   }

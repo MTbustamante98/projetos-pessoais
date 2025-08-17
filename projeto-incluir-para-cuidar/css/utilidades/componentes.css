@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+}
+
+#bg-radiologia {
+  background: url("/img/rad_background-removebg.png") center no-repeat;
+  background-size: 75% 130%;
+  min-height: 100vh;
+}
+
+.bg-barra-horizontal {
+  height: 100px;
+  background: url("/img/barra-horizontal.png") center no-repeat;
+  background-size: cover;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.link-inicial {
+  background-color: #bedc96;
+}
+
+.img-proximo {
+  height: 60px;
+  width: 100px;
+  background: url("/img/avancar-prox-pagina.png") center no-repeat;
+  background-size: contain;
+  position: absolute;
+  right: 0;
+  top: 20px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+#container-media-video {
+  width: 400px;
+  height: 600px;
+  border: 3px solid black;
+  box-shadow: 12px 14px 0 0 black;
+  border-radius: 0.625rem;
+  margin-right: 60px;
+  margin-top: -60px;
+  background: #fff;
+}

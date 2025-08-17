@@ -1,0 +1,9 @@
+.flex-img-video {
+  display: flex;
+  justify-content: space-between;
+}
+
+.img-incluir-cuidar {
+  margin-top: -120px;
+  align-self: flex-start;
+}
