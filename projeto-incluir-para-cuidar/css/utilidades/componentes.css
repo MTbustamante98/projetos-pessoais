@@ -52,3 +52,10 @@ img {
   margin-top: -60px;
   background: #fff;
 }
+
+@media (max-width: 1440px) {
+  #container-media-video {
+    width: 400px;
+    height: 550px;
+  }
+}
