@@ -12,14 +12,14 @@ img {
 }
 
 #bg-radiologia {
-  background: url("img/rad_background-removebg.png") center no-repeat;
+  background: url("../img/rad_background-removebg.png") center no-repeat;
   background-size: 75% 130%;
   min-height: 100vh;
 }
 
 .bg-barra-horizontal {
   height: 100px;
-  background: url("img/barra-horizontal.png") center no-repeat;
+  background: url("../img/barra-horizontal.png") center no-repeat;
   background-size: cover;
   width: 100%;
   position: absolute;
@@ -33,7 +33,7 @@ img {
 .img-proximo {
   height: 60px;
   width: 100px;
-  background: url("img/avancar-prox-pagina.png") center no-repeat;
+  background: url("../img/avancar-prox-pagina.png") center no-repeat;
   background-size: contain;
   position: absolute;
   right: 0;
