@@ -1,0 +1,28 @@
+:root {
+  --lightgreen: #bedc96;
+  --black: #222;
+  --darkSlateGray: #282828;
+  --white: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: hidden;
+  z-index: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+main {
+  position: relative;
+}
+
+ul li {
+  list-style: none;
+}

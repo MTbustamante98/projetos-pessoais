@@ -1,28 +1,11 @@
-.flex-img-video {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .container-img-pg-inicial {
   display: flex;
   align-items: center;
-  margin-top: -120px;
+  margin-top: -7.5rem;
 }
 
-/* .container-titulo-parahraph {
-  width: auto;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-} */
-
-.titulo-pg-inicial {
-  font: 700 6rem monospace;
-}
 
 .img-incluir-cuidar {
-  /* margin: 0 0 0 120px; */
   align-self: flex-start;
 }
 

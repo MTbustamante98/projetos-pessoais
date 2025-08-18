@@ -4,11 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Special+Elite&display=swap"
+      rel="stylesheet"
+    />
     <title>Document</title>
   </head>
   <body id="bg-radiologia">
-    <main>
-      <h1>Rotina mão</h1>
-    </main>
+    <header class="header fadeInDown" data-anime="200">
+      <picture
+        ><img src="./img/logo-senac.png" alt="Logo da empresa Senac"
+      /></picture>
+      <h1 class="titulo-header-typewriter" data-titulo>Banco de Imagens</h1>
+    </header>
+    <div class="container-border-left fadeInDown" data-anime="300">
+      <nav class="nav-icones">
+        <ul class="menu-icones">
+          <li><img src="./img/ico-duas-maos-inicio.png" alt="" /></li>
+          <li><img src="./img/ico-info.png" alt=""</li>
+          <li><img src="./img/ico-legenda.png" alt=""</li>
+          <li><img src="./img/ico-mao-apresentacao.png" alt=""</li>
+          <li><img src="./img/ico-rotinas.png" alt=""</li>
+        </ul>
+      </nav>
+    </div>
+    <div id="container-media-video" class="fadeInRight" data-anime="300"></div>
+    <script src="./js/simple-anime.js"></script>
+    <script type="module" src="dist/main.js"></script>
   </body>
 </html>

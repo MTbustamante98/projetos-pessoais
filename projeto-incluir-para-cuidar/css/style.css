@@ -3,5 +3,11 @@
 @import "utilidades/componentes.css";
 @import "utilidades/simple-anime.css";
 
+/* Global */
+@import "global/geral.css";
+
 /* Home */
 @import "home/introducao.css";
+
+/* Banco de imagens */
+@import "banco-de-imagens/banco-imagens.css";
