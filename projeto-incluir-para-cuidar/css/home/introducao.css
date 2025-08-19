@@ -3,10 +3,17 @@
   top: -100px;
 }
 
+.media-video {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+} 
+
 @media (max-width: 1440px) {
   .container-img-pg-inicial {
-    top: -35px;
-}
+    top: -85px;
+    left: -10px;
+  }
 }
 
 @media (max-width: 1024px) {

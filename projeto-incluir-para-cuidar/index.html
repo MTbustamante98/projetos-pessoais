@@ -1,55 +1,51 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Projeto incluir para cuidar" />
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Special+Elite&display=swap"
-      rel="stylesheet"
-    />
-    <title>Incluir para cuidar</title>
-    <style>
-      @media (max-width: 1024px) { #container-media-video { top: 90px;} }
-    </style>
-  </head>
-  <body id="bg-radiologia">
-    <header class="header">
-      <picture
-        ><img src="./img/logo-senac.png" alt="Logo da empresa Senac"
-      /></picture>
-    </header>
-    <main>
-      <article class="introducao-bg">
-        <div class="container-img-pg-inicial">
-          <picture class="fadeInLeft" data-anime="200">
-            <source
-              media="(max-width: 1440px)"
-              srcset="./img/img-pg-inicial-medio.png"
-              type="image/png"
-            />
-            <img
-              src="./img/img-pg-inicial.png"
-              alt="Imagem ilustrativa, incluir para cuidar, soluções para o atendimento de pessoas surdas."
-            />
-          </picture>
-        </div>
-      </article>
-      <div
-        id="container-media-video"
-        class="fadeInRight"
-        data-anime="300"
-      ></div>
-    </main>
-    <footer class="bg-barra-horizontal">
-      <a href="./bancoDeImagens.html">
-        <div class="img-proximo"></div>
-      </a>
-    </footer>
-    <script src="./js/simple-anime.js"></script>
-    <script type="module" src="dist/main.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Projeto incluir para cuidar" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Special+Elite&display=swap" rel="stylesheet" />
+  <title>Incluir para cuidar</title>
+  <style>
+    @media (max-width: 1024px) {
+      #container-media-video {
+        top: 90px;
+      }
+    }
+  </style>
+</head>
+
+<body id="bg-radiologia">
+  <header class="header">
+    <picture><img src="./img/logo-senac.png" alt="Logo da empresa Senac" /></picture>
+  </header>
+  <main>
+    <article class="introducao-bg">
+      <div class="container-img-pg-inicial">
+        <picture class="fadeInLeft" data-anime="200">
+          <source media="(max-width: 1440px)" srcset="./img/img-pg-inicial-medio.png" type="image/png" />
+          <img src="./img/img-pg-inicial.png" alt="Imagem ilustrativa, incluir para cuidar, soluções para o atendimento de pessoas surdas." />
+        </picture>
+      </div>
+    </article>
+    <div id="container-media-video" class="fadeInRight" data-anime="300">
+      <video controls class="media-video">
+        <source src="" type="video/webm" />
+        O teu navegador não suporta vídeo.
+      </video>
+    </div>
+  </main>
+  <footer class="bg-barra-horizontal">
+    <a href="./bancoDeImagens.html">
+      <div class="img-proximo"></div>
+    </a>
+  </footer>
+  <script src="./js/simple-anime.js"></script>
+  <script type="module" src="dist/main.js"></script>
+</body>
+
 </html>

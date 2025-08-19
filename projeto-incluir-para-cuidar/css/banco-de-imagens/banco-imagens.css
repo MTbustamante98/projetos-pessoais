@@ -103,6 +103,10 @@
     top: 160px;
     left: 45px;
   }
+
+  .nav-icones .activeDropChoose {
+    margin-bottom: 50px;
+  }
 }
 
 @media (max-width: 1024px) {

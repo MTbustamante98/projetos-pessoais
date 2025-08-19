@@ -41,7 +41,8 @@
 @media (max-width: 1440px) {
   #container-media-video {
     width: 350px;
-    height: 550px;
+    height: 500px;
+    top: 30px;
   }
 
   .img-proximo {
