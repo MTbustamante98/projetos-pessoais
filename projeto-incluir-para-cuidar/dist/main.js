@@ -16,7 +16,7 @@
   \**************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst activeDropDivs = () => {\r\n  const dropWapper = document.querySelectorAll(\".drop-wrapper\");\r\n  const slide = document.querySelectorAll(\"[data-drop]\");\r\n  const active = \"active\";\r\n  console.log(slide);\r\n  if (slide && slide.length) slide[0].classList.add(active);\r\n\r\n  function handleActiveDiv(e) {\r\n    const itemOpenDiv = e.currentTarget.dataset.toggle;\r\n    const drop = document.querySelector(`[data-drop=\"${itemOpenDiv}\"]`);\r\n    drop?.classList.add(active);\r\n  }\r\n\r\n  function handleLeaveDiv(e) {\r\n    const itemOpenDiv = e.currentTarget.dataset.toggle;\r\n    const drop = document.querySelector(`[data-drop=\"${itemOpenDiv}\"]`);\r\n    drop?.classList.remove(active);\r\n  }\r\n\r\n  function handleTouchToggle(e) {\r\n    const itemOpenDiv = e.currentTarget.dataset.toggle;\r\n    const drop = document.querySelector(`[data-drop=\"${itemOpenDiv}\"]`);\r\n    drop?.classList.toggle(active);\r\n  }\r\n\r\n  dropWapper.forEach((el) => {\r\n    if (window.matchMedia(\"(max-width: 1024px)\").matches) {\r\n      el.addEventListener(\"touchstart\", handleTouchToggle, { passive: true });\r\n    } else {\r\n      el.addEventListener(\"mouseenter\", handleActiveDiv);\r\n      el.addEventListener(\"mouseleave\", handleLeaveDiv);\r\n    }\r\n  });\r\n};\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (activeDropDivs);\r\n\n\n//# sourceURL=webpack:///./js/modules/ActiveDropDivs.js?\n}");
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst activeDropDivs = () => {\r\n  const dropWapper = document.querySelectorAll(\".drop-wrapper\");\r\n  const slide = document.querySelectorAll(\"[data-drop]\");\r\n  const active = \"active\";\r\n\r\n  if (slide && slide.length) slide[0].classList.add(active);\r\n\r\n  function handleActiveDiv(e) {\r\n    const itemOpenDiv = e.currentTarget.dataset.toggle;\r\n    const drop = document.querySelector(`[data-drop=\"${itemOpenDiv}\"]`);\r\n    drop?.classList.add(active);\r\n  }\r\n\r\n  function handleLeaveDiv(e) {\r\n    const itemOpenDiv = e.currentTarget.dataset.toggle;\r\n    const drop = document.querySelector(`[data-drop=\"${itemOpenDiv}\"]`);\r\n    drop?.classList.remove(active);\r\n  }\r\n\r\n  function handleTouchToggle(e) {\r\n    const itemOpenDiv = e.currentTarget.dataset.toggle;\r\n    const drop = document.querySelector(`[data-drop=\"${itemOpenDiv}\"]`);\r\n    drop?.classList.toggle(active);\r\n  }\r\n\r\n  dropWapper.forEach((el) => {\r\n    if (window.matchMedia(\"(max-width: 1024px)\").matches) {\r\n      el.addEventListener(\"touchstart\", handleTouchToggle, { passive: true });\r\n    } else {\r\n      el.addEventListener(\"mouseenter\", handleActiveDiv);\r\n      el.addEventListener(\"mouseleave\", handleLeaveDiv);\r\n    }\r\n  });\r\n};\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (activeDropDivs);\r\n\n\n//# sourceURL=webpack:///./js/modules/ActiveDropDivs.js?\n}");
 
 /***/ }),
 
@@ -30,13 +30,23 @@ eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpa
 
 /***/ }),
 
+/***/ "./js/modules/ToUpdateVideos.js":
+/*!**************************************!*\
+  !*** ./js/modules/ToUpdateVideos.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst toUpdateVideos = () => {\r\n  const video = document.querySelector(\"video\");\r\n  const source = video.querySelector(\"source\");\r\n \r\n  document.addEventListener(\"click\", ({ target }) => {\r\n    const itemOpenVideo = target.closest(\".btn-icone\");\r\n    if (itemOpenVideo) {\r\n      const data = itemOpenVideo.getAttribute(\"data-video\");\r\n      if (data) {\r\n        source.src = `./${data}.mp4`;\r\n\r\n        video.load();\r\n        video.play();\r\n      }\r\n    }\r\n  });\r\n};\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (toUpdateVideos);\r\n\n\n//# sourceURL=webpack:///./js/modules/ToUpdateVideos.js?\n}");
+
+/***/ }),
+
 /***/ "./js/script.js":
 /*!**********************!*\
   !*** ./js/script.js ***!
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_SimpleAnimeActive__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/SimpleAnimeActive */ \"./js/modules/SimpleAnimeActive.js\");\n/* harmony import */ var _modules_ActiveDropDivs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/ActiveDropDivs */ \"./js/modules/ActiveDropDivs.js\");\n\r\n\r\n\r\n(0,_modules_SimpleAnimeActive__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n(0,_modules_ActiveDropDivs__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(); \r\n\n\n//# sourceURL=webpack:///./js/script.js?\n}");
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_SimpleAnimeActive__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/SimpleAnimeActive */ \"./js/modules/SimpleAnimeActive.js\");\n/* harmony import */ var _modules_ActiveDropDivs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/ActiveDropDivs */ \"./js/modules/ActiveDropDivs.js\");\n/* harmony import */ var _modules_ToUpdateVideos__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/ToUpdateVideos */ \"./js/modules/ToUpdateVideos.js\");\n\r\n\r\n\r\n\r\n(0,_modules_ActiveDropDivs__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(); \r\n(0,_modules_SimpleAnimeActive__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n(0,_modules_ToUpdateVideos__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(); \r\n\n\n//# sourceURL=webpack:///./js/script.js?\n}");
 
 /***/ })
 

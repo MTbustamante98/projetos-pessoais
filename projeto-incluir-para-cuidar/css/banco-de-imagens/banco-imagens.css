@@ -81,7 +81,15 @@
 
 .btn-icone:hover {
   background: var(--lightgreen);
-  color: var(--white) !important;
+  color: var(--white);
+}
+
+.btn-icone a {
+  color: var(--darkSlateGray);
+}
+
+.btn-icone:hover a {
+  color: var(--white);
 }
 
 .drop-wrapper {
@@ -112,7 +120,11 @@
 @media (max-width: 1024px) {
   .menu-icones {
     position: absolute;
-    top: 180px;
+    top: 210px;
     left: 45px;
+  }
+
+  .btn-icone {
+    width: 200px;
   }
 }

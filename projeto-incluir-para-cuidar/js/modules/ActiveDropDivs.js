@@ -2,7 +2,7 @@ const activeDropDivs = () => {
   const dropWapper = document.querySelectorAll(".drop-wrapper");
   const slide = document.querySelectorAll("[data-drop]");
   const active = "active";
-  console.log(slide);
+
   if (slide && slide.length) slide[0].classList.add(active);
 
   function handleActiveDiv(e) {
