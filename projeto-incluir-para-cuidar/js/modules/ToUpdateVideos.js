@@ -1,7 +1,8 @@
 const toUpdateVideos = () => {
   const video = document.querySelector("video");
   const source = video.querySelector("source");
- 
+  const title = document.querySelector("[data-titulo]");
+  console.log(title);
   document.addEventListener("click", ({ target }) => {
     const itemOpenVideo = target.closest(".btn-icone");
     if (itemOpenVideo) {
@@ -11,6 +12,8 @@ const toUpdateVideos = () => {
 
         video.load();
         video.play();
+
+        title.innerText = target.innerText;
       }
     }
   });
