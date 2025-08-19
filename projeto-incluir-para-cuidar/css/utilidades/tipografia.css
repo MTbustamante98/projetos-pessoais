@@ -2,3 +2,7 @@
   font: 500 4rem "Special Elite", cursive;
   color: var(--darkSlateGray);
 }
+
+.span-botao-hover {
+  font: 900 1.125rem "Roboto", Arial, sans-serif;
+}

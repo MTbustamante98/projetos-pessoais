@@ -1,16 +1,20 @@
 .container-img-pg-inicial {
-  display: flex;
-  align-items: center;
-  margin-top: -7.5rem;
-}
-
-
-.img-incluir-cuidar {
-  align-self: flex-start;
+  position: absolute;
+  top: -100px;
 }
 
 @media (max-width: 1440px) {
-  .flex-img-video {
-    align-items: center;
+  .container-img-pg-inicial {
+    top: -35px;
+}
+}
+
+@media (max-width: 1024px) {
+  .container-img-pg-inicial {
+    width: 730px;
+    height: 730px;
+    position: absolute;
+    top: 10px;
+    left: -30px;
   }
 }

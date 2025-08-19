@@ -32,16 +32,16 @@
   box-shadow: 12px 14px 0 0 var(--black);
   border-radius: 0.625rem;
   background: var(--white);
-  position: absolute;
+  position: fixed;
   right: 60px;
   top: 100px;
+  bottom: 0;
 }
 
 @media (max-width: 1440px) {
   #container-media-video {
     width: 350px;
-    height: 500px;
-    top: 20px;
+    height: 550px;
   }
 
   .img-proximo {
@@ -50,5 +50,14 @@
 
   .bg-barra-horizontal {
     height: 80px;
+  }
+}
+
+@media (max-width: 1024px) {
+  #container-media-video {
+    width: 300px;
+    height: 550px;
+    right: 40px;
+    top: 150px;
   }
 }

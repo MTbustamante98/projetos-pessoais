@@ -1,0 +1,18 @@
+[data-drop] {
+  display: none;
+}
+
+[data-drop].active {
+  display: block;
+  animation: showLeft 0.8s ease;
+}
+
+@keyframes showLeft {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+      transform: translate(8px, 0);
+    }
+}

@@ -12,22 +12,66 @@
   </head>
   <body id="bg-radiologia">
     <header class="header fadeInDown" data-anime="200">
-      <picture
-        ><img src="./img/logo-senac.png" alt="Logo da empresa Senac"
-      /></picture>
-      <h1 class="titulo-header-typewriter" data-titulo>Banco de Imagens</h1>
+      <picture>
+        <a href="./index.html">
+          <img src="./img/logo-senac.png" alt="Logo da empresa Senac" /> </a
+      ></picture>
+      <h1 class="titulo-header-typewriter" data-titulo>Menu Inicial</h1>
     </header>
-    <div class="container-border-left fadeInDown" data-anime="300">
-      <nav class="nav-icones">
-        <ul class="menu-icones">
-          <li><img src="./img/ico-duas-maos-inicio.png" alt="" /></li>
-          <li><img src="./img/ico-info.png" alt=""</li>
-          <li><img src="./img/ico-legenda.png" alt=""</li>
-          <li><img src="./img/ico-mao-apresentacao.png" alt=""</li>
-          <li><img src="./img/ico-rotinas.png" alt=""</li>
-        </ul>
-      </nav>
-    </div>
+    <section class="container-border-left fadeInDown" data-anime="300">
+      <div class="nav-icones">
+        <div class="menu-icones">
+          <div data-toggle="inicial" class="drop-wrapper">
+            <div class="activeDropChoose">
+              <img src="./img/ico-duas-maos-inicio.png" alt="" />
+            </div>
+            <div class="btn-icone" data-drop="inicial">
+              <span class="span-botao-hover" data-video="inicial">Início</span>
+            </div>
+          </div>
+
+          <div data-toggle="informacao" class="drop-wrapper">
+            <div class="activeDropChoose">
+              <img src="./img/ico-info.png" alt="" />
+            </div>
+            <div class="btn-icone" data-drop="informacao">
+              <span class="span-botao-hover" data-video="informacao"
+                >Informação</span
+              >
+            </div>
+          </div>
+
+          <div data-toggle="legenda" class="drop-wrapper">
+            <div class="activeDropChoose">
+              <img src="./img/ico-legenda.png" alt="" />
+            </div>
+            <div class="btn-icone" data-drop="legenda">
+              <span class="span-botao-hover" data-video="legenda">Legenda</span>
+            </div>
+          </div>
+
+          <div data-toggle="apresentacao" class="drop-wrapper">
+            <div data-toggle="apresentacao" data class="activeDropChoose">
+              <img src="./img/ico-mao-apresentacao.png" alt="" />
+            </div>
+            <div class="btn-icone" data-drop="apresentacao">
+              <span class="span-botao-hover" data-video="apresentacao"
+                >Apresentação</span
+              >
+            </div>
+          </div>
+
+          <div data-toggle="rotinas" class="drop-wrapper">
+            <div class="activeDropChoose">
+              <img src="./img/ico-rotinas.png" alt="" />
+            </div>
+            <div class="btn-icone" data-drop="rotinas">
+              <span class="span-botao-hover" data-video="rotinas">Rotinas</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <div id="container-media-video" class="fadeInRight" data-anime="300"></div>
     <script src="./js/simple-anime.js"></script>
     <script type="module" src="dist/main.js"></script>

@@ -12,6 +12,9 @@
       rel="stylesheet"
     />
     <title>Incluir para cuidar</title>
+    <style>
+      @media (max-width: 1024px) { #container-media-video { top: 90px;} }
+    </style>
   </head>
   <body id="bg-radiologia">
     <header class="header">
@@ -21,22 +24,25 @@
     </header>
     <main>
       <article class="introducao-bg">
-          <div class="container-img-pg-inicial">
-            <picture class="fadeInLeft" data-anime="200">
-              <source
-                media="(max-width: 1440px)"
-                srcset="./img/img-pg-inicial-responsivo.png"
-                type="image/png"
-              />
-              <img
-                class="img-incluir-cuidar"
-                src="./img/img-pg-inicial.png"
-                alt="Imagem ilustrativa, incluir para cuidar, soluções para o atendimento de pessoas surdas."
-              />
-            </picture>
-          </div>
-        </article>
-        <div id="container-media-video" class="fadeInRight" data-anime="300"></div>
+        <div class="container-img-pg-inicial">
+          <picture class="fadeInLeft" data-anime="200">
+            <source
+              media="(max-width: 1440px)"
+              srcset="./img/img-pg-inicial-medio.png"
+              type="image/png"
+            />
+            <img
+              src="./img/img-pg-inicial.png"
+              alt="Imagem ilustrativa, incluir para cuidar, soluções para o atendimento de pessoas surdas."
+            />
+          </picture>
+        </div>
+      </article>
+      <div
+        id="container-media-video"
+        class="fadeInRight"
+        data-anime="300"
+      ></div>
     </main>
     <footer class="bg-barra-horizontal">
       <a href="./bancoDeImagens.html">

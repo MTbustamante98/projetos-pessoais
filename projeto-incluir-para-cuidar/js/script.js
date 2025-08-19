@@ -1,3 +1,5 @@
-if (window.SimpleAnime) {
-  new SimpleAnime();
-}
+import activeSimpleAnime from "./modules/SimpleAnimeActive";
+import activeDropDivs from "./modules/ActiveDropDivs";
+
+activeSimpleAnime();
+activeDropDivs(); 
