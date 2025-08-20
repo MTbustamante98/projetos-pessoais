@@ -1,0 +1,63 @@
+.position-modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal {
+  width: 800px;
+  height: 650px;
+}
+
+.modal-flex {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 65vh;
+}
+
+.box-modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 250px;
+  border: 3px solid var(--black);
+  border-radius: 0.625rem;
+  background: var(--white);
+  box-shadow: 7px 5px 0 0 var(--black);
+  position: relative;
+  transition: all 0.8s ease;
+}
+
+.box-modal:hover {
+  transform: translateY(-5px);
+  box-shadow: 10px 8px 0 0 var(--black);
+}
+
+.box-modal::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  transition: width 0.6s ease;
+  /* background: var(--lightgreen); */
+  background: rgba(0, 0, 0, 0.1);
+  z-index: -1;
+}
+
+.box-modal:hover::after {
+  width: 100%;
+  right: auto;
+  left: 0;
+}
+
+.paragraph-modal {
+  color: var(--darkSlateGray);
+}

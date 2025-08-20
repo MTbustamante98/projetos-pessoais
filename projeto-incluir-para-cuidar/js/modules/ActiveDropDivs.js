@@ -1,10 +1,19 @@
+import { dropWapper, slide, active } from "./elements";
+
+document.addEventListener("DOMContentLoaded", () => {
+  setTimeout(() => {
+    slide.forEach((divSlide) => {
+      if (divSlide) divSlide.classList.add(active);
+    });
+    setTimeout(() => {
+      slide.forEach((divSlide) => {
+        if (divSlide) divSlide.classList.remove(active);
+      });
+    }, 3000);
+  }, 1000);
+});
+
 const activeDropDivs = () => {
-  const dropWapper = document.querySelectorAll(".drop-wrapper");
-  const slide = document.querySelectorAll("[data-drop]");
-  const active = "active";
-
-  if (slide && slide.length) slide[0].classList.add(active);
-
   function handleActiveDiv(e) {
     const itemOpenDiv = e.currentTarget.dataset.toggle;
     const drop = document.querySelector(`[data-drop="${itemOpenDiv}"]`);

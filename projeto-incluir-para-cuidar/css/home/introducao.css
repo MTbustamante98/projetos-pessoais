@@ -7,11 +7,18 @@
   width: 100%;
   height: 100%;
   border-radius: 4px;
-} 
+}
 
 @media (max-width: 1440px) {
   .container-img-pg-inicial {
     top: -85px;
+    left: -10px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .container-img-pg-inicial {
+    top: 0px;
     left: -10px;
   }
 }

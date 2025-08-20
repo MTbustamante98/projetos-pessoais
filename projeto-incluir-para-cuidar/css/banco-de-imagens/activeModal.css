@@ -1,0 +1,23 @@
+[data-modal] {
+  display: none;
+}
+
+[data-modal].active {
+  display: flex;
+  animation: showModal 0.8s ease forwards;
+}
+
+@keyframes showModal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 60px);
+  }
+}
+
+#container-media-video.removeClass {
+  display: none;
+}
+

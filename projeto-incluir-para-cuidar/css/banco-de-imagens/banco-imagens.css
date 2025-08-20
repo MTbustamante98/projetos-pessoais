@@ -105,6 +105,10 @@
   left: 40px;
 }
 
+.classe-utilitaria {
+  top: 200px;
+}
+
 @media (max-width: 1440px) {
   .menu-icones {
     position: absolute;
@@ -114,6 +118,12 @@
 
   .nav-icones .activeDropChoose {
     margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .menu-icones {
+    top: 210px;
   }
 }
 

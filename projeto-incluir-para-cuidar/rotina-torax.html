@@ -10,10 +10,8 @@
     />
     <title>Document</title>
     <style>
-      @media (max-width: 1920px) {
-        #container-media-video {
-          top: 190px;
-        }
+      #container-media-video {
+        top: 160px;
       }
 
       @media (max-width: 1440px) {
@@ -23,7 +21,6 @@
       }
     </style>
   </head>
-
   <body id="bg-radiologia">
     <header class="header fadeInDown" data-anime="200">
       <picture>
@@ -31,7 +28,7 @@
           <img src="./img/logo-senac.png" alt="Logo da empresa Senac" />
         </a>
       </picture>
-      <h1 class="titulo-header-typewriter" data-titulo>Menu Inicial</h1>
+      <h1 class="titulo-header-typewriter" data-titulo>Rotina Tórax</h1>
     </header>
     <section class="container-border-left fadeInDown" data-anime="300">
       <div class="nav-icones">
@@ -103,42 +100,39 @@
         </div>
       </div>
     </section>
-    <div class="position-modal">
-      <section class="modal" data-modal>
-        <div class="modal-flex">
-          <a href="./rotina-mao.html">
-            <div class="box-modal">
-              <p class="paragraph-modal font-p-modal-xl">Mão</p>
-            </div>
-          </a>
-          <a href="./rotina-cranio.html">
-            <div class="box-modal">
-              <p class="paragraph-modal font-p-modal-xl">Crânio</p>
-            </div>
-          </a>
-          <a href="./rotina-abdome.html">
-            <div class="box-modal">
-              <p class="paragraph-modal font-p-modal-xl">Abdome</p>
-            </div>
-          </a>
-          <a href="./rotina-torax.html">
-            <div class="box-modal">
-              <p class="paragraph-modal font-p-modal-xl">Tórax</p>
-            </div>
-          </a>
-        </div>
-      </section>
-    </div>
-    <div
-      id="container-media-video"
-      class="fadeInRight"
-      data-anime="300"
-    >
+    <section class="modal" data-modal>
+      <div class="modal-flex">
+        <a href="./rotina-mao.html">
+          <div class="box-modal">
+            <p class="paragraph-modal font-p-modal-xl">Mão</p>
+          </div>
+        </a>
+        <a href="./rotina-cranio.html">
+          <div class="box-modal">
+            <p class="paragraph-modal font-p-modal-xl">Crânio</p>
+          </div>
+        </a>
+        <a href="./rotina-abdome.html">
+          <div class="box-modal">
+            <p class="paragraph-modal font-p-modal-xl">Abdome</p>
+          </div>
+        </a>
+        <a href="./rotina-torax.html">
+          <div class="box-modal">
+            <p class="paragraph-modal font-p-modal-xl">Tórax</p>
+          </div>
+        </a>
+      </div>
+    </section>
+    <div id="container-media-video" class="fadeInRight" data-anime="300">
       <video controls class="media-video">
         <source src="" type="video/webm" />
         O teu navegador não suporta vídeo.
       </video>
     </div>
+    <footer class="bg-barra-horizontal">
+      <a href=""> </a>
+    </footer>
     <script src="./js/simple-anime.js"></script>
     <script type="module" src="dist/main.js"></script>
   </body>
