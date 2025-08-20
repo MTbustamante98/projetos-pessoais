@@ -8,6 +8,7 @@
 .modal {
   width: 800px;
   height: 650px;
+  position: relative;
 }
 
 .modal-flex {
@@ -60,6 +61,12 @@
 
 .paragraph-modal {
   color: var(--darkSlateGray);
+}
+
+.close-modal {
+  position: absolute;
+  top: -60px;
+  cursor: pointer;
 }
 
 @media (max-width: 1024px) {
