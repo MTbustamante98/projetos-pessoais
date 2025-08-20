@@ -8,5 +8,11 @@
 }
 
 .font-p-modal-xl {
-  font: 900 3.5rem "Roboto", Arial, sans-serif;;
+  font: 900 3.5rem "Roboto", Arial, sans-serif;
+}
+
+@media (max-width: 1024px) {
+  .font-p-modal-xl {
+    font-size: 2rem;
+  }
 }

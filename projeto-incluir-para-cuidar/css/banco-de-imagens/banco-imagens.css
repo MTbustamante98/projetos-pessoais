@@ -130,8 +130,12 @@
 @media (max-width: 1024px) {
   .menu-icones {
     position: absolute;
-    top: 210px;
+    top: 190px;
     left: 45px;
+  }
+
+  .nav-icones .activeDropChoose {
+    margin-bottom: 60px;
   }
 
   .btn-icone {

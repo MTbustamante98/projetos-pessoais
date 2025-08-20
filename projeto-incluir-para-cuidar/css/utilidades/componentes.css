@@ -63,10 +63,18 @@
 }
 
 @media (max-width: 1024px) {
-  #container-media-video {
-    width: 300px;
-    height: 550px;
-    right: 30px;
-    top: 170px !important;
+  #bg-radiologia {
+    background-size: contain;
+  }
+
+  .media-utilitario {
+    width: 320px !important;
+    height: 550px !important;
+    top: 150px !important;
+    right: 30px !important;
+  }
+
+  .remover-media {
+    display: none;
   }
 }

@@ -61,3 +61,19 @@
 .paragraph-modal {
   color: var(--darkSlateGray);
 }
+
+@media (max-width: 1024px) {
+  .modal {
+    width: 300px;
+  }
+
+  .modal-flex {
+    flex-direction: column;
+    margin-top: 2rem;
+  }
+
+  .box-modal {
+    width: 200px;
+    height: 170px;
+  }
+}

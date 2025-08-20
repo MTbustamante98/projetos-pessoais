@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
       slide.forEach((divSlide) => {
         if (divSlide) divSlide.classList.remove(active);
       });
-    }, 3000);
+    }, 1500);
   }, 1000);
 });
 

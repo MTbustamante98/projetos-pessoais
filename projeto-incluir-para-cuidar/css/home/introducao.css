@@ -25,10 +25,9 @@
 
 @media (max-width: 1024px) {
   .container-img-pg-inicial {
-    width: 730px;
-    height: 730px;
+    width: 820px;
     position: absolute;
-    top: 10px;
-    left: -30px;
+    top: 50%;
+    left: -35px;
   }
 }
