@@ -63,7 +63,7 @@
 }
 
 @media (max-width: 1024px) {
-  #bg-radiologia {
+  .bg-radiologia {
     background-size: contain;
   }
 
