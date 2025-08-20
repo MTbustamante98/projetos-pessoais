@@ -5,6 +5,7 @@ import {
   active,
   title,
   video,
+  closeModal,
 } from "./elements";
 
 const activeModal = () => {
@@ -19,7 +20,8 @@ const activeModal = () => {
     });
 
     document.addEventListener("click", ({ target }) => {
-      if (!modal.contains(target) && ![...btnModal].includes(target)) {
+      console.log(target)
+      if (!modal.contains(target) && ![...btnModal].includes(target) && !closeModal.contains(target) || target === closeModal) {
         if (modal.classList.contains(active)) {
           modal.classList.remove(active);
           containerMedia.classList.remove("removeClass");

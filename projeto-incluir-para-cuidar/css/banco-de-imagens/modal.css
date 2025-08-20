@@ -63,10 +63,25 @@
   color: var(--darkSlateGray);
 }
 
-.close-modal {
+.container-close-modal {
   position: absolute;
   top: -60px;
   cursor: pointer;
+}
+
+@media (max-width: 1440px) {
+  .modal {
+    margin-top: 10rem;
+  }
+
+  .box-modal {
+    width: 240px;
+    height: 190px;
+  }
+
+  .container-close-modal {
+    top: -80px;
+    right: 130px; }
 }
 
 @media (max-width: 1024px) {

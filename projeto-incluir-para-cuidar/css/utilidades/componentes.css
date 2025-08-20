@@ -1,4 +1,4 @@
-#bg-radiologia {
+.bg-radiologia {
   background: url("../../img/rad_background-removebg.png") center no-repeat;
   background-size: 75% 130%;
   min-height: 100vh;

@@ -3,7 +3,7 @@
 }
 
 [data-modal].active {
-  display: flex;
+  display: block;
   animation: showModal 0.8s ease forwards;
 }
 

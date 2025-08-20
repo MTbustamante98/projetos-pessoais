@@ -10,18 +10,16 @@
     />
     <title>Document</title>
     <style>
-      #container-media-video {
-        top: 160px;
-      }
-
       @media (max-width: 1440px) {
         #container-media-video {
-          top: 100px;
+          height: 470px;
+          top: 55px;
         }
       }
     </style>
   </head>
-  <body id="bg-radiologia">
+
+  <body class="bg-radiologia" id="rotina-abdome">
     <header class="header fadeInDown" data-anime="200">
       <picture>
         <a href="./index.html">
@@ -88,45 +86,17 @@
               >
             </div>
           </div>
-
-          <div data-toggle="rotinas" class="drop-wrapper">
-            <div class="activeDropChoose">
-              <img src="./img/ico-rotinas.png" alt="" />
-            </div>
-            <div class="btn-icone" data-drop="rotinas" data-active-modal>
-              <span class="span-botao-hover" data-active-modal>Rotinas</span>
-            </div>
-          </div>
         </div>
       </div>
-    </section><div class="position-modal">
-      
-      <section class="modal" data-modal>
-        <div class="modal-flex">
-          <a href="./rotina-mao.html">
-            <div class="box-modal">
-              <p class="paragraph-modal font-p-modal-xl">Mão</p>
-            </div>
-          </a>
-          <a href="./rotina-cranio.html">
-            <div class="box-modal">
-              <p class="paragraph-modal font-p-modal-xl">Crânio</p>
-            </div>
-          </a>
-          <a href="./rotina-abdome.html">
-            <div class="box-modal">
-              <p class="paragraph-modal font-p-modal-xl">Abdome</p>
-            </div>
-          </a>
-          <a href="./rotina-torax.html">
-            <div class="box-modal">
-              <p class="paragraph-modal font-p-modal-xl">Tórax</p>
-            </div>
-          </a>
-        </div>
-      </section>
+    </section>
+    <div>
+      <img class="container-img-rotina" src="" alt="">
     </div>
-    <div id="container-media-video" class="fadeInRight media-utilitario" data-anime="300">
+    <div
+      id="container-media-video"
+      class="fadeInRight media-utilitario"
+      data-anime="300"
+    >
       <video controls class="media-video">
         <source src="" type="video/webm" />
         O teu navegador não suporta vídeo.
