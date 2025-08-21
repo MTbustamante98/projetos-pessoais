@@ -4,37 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/media-utilitario-menu.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Special+Elite&display=swap"
       rel="stylesheet"
     />
     <title>Document</title>
-    <style>
-      @media (max-width: 1920px) {
-        #container-media-video {
-          top: 160px;
-        }
-      }
-
-      @media (max-width: 1440px) {
-        #container-media-video {
-          top: 100px;
-        }
-      }
-
-      @media (max-width: 1280px) {
-        #container-media-video {
-          top: 170px !important;
-        }
-      }
-
-      @media (max-width: 1024px) {
-        #container-media-video {
-          width: 300px !important;
-          top: 190px !important;
-        }
-      }
-    </style>
   </head>
 
   <body class="bg-radiologia">
@@ -46,76 +21,82 @@
       </picture>
       <h1 class="titulo-header-typewriter" data-titulo>Menu Inicial</h1>
     </header>
-    <section class="container-border-left fadeInDown" data-anime="300">
-      <div class="nav-icones">
-        <div class="menu-icones">
-          <a href="./index.html">
-            <div data-toggle="inicial" class="drop-wrapper">
+
+    <main>
+      <section class="container-border-left fadeInDown" data-anime="300">
+        <div class="nav-icones">
+          <div class="menu-icones">
+            <a href="./index.html">
+              <div data-toggle="inicial" class="drop-wrapper">
+                <div class="activeDropChoose">
+                  <img src="./img/ico-duas-maos-inicio.png" alt="" />
+                </div>
+                <div class="btn-icone" data-drop="inicial">
+                  <span class="span-botao-hover">Início</span>
+                </div>
+              </div>
+            </a>
+            <div data-toggle="informacao" class="drop-wrapper">
               <div class="activeDropChoose">
-                <img src="./img/ico-duas-maos-inicio.png" alt="" />
+                <img src="./img/ico-info.png" alt="" />
               </div>
-              <div class="btn-icone" data-drop="inicial">
-                <span class="span-botao-hover">Início</span>
+              <div
+                class="btn-icone"
+                data-drop="informacao"
+                data-video="./videos/info"
+              >
+                <span class="span-botao-hover" data-video="./videos/info"
+                  >Informação</span
+                >
               </div>
             </div>
-          </a>
-
-          <div data-toggle="informacao" class="drop-wrapper">
-            <div class="activeDropChoose">
-              <img src="./img/ico-info.png" alt="" />
-            </div>
-            <div
-              class="btn-icone"
-              data-drop="informacao"
-              data-video="./videos/info"
-            >
-              <span class="span-botao-hover" data-video="./videos/info"
-                >Informação</span
+            <div data-toggle="legenda" class="drop-wrapper">
+              <div class="activeDropChoose">
+                <img src="./img/ico-legenda.png" alt="" />
+              </div>
+              <div
+                class="btn-icone"
+                data-drop="legenda"
+                data-video="./videos/legenda"
               >
+                <span class="span-botao-hover" data-video="./videos/legenda"
+                  >Legenda</span
+                >
+              </div>
             </div>
-          </div>
-
-          <div data-toggle="legenda" class="drop-wrapper">
-            <div class="activeDropChoose">
-              <img src="./img/ico-legenda.png" alt="" />
-            </div>
-            <div
-              class="btn-icone"
-              data-drop="legenda"
-              data-video="./videos/legenda"
-            >
-              <span class="span-botao-hover" data-video="./videos/legenda"
-                >Legenda</span
+            <div data-toggle="apresentacao" class="drop-wrapper">
+              <div data-toggle="apresentacao" data class="activeDropChoose">
+                <img src="./img/ico-mao-apresentacao.png" alt="" />
+              </div>
+              <div
+                class="btn-icone"
+                data-drop="apresentacao"
+                data-video="./videos/apresentacao"
               >
+                <span class="span-botao-hover" data-video="./videos/apresentacao"
+                  >Apresentação</span
+                >
+              </div>
             </div>
-          </div>
-
-          <div data-toggle="apresentacao" class="drop-wrapper">
-            <div data-toggle="apresentacao" data class="activeDropChoose">
-              <img src="./img/ico-mao-apresentacao.png" alt="" />
-            </div>
-            <div
-              class="btn-icone"
-              data-drop="apresentacao"
-              data-video="./videos/apresentacao"
-            >
-              <span class="span-botao-hover" data-video="./videos/apresentacao"
-                >Apresentação</span
-              >
-            </div>
-          </div>
-
-          <div data-toggle="rotinas" class="drop-wrapper">
-            <div class="activeDropChoose">
-              <img src="./img/ico-rotinas.png" alt="" />
-            </div>
-            <div class="btn-icone" data-drop="rotinas" data-active-modal>
-              <span class="span-botao-hover" data-active-modal>Rotinas</span>
+            <div data-toggle="rotinas" class="drop-wrapper">
+              <div class="activeDropChoose">
+                <img src="./img/ico-rotinas.png" alt="" />
+              </div>
+              <div class="btn-icone" data-drop="rotinas" data-active-modal>
+                <span class="span-botao-hover" data-active-modal>Rotinas</span>
+              </div>
             </div>
           </div>
         </div>
+      </section>
+      <div id="container-media-video" class="fadeInRight" data-anime="300">
+        <video controls class="media-video">
+          <source src="" type="video/webm" />
+          O teu navegador não suporta vídeo.
+        </video>
       </div>
-    </section>
+    </main>
+
     <div class="position-modal">
       <section class="modal" data-modal>
         <div class="container-close-modal">
@@ -146,12 +127,6 @@
           </a>
         </div>
       </section>
-    </div>
-    <div id="container-media-video" class="fadeInRight" data-anime="300">
-      <video controls class="media-video">
-        <source src="" type="video/webm" />
-        O teu navegador não suporta vídeo.
-      </video>
     </div>
     <script src="./js/simple-anime.js"></script>
     <script type="module" src="dist/main.js"></script>

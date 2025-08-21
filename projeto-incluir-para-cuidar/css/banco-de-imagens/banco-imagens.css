@@ -141,4 +141,8 @@
   .btn-icone {
     width: 200px;
   }
+
+  #estilo-utilitario {
+    display: none;
+  }
 }

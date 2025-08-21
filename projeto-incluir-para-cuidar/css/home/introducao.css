@@ -1,6 +1,6 @@
 .container-img-pg-inicial {
   position: absolute;
-  top: -100px;
+  top: 30px;
 }
 
 .media-video {
@@ -11,7 +11,7 @@
 
 @media (max-width: 1440px) {
   .container-img-pg-inicial {
-    top: -85px;
+    top: 60px;
     left: -10px;
   }
 }
@@ -27,7 +27,7 @@
   .container-img-pg-inicial {
     width: 820px;
     position: absolute;
-    top: 50%;
-    left: -35px;
+    top: 17%;
+    left: -45px;
   }
 }

@@ -1,0 +1,25 @@
+/* Media queries específicos para cada página */
+@media (max-width: 1920px) {
+  #container-media-video {
+    top: 160px;
+  }
+}
+
+@media (max-width: 1440px) {
+  #container-media-video {
+    top: 100px;
+  }
+}
+
+@media (max-width: 1280px) {
+  #container-media-video {
+    top: 170px !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  #container-media-video {
+    width: 300px !important;
+    top: 190px !important;
+  }
+}

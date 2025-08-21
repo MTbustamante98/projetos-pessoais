@@ -57,7 +57,12 @@
 }
 
 @media (max-width: 1280px) {
-  #container-media-video  {
+  .bg-radiologia {
+    background-size: contain;
+  }
+
+  /* Media somente para a página inicial */
+  #container-media-video {
     top: 130px !important;
     right: 30px !important;
   }
@@ -66,13 +71,6 @@
 @media (max-width: 1024px) {
   .bg-radiologia {
     background-size: contain;
-  }
-
-  .media-utilitario {
-    width: 520px !important;
-    height: 230px !important;
-    top: 430px !important;
-    right: 30px !important;
   }
 
   .remover-media {

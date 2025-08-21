@@ -3,3 +3,35 @@
   top: 200px;
   left: 500px;
 }
+
+@media (max-width: 1440px) {
+  .container-img-rotina {
+    top: 160px;
+    left: 360px;
+    /* top: 170px;
+    left: 10px; */
+  }
+
+  .container-img-rotina img {
+    width: 500px !important;
+    height: 350px;
+    /* width: 320px !important;
+    height: 500px; */
+  }
+}
+
+@media (max-width: 1024px) {
+  .container-img-rotina {
+    top: 160px;
+    left: 100px;
+    top: 170px;
+    left: 10px;
+  }
+
+  .container-img-rotina img {
+    width: 650px !important;
+    height: 250px;
+    /* width: 320px !important;
+    height: 500px; */
+  }
+}
