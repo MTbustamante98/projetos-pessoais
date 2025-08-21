@@ -48,11 +48,13 @@
   }
 
   .img-proximo {
-    top: 20%;
+    height: 75%;
+    width: 4%;
+    top: 14%;
   }
 
   .bg-barra-horizontal {
-    height: 12%;
+    height: 10%;
   }
 }
 
@@ -63,7 +65,9 @@
 
   /* Media somente para a página inicial */
   #container-media-video {
-    top: 130px !important;
+    width: 30%;
+    height: 70%;
+    top: 85px !important;
     right: 30px !important;
   }
 }
@@ -74,16 +78,23 @@
   }
 
   .remover-media {
-    display: none;
+    display: block;
   }
 
   .img-proximo {
-    height: 80%;
+    height: 65%;
     width: 7%;
-    top: 0.313rem;
+    top: 0.938rem;
   }
 
   .bg-barra-horizontal {
     height: 11%;
+  }
+
+  #container-media-video {
+    width: 70%;
+    height: 40%;
+    top: 40% !important;
+    right: 100px !important;
   }
 }

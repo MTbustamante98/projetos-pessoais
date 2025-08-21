@@ -19,7 +19,9 @@
 
 @media (max-width: 1024px) {
   #container-media-video {
-    width: 300px !important;
-    top: 190px !important;
+    width: 300px;
+    height: 70%;
+    top: 160px !important;
+    right: 1.25rem !important;
   }
 }

@@ -7,13 +7,13 @@
 
 @media (max-width: 1024px) {
   #container-media-video {
-    top: 450px !important;
+    /* top: 450px !important;
     right: 140px !important;
     width: 520px !important;
-    height: 230px !important;
-    /* top: 145px !important;
+    height: 230px !important; */
+    top: 145px !important;
     right: 20px !important;
-    width: 300px !important;
-    height: 520px !important; */
+    width: 50% !important;
+    height: 70% !important;
   }
 }

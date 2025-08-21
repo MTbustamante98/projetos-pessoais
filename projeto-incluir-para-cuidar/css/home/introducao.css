@@ -19,15 +19,20 @@
 @media (max-width: 1280px) {
   .container-img-pg-inicial {
     top: 7.5rem;
-    left: 2.813rem;
+    left: -3rem;
   }
 }
 
 @media (max-width: 1024px) {
   .container-img-pg-inicial {
-    width: 820px;
     position: absolute;
-    top: 9rem;
-    left: -2.813rem;
+    /* top: 10rem;
+    left: -2.813rem; */
+    top: -50px;
+    left: 140px;
+  }
+
+  .container-img-pg-inicial img {
+    width: 600px !important;
   }
 }

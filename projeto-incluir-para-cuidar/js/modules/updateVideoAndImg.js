@@ -20,7 +20,11 @@ const updateVideoImg = () => {
       },
       { img: "./img/abdome-orts-ap.png", video: "./videos/abdome-orts-ap.mp4" },
       { img: "./img/abdome-rub-dle.png", video: "./videos/abdome-rub-dle.mp4" },
-      { img: "./img/abdome-dle.png", video: "./videos/abdome-dle.mp4" },
+      { img: "./img/abdome-dle.png", video: "./videos/abdome-dle.m  p4" },
+    ],
+    torax: [
+      { img: "./img/torax-pa.png", video: "./videos/torax-pa.mp4" },
+      { img: "./img/torax-pe.png", video: "./videos/torax-pe.mp4" },
     ],
   };
 
