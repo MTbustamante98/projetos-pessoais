@@ -42,17 +42,17 @@
 
 @media (max-width: 1440px) {
   #container-media-video {
-    width: 23%;
-    height: 75%;
-    top: 1.875rem;
+    width: 350px;
+    height: 500px;
+    top: 30px;
   }
 
   .img-proximo {
-    top: 20%;
+    top: 10px;
   }
 
   .bg-barra-horizontal {
-    height: 12%;
+    height: 80px;
   }
 }
 
@@ -84,6 +84,6 @@
   }
 
   .bg-barra-horizontal {
-    height: 11%;
+    height: 8%;
   }
 }
