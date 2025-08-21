@@ -13,7 +13,7 @@ export const containerMedia = document.querySelector("#container-media-video");
 export const closeModal = document.querySelector(".close-modal");
 
 //Rotinas
-export const sliderImg = document.querySelector(".container-img-rotina");
+export const sliderImg = document.querySelector("[data-imagem-rotina]");
 
 export const active = "active";
 export const title = document.querySelector("[data-titulo]");
