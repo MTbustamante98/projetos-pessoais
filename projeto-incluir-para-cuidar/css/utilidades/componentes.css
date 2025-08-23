@@ -92,13 +92,19 @@
   }
 
   .img-proximo {
-    height: 65%;
+    height: 70%;
     width: 7%;
-    top: 0.938rem;
+    top: 0.625rem;
+  }
+
+  .img-prev {
+    height: 70%;
+    width: 7%;
+    top: 0.625rem;
   }
 
   .bg-barra-horizontal {
-    height: 11%;
+    height: 8%;
   }
 
   #container-media-video {
