@@ -26,13 +26,11 @@
   }
 
   #titulo-rotinas-posicao {
-    margin: 0.938rem 0 0 -1.875rem;
+    margin: 1.875rem 0 0 -0.875rem;
   }
 
   .container-img-rotina {
-    top: 160px;
-    left: 100px;
-    top: 170px;
+    top: 45px;
     left: 10px;
   }
 
@@ -40,6 +38,6 @@
     /* width: 650px !important;
     height: 250px; */
     width: 60% !important;
-    height: 450px;
+    height: 550px;
   }
 }
