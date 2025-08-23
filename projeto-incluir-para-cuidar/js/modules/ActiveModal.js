@@ -35,11 +35,12 @@ const activeModal = () => {
 
   events.forEach((eventType) => {
     document.addEventListener(eventType, ({ target }) => {
-      if (
-        !modal.contains(target) &&
-        ![...btnModal].includes(target) &&
-        !closeModal.contains(target)
-      ) {
+      const isOutsideModal = modal && !modal.contains(target);
+      const isNotBtn = ![...btnModal].includes(target);
+      const isNotClose = closeModal && !closeModal.contains(target);
+      const isClose = target === closeModal;
+
+      if ((isOutsideModal && isNotBtn && isNotClose) || isClose) {
         closeModalHandler();
       }
     });
