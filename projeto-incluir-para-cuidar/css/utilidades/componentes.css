@@ -9,8 +9,9 @@
   background: url("../../img/barra-horizontal.png") center no-repeat;
   background-size: cover;
   width: 100%;
-  position: absolute;
+  position: fixed;
   bottom: 0;
+  z-index: 10;
 }
 
 .img-proximo {
