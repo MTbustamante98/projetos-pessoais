@@ -27,16 +27,18 @@ const activeModal = () => {
     title.setAttribute("data-titulo", "Menu Inicial");
   }
 
-  events.forEach((eventType) =>
-    closeModal.addEventListener(eventType, closeModalHandler)
-  );
+  if (closeModal) {
+    events.forEach((eventType) =>
+      closeModal.addEventListener(eventType, closeModalHandler)
+    );
+  }
 
   events.forEach((eventType) => {
     document.addEventListener(eventType, ({ target }) => {
       if (
-        (!modal.contains(target) &&
-          ![...btnModal].includes(target) &&
-          !closeModal.contains(target))
+        !modal.contains(target) &&
+        ![...btnModal].includes(target) &&
+        !closeModal.contains(target)
       ) {
         closeModalHandler();
       }

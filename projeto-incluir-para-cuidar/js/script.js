@@ -7,7 +7,5 @@ import updateVideoImg from "./modules/updateVideoAndImg";
 activeDropDivs();
 activeSimpleAnime();
 toUpdateVideos();
-document.addEventListener("DOMContentLoaded", () => {
-  activeModal();
-});
+activeModal();
 updateVideoImg();
