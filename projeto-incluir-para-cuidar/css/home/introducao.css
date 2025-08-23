@@ -1,6 +1,8 @@
 .container-img-pg-inicial {
   position: absolute;
-  top: 2rem;
+  top: -7rem;
+  right: auto;
+  left: auto;
 }
 
 .media-video {
