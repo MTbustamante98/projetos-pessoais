@@ -71,6 +71,13 @@
 }
 
 @media (max-width: 1440px) {
+  .position-modal {
+    position: absolute;
+    left: 58%;
+    top: 43%;
+    transform: translate(-50%, -50%);
+  }
+
   .modal {
     margin-top: 0;
   }
@@ -89,7 +96,6 @@
 @media (max-width: 1024px) {
   .modal {
     width: 300px;
-    margin-top: 1rem;
   }
 
   .modal-flex {
@@ -97,12 +103,12 @@
   }
 
   .box-modal {
-    width: 200px;
-    height: 170px;
+    width: 170px;
+    height: 160px;
   }
 
   .container-close-modal {
-    top: -1.875rem;
-    right: -10.313rem;
+    top: 0;
+    right: -6.313rem;
   }
 }
