@@ -4,8 +4,10 @@ import toUpdateVideos from "./modules/ToUpdateVideos";
 import activeModal from "./modules/ActiveModal";
 import updateVideoImg from "./modules/updateVideoAndImg";
 
-activeDropDivs(); 
+activeDropDivs();
 activeSimpleAnime();
-toUpdateVideos(); 
-activeModal();
+toUpdateVideos();
+document.addEventListener("DOMContentLoaded", () => {
+  activeModal();
+});
 updateVideoImg();
