@@ -18,22 +18,22 @@ const activeModal = () => {
     title.innerText = e.currentTarget.innerText.trim();
     video.pause();
   }
-  
-    document.addEventListener("click", ({ target }) => {
-      if (
-        (!modal.contains(target) &&
-          ![...btnModal].includes(target) &&
-          !closeModal.contains(target)) ||
-        target === closeModal
-      ) {
-        if (modal.classList.contains(active)) {
-          modal.classList.remove(active);
-          containerMedia.classList.remove("removeClass");
-          title.innerText = "Menu Inicial";
-          title.setAttribute("data-titulo", "Menu Inicial");
-        }
+
+  document.addEventListener("click", ({ target }) => {
+    if (
+      (!modal.contains(target) &&
+        ![...btnModal].includes(target) &&
+        !closeModal.contains(target)) ||
+      target === closeModal
+    ) {
+      if (modal.classList.contains(active)) {
+        modal.classList.remove(active);
+        containerMedia.classList.remove("removeClass");
+        title.innerText = "Menu Inicial";
+        title.setAttribute("data-titulo", "Menu Inicial");
       }
-    });
+    }
+  });
 
   if (events.length > 0) {
     events.forEach((eventType) => {
