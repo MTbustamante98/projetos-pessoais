@@ -121,6 +121,7 @@
 
   .container-border-left {
     width: 11%;
+    height: 100vh;
   }
 }
 
@@ -137,7 +138,7 @@
   }
 
   .container-border-left {
-    width: 21%;
+    width: 24%;
   }
 
   .nav-icones .activeDropChoose {
