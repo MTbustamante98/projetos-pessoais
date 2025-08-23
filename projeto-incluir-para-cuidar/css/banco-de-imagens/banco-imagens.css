@@ -147,7 +147,8 @@
   }
 
   .btn-icone {
-    width: 195px;
+    width: 200px;
+    left: 100%;
   }
 
   #estilo-utilitario {
