@@ -20,7 +20,6 @@ const activeModal = () => {
     });
 
     document.addEventListener("click", ({ target }) => {
-      console.log(target)
       if (!modal.contains(target) && ![...btnModal].includes(target) && !closeModal.contains(target) || target === closeModal) {
         if (modal.classList.contains(active)) {
           modal.classList.remove(active);

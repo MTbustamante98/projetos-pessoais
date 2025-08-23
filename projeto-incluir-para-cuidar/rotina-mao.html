@@ -9,19 +9,46 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Special+Elite&display=swap"
       rel="stylesheet"
     />
-    <title>Document</title>
+    <title>Rotina mão</title>
+    <style>
+      @media (max-width: 1024px) {
+        [data-titulo]::after {
+          position: absolute;
+          top: -16px;
+          background: url("../../img/ico-play.png") no-repeat;
+        }
+      }
+    </style>
   </head>
   <body class="bg-radiologia" id="rotina-mao">
-    <header class="header fadeInDown" data-anime="200">
+    <header
+      id="header-gap-utilitario"
+      class="header fadeInDown"
+      data-anime="200"
+    >
       <picture>
         <a href="./index.html">
-          <img src="./img/logo-senac.png" alt="Logo da empresa Senac" />
+          <img
+            class="logo"
+            src="./img/logo-senac.png"
+            alt="Logo da empresa Senac"
+          />
         </a>
       </picture>
-      <h1 class="titulo-header-typewriter" data-titulo>Rotina Mão</h1>
+      <h1
+        id="titulo-rotinas-posicao"
+        class="titulo-header-typewriter"
+        data-titulo
+      >
+        Rotina Mão
+      </h1>
     </header>
     <main>
-      <section id="estilo-utilitario" class="container-border-left fadeInDown" data-anime="300">
+      <section
+        id="estilo-utilitario"
+        class="container-border-left fadeInDown"
+        data-anime="300"
+      >
         <div class="nav-icones">
           <div class="menu-icones">
             <a href="./index.html">
@@ -92,8 +119,11 @@
       </div>
     </main>
     <footer class="bg-barra-horizontal">
+      <a href="./bancoDeImagens.html"
+        ><img class="img-prev" src="./img/img-prev.png" alt="Voltar para menu inicial"
+      /></a>
       <a href="./rotina-cranio.html">
-        <img src="./img/avancar-prox-pagina.png" class="img-proximo" />
+        <img src="./img/avancar-prox-pagina.png" class="img-proximo" alt="Avançar para rotina crânio" />
       </a>
     </footer>
     <script src="./js/simple-anime.js"></script>

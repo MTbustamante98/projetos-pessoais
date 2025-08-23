@@ -23,6 +23,16 @@
   z-index: 1;
 }
 
+.img-prev {
+  height: 65%;
+  width: 4%;
+  position: absolute;
+  left: 0.938rem;
+  top: 1.25rem;
+  border-radius: 50%;
+  z-index: 1;
+}
+
 #container-media-video {
   /* width: 900px; */
   width: 23%;

@@ -24,12 +24,17 @@
 }
 
 @media (max-width: 1024px) {
+  .header .logo {
+    width: 60%;
+    height: auto;
+  }
+
   .container-img-pg-inicial {
     position: absolute;
     /* top: 10rem;
     left: -2.813rem; */
-    top: -50px;
-    left: 140px;
+    top: -3.125rem;
+    left: 3.75rem;
   }
 
   .container-img-pg-inicial img {

@@ -15,7 +15,7 @@ const updateVideoImg = () => {
     ],
     abdome: [
       {
-        img: "./img/rotina-abdome-1.png",
+        img: "./img/abdome-1.png",
         video: "./videos/rotina-abdome-1.mp4",
       },
       { img: "./img/abdome-orts-ap.png", video: "./videos/abdome-orts-ap.mp4" },
