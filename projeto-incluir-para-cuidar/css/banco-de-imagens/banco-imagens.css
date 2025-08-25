@@ -10,7 +10,7 @@
 }
 
 .container-border-left {
-  width: 9%;
+  width: 8.5%;
   height: 99.6vh;
   border: 1px solid var(--black);
   border-top: 2px solid #000;
@@ -31,12 +31,12 @@
 
 [data-titulo]::before {
   content: "";
-  width: 27%;
-  height: 8%;
+  width: 25%;
+  height: 6%;
   background: var(--lightgreen);
   position: absolute;
-  right: 12%;
-  top: 90%;
+  right: 15%;
+  bottom: 3%;
   border-radius: 0.25rem;
   opacity: 0.5;
 }
@@ -56,7 +56,7 @@
 }
 
 .nav-icones .activeDropChoose {
-  margin-bottom: 3.75rem;
+  margin-bottom: 5rem;
   cursor: pointer;
 }
 
@@ -68,7 +68,7 @@
   width: 300px;
   position: absolute;
   left: 125%;
-  margin-top: -6.875rem;
+  margin-top: -8.125rem;
   padding: 0.75rem;
   border: 1px solid var(--black);
   background: var(--white);
@@ -110,23 +110,39 @@
 }
 
 @media (max-width: 1440px) {
+  .container-border-left {
+    width: 11%;
+  }
+
   .menu-icones {
     top: 25%;
     left: 30%;
   }
 
   .nav-icones .activeDropChoose {
-    margin-bottom: 3.125rem;
+    margin-bottom: 3rem;
   }
 
-  .container-border-left {
-    width: 11%;
+  .btn-icone {
+    margin-top: -6rem;
   }
 }
 
 @media (max-width: 1280px) {
   .menu-icones {
-    top: 210px;
+    top: 200px;
+  }
+
+  .container-border-left {
+    width: 12%;
+  }
+
+  .nav-icones .activeDropChoose {
+    margin-bottom: 5rem;
+  }
+
+  .btn-icone {
+    width: 210px;
   }
 }
 
@@ -150,8 +166,11 @@
     left: 100%;
   }
 
+  .drop-wrapper::after {
+    display: none;
+  }
+
   #estilo-utilitario {
     display: none;
   }
 }
-

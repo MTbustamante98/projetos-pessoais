@@ -1,0 +1,206 @@
+.header {
+  justify-content: space-between;
+  padding-right: 1.875rem;
+  padding-left: 1.875rem;
+}
+
+[data-titulo]::after {
+  display: none;
+}
+
+[data-titulo]::before {
+  right: 0.625rem;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer button {
+  padding: 1.125rem 3rem;
+  background: var(--palegreen);
+  border-radius: 0.625rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.3);
+}
+
+.footer button:hover {
+  background: var(--limegreen);
+  color: var(--white);
+  box-shadow: 0 0 0 0;
+}
+
+.div-btn-iniciar {
+  padding-right: 1.875rem;
+}
+
+.container-posicao-sugestao {
+  margin-top: 5rem;
+}
+
+.container-sugestao-flex {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.container-sugestao-flex .balao-img {
+  width: 350px;
+  height: 350px;
+  position: fixed;
+  left: 20rem;
+  top: 8rem;
+}
+
+.container-sugestao-flex .textarea-img {
+  width: 550px;
+  height: 550px;
+}
+
+.form {
+  position: relative;
+  height: 40%;
+}
+
+.form textarea {
+  position: absolute;
+  top: 175px;
+  left: 8px;
+  width: 97%;
+  height: 54%;
+  border: none;
+  resize: none;
+  box-sizing: border-box;
+}
+
+.form textarea:focus {
+  outline: none;
+  border: none;
+}
+
+.form textarea::placeholder {
+  font: 500 3rem/1.3 "Special Elite", cursive;
+  text-align: center;
+  color: var(--black);
+  padding: 35px;
+}
+
+.sobreposicao {
+  position: absolute;
+  background: var(--white);
+  width: 97%;
+  height: 5%;
+  top: 373px;
+  left: 8px;
+  z-index: -1;
+}
+
+.sobreposicao-2 {
+  position: absolute;
+  background: var(--white);
+  width: 97%;
+  height: 5%;
+  top: 163px;
+  left: 8px;
+  z-index: -1;
+}
+
+@media (max-width: 1440px) {
+  .footer button {
+    padding: 0.5rem 2.5rem;
+  }
+
+  .container-posicao-sugestao {
+    margin-top: -4rem;
+  }
+
+  .container-sugestao-flex .balao-img {
+    width: 250px;
+    height: 250px;
+    position: fixed;
+    left: 8rem;
+    top: 8rem;
+  }
+
+  .form textarea {
+    height: 77%;
+  }
+
+  .sobreposicao {
+    height: 7%;
+  }
+}
+
+@media (max-width: 1280px) {
+  .container-posicao-sugestao {
+    margin-top: 2rem;
+  }
+
+  .container-sugestao-flex .balao-img {
+    width: 300px;
+    height: 300px;
+    position: fixed;
+    left: 3rem;
+    top: 8rem;
+  }
+
+  .form textarea {
+    height: 58%;
+  }
+
+  .form textarea::placeholder {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .footer button {
+    padding: 0.5rem 2.5rem;
+  }
+
+  .container-posicao-sugestao {
+    margin-top: 0;
+    margin-left: 10rem;
+  }
+
+  .container-sugestao-flex .balao-img {
+    width: 170px;
+    height: 170px;
+    position: fixed;
+    left: 1rem;
+    top: 8rem;
+  }
+
+  .container-sugestao-flex .textarea-img {
+    width: 470px;
+    height: 470px;
+  }
+
+  .form textarea {
+    height: 61%;
+    top: 150px;
+  }
+
+  .form textarea::placeholder {
+    padding: 30px;
+  }
+
+  .sobreposicao {
+    height: 6%;
+    top: 316px;
+    left: 6px;
+  }
+
+  .sobreposicao-2 {
+    height: 5%;
+    top: 139px;
+    left: 8px;
+  }
+
+  .form textarea::placeholder {
+    font-size: 2.5rem;
+  }
+}

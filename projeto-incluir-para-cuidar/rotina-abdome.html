@@ -1,143 +1,110 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/media-utilitario-rotinas.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Special+Elite&display=swap"
-      rel="stylesheet"
-    />
-    <title>Rotina Abdome</title>
-    <style>
-      @media (max-width: 1024px) {
-        [data-titulo]::after {
-          position: absolute;
-          top: -16px;
-          background: url("../../img/ico-play.png") no-repeat;
-        }
 
-        [data-titulo]::before {
-          right: 5px;
-        }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/media-utilitario-rotinas.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Special+Elite&display=swap" rel="stylesheet" />
+  <title>Rotina Abdome</title>
+  <style>
+    @media (max-width: 1024px) {
+      [data-titulo]::after {
+        position: absolute;
+        top: -16px;
+        background: url("../../img/ico-play.png") no-repeat;
       }
-    </style>
-  </head>
-  <body id="rotina-abdome" class="bg-radiologia">
-    <header
-      id="header-gap-utilitário"
-      class="header fadeInDown"
-      data-anime="200"
-    >
-      <picture>
-        <a href="./index.html">
-          <img
-            class="logo"
-            src="./img/logo-senac.png"
-            alt="Logo da empresa Senac"
-          />
-        </a>
-      </picture>
-      <h1
-        id="titulo-rotinas-posicao"
-        class="titulo-header-typewriter"
-        data-titulo
-      >
-        Rotina Abdome
-      </h1>
-    </header>
-    <main>
-      <section
-        id="estilo-utilitario"
-        class="container-border-left fadeInDown"
-        data-anime="300"
-      >
-        <div class="nav-icones">
-          <div class="menu-icones">
-            <a href="./index.html">
-              <div data-toggle="inicial" class="drop-wrapper">
-                <div class="activeDropChoose">
-                  <img src="./img/ico-duas-maos-inicio.png" alt="" />
-                </div>
-                <div class="btn-icone" data-drop="inicial">
-                  <span class="span-botao-hover">Início</span>
-                </div>
-              </div>
-            </a>
 
-            <div data-toggle="informacao" class="drop-wrapper">
+      [data-titulo]::before {
+        right: 5px;
+      }
+    }
+
+    @media (max-width: 1440px) {
+      .btn-icone {
+        width: 200px;
+      }
+    }
+  </style>
+</head>
+
+<body id="rotina-abdome" class="bg-radiologia">
+  <header id="header-gap-utilitário" class="header fadeInDown" data-anime="200">
+    <picture>
+      <a href="./index.html">
+        <img class="logo" src="./img/logo-senac.png" alt="Logo da empresa Senac" />
+      </a>
+    </picture>
+    <h1 id="titulo-rotinas-posicao" class="titulo-header-typewriter" data-titulo>
+      Rotina Abdome
+    </h1>
+  </header>
+  <main>
+    <section id="estilo-utilitario" class="container-border-left fadeInDown" data-anime="300">
+      <div class="nav-icones">
+        <div class="menu-icones">
+          <a href="./index.html">
+            <div data-toggle="inicial" class="drop-wrapper">
               <div class="activeDropChoose">
-                <img src="./img/ico-info.png" alt="" />
+                <img src="./img/ico-duas-maos-inicio.png" alt="" />
               </div>
-              <div
-                class="btn-icone"
-                data-drop="informacao"
-                data-video="./videos/info"
-              >
-                <span class="span-botao-hover" data-video="./videos/info"
-                  >Informação</span
-                >
+              <div class="btn-icone" data-drop="inicial">
+                <span class="span-botao-hover">Início</span>
               </div>
             </div>
+          </a>
 
-            <div data-toggle="legenda" class="drop-wrapper">
-              <div class="activeDropChoose">
-                <img src="./img/ico-legenda.png" alt="" />
-              </div>
-              <div
-                class="btn-icone"
-                data-drop="legenda"
-                data-video="./videos/legenda"
-              >
-                <span class="span-botao-hover" data-video="./videos/legenda"
-                  >Legenda</span
-                >
-              </div>
+          <div data-toggle="informacao" class="drop-wrapper">
+            <div class="activeDropChoose">
+              <img src="./img/ico-info.png" alt="" />
             </div>
+            <div class="btn-icone" data-drop="informacao" data-video="./videos/info">
+              <span class="span-botao-hover" data-video="./videos/info">Informação</span>
+            </div>
+          </div>
 
-            <div data-toggle="apresentacao" class="drop-wrapper">
-              <div data-toggle="apresentacao" data class="activeDropChoose">
-                <img src="./img/ico-mao-apresentacao.png" alt="" />
-              </div>
-              <div
-                class="btn-icone"
-                data-drop="apresentacao"
-                data-video="./videos/apresentacao"
-              >
-                <span
-                  class="span-botao-hover"
-                  data-video="./videos/apresentacao"
-                  >Apresentação</span
-                >
-              </div>
+          <div data-toggle="legenda" class="drop-wrapper">
+            <div class="activeDropChoose">
+              <img src="./img/ico-legenda.png" alt="" />
+            </div>
+            <div class="btn-icone" data-drop="legenda" data-video="./videos/legenda">
+              <span class="span-botao-hover" data-video="./videos/legenda">Legenda</span>
+            </div>
+          </div>
+
+          <div data-toggle="apresentacao" class="drop-wrapper">
+            <div data-toggle="apresentacao" data class="activeDropChoose">
+              <img src="./img/ico-mao-apresentacao.png" alt="" />
+            </div>
+            <div class="btn-icone" data-drop="apresentacao" data-video="./videos/apresentacao">
+              <span class="span-botao-hover" data-video="./videos/apresentacao">Apresentação</span>
             </div>
           </div>
         </div>
-      </section>
-      <div class="container-img-rotina">
-        <img data-imagem-rotina src="" alt="" />
       </div>
-      <div
-        id="container-media-video"
-        class="fadeInRight media-utilitario"
-        data-anime="300"
-      >
-        <video controls class="media-video">
-          <source src="" type="video/webm" />
-          O teu navegador não suporta vídeo.
-        </video>
-      </div>
-    </main>
-    <footer class="bg-barra-horizontal">
-      <a href="./rotina-cranio.html"
-        ><img class="img-prev" src="./img/img-prev.png" alt="Voltar para menu inicial"
-      /></a>
-      <a href="./rotina-torax.html">
-        <img src="./img/avancar-prox-pagina.png" class="img-proximo" />
-      </a>
-    </footer>
-    <script src="./js/simple-anime.js"></script>
-    <script type="module" src="dist/main.js"></script>
-  </body>
+    </section>
+    <div class="container-img-rotina">
+      <img data-imagem-rotina src="" alt="" />
+    </div>
+    <p class="instrucao font-instrucao">
+      Avance o vídeo para mudar o posicionamento!
+    </p>
+    <div id="container-media-video" class="fadeInRight media-utilitario" data-anime="300">
+      <video controls class="media-video">
+        <source src="" type="video/webm" />
+        O teu navegador não suporta vídeo.
+      </video>
+    </div>
+  </main>
+  <footer class="bg-barra-horizontal">
+    <a href="./bancoDeImagens.html"><img class="img-prev" src="./img/img-prev.png" alt="Voltar para menu inicial" /></a>
+    <a href="">
+      <img src="./img/avancar-prox-pagina.png" class="img-proximo" />
+    </a>
+  </footer>
+  <script src="./js/simple-anime.js"></script>
+  <script type="module" src="dist/main.js"></script>
+</body>
+
 </html>

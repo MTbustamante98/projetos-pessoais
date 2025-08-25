@@ -4,7 +4,8 @@ export const slide = document.querySelectorAll("[data-drop]");
 
 //Elements update video
 export const video = document.querySelector("video");
-export const source = video.querySelector("source");
+export const source = video ? video.querySelector("source") : null;
+
 
 //Modal
 export const btnModal = document.querySelectorAll("[data-active-modal]");
@@ -17,5 +18,3 @@ export const sliderImg = document.querySelector("[data-imagem-rotina]");
 
 export const active = "active";
 export const title = document.querySelector("[data-titulo]");
-
-

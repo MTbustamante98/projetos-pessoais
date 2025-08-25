@@ -16,7 +16,7 @@ const updateVideoImg = () => {
     abdome: [
       {
         img: "./img/abdome-1.png",
-        video: "./videos/rotina-abdome-1.mp4",
+        video: "./videos/torax-pa.mp4",
       },
       { img: "./img/abdome-orts-ap.png", video: "./videos/abdome-orts-ap.mp4" },
       { img: "./img/abdome-rub-dle.png", video: "./videos/abdome-rub-dle.mp4" },
@@ -49,7 +49,7 @@ const updateVideoImg = () => {
     video.load();
   }
 
-  video.addEventListener("ended", updateSliderAndMediaVideo);
+  if (video && source) video.addEventListener("ended", updateSliderAndMediaVideo);
 };
 
 export default updateVideoImg;

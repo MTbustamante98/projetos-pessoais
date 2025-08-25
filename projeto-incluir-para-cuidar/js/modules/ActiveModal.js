@@ -6,14 +6,17 @@ import {
   title,
   video,
   closeModal,
+  slide,
 } from "./elements";
-
+console.log()
 const activeModal = () => {
   const events = ["click", "touchstart"];
   function openModal(e) {
     e.preventDefault();
     e.stopPropagation();
+
     modal.classList.add(active);
+    if (modal) slide.forEach((slide) => slide.classList.remove(active))
     containerMedia.classList.add("removeClass");
 
     title.innerText = e.currentTarget.innerText.trim();

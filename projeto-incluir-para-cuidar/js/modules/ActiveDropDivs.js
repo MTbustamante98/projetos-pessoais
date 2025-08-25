@@ -30,6 +30,16 @@ const activeDropDivs = () => {
     const itemOpenDiv = e.currentTarget.dataset.toggle;
     const drop = document.querySelector(`[data-drop="${itemOpenDiv}"]`);
     drop?.classList.toggle(active);
+
+    document.addEventListener("touchstart", ({ target }) => {
+      const insideDrop = target.closest("[data-drop]");
+      const insideTrigger = target.closest("[data-toggle]");
+      if (!insideDrop && !insideTrigger) {
+        document
+          .querySelectorAll("[data-drop]")
+          .forEach((drop) => drop.classList.remove(active));
+      }
+    });
   }
 
   dropWapper.forEach((el) => {

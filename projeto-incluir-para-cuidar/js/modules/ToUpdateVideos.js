@@ -7,9 +7,10 @@ const toUpdateVideos = () => {
       if (itemOpenVideo) {
         const data = itemOpenVideo.getAttribute("data-video");
         if (data) {
-          source.src = `${data}.mp4`;
-
-          video.load();
+          if (video && source) {
+            source.src = `${data}.mp4`;
+            video.load();
+          }
 
           const spanText = itemOpenVideo.querySelector("span");
           if (spanText) {

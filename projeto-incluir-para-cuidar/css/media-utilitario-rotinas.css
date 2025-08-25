@@ -1,7 +1,25 @@
+@media (max-width: 1920px) {
+  #container-media-video {
+    width: 33%;
+    height: 55%;
+    right: 60px;
+    top: 13.25rem;
+  }
+}
+
 @media (max-width: 1440px) {
   #container-media-video {
-    height: 470px;
+    width: 25%;
+    height: 75%;
     top: 55px;
+  }
+}
+
+@media (max-width: 1280px) {
+  #container-media-video {
+    width: 27%;
+    height: 600px;
+    top: 7rem !important;
   }
 }
 

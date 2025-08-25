@@ -1,22 +1,45 @@
 .container-img-rotina {
   position: absolute;
-  top: 200px;
-  left: 500px;
+  top: 2.5rem;
+  left: 28.75rem;
+}
+
+.container-img-rotina img {
+  width: 95% !important;
+  height: 550px;
+}
+
+.instrucao {
+  position: absolute;
+  right: 4rem;
+  top: 1.875rem;
 }
 
 @media (max-width: 1440px) {
   .container-img-rotina {
-    top: 160px;
+    top: -0.625rem;
     left: 360px;
-    /* top: 170px;
-    left: 10px; */
   }
 
   .container-img-rotina img {
-    width: 500px !important;
-    height: 350px;
-    /* width: 320px !important;
-    height: 500px; */
+    width: 400px !important;
+    height: 420px;
+  }
+
+  .instrucao {
+    top: -7.525rem;
+  }
+}
+
+@media (max-width: 1280px) {
+  .container-img-rotina {
+    top: 20px;
+    left: 350px;
+  }
+
+  .container-img-rotina img {
+    width: 80% !important;
+    height: 550px;
   }
 }
 
@@ -35,9 +58,12 @@
   }
 
   .container-img-rotina img {
-    /* width: 650px !important;
-    height: 250px; */
     width: 60% !important;
     height: 550px;
+  }
+
+  .instrucao {
+    right: 1rem;
+    top: 0;
   }
 }

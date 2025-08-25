@@ -14,12 +14,18 @@
       @media (max-width: 1024px) {
         [data-titulo]::after {
           position: absolute;
-          top: -16px;
+          top: -1rem;
           background: url("../../img/ico-play.png") no-repeat;
         }
 
         [data-titulo]::before {
-          right: 5px;
+          right: 0.625rem;
+        }
+      }
+
+      @media (max-width: 1440px) {
+        .btn-icone {
+          width: 200px;
         }
       }
     </style>
@@ -115,6 +121,9 @@
       <div class="container-img-rotina">
         <img data-imagem-rotina src="" alt="" />
       </div>
+      <p class="instrucao font-instrucao">
+        Avance o vídeo para mudar o posicionamento!
+      </p>
       <div id="container-media-video" class="fadeInRight" data-anime="300">
         <video controls class="media-video">
           <source src="" type="video/webm" />
@@ -129,7 +138,7 @@
           src="./img/img-prev.png"
           alt="Voltar para menu inicial"
       /></a>
-      <a href="./rotina-cranio.html">
+      <a href="./sugestao.html">
         <img
           src="./img/avancar-prox-pagina.png"
           class="img-proximo"

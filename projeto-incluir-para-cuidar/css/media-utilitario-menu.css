@@ -1,6 +1,8 @@
 /* Media queries específicos para cada página */
 @media (max-width: 1920px) {
   #container-media-video {
+    width: 23%;
+    height: 73%;
     top: 160px;
   }
 }
@@ -13,6 +15,8 @@
 
 @media (max-width: 1280px) {
   #container-media-video {
+    width: 30%;
+    height: 73%;
     top: 170px !important;
   }
 }
