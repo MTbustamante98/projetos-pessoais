@@ -7,8 +7,8 @@ const sendEmailJS = () => {
   function sendEmail(e) {
     e.preventDefault();
 
-    const textValue = textarea.value.trim();
     const inputValue = inputName.value.trim();
+    const textValue = textarea.value.trim();
 
     if (!textValue || !inputValue) return false;
 
