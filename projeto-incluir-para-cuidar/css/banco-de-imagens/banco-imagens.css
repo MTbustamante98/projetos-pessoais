@@ -142,19 +142,24 @@
   }
 
   .btn-icone {
-    width: 210px;
+    width: 210px !important;
+    margin-top: -8rem;
   }
 }
 
 @media (max-width: 1024px) {
+  body {
+    overflow-y: scroll;
+  }
+
   .menu-icones {
     top: 25%;
     left: 30%;
   }
 
   .container-border-left {
-    width: 22%;
-    height: 95vh;
+    width: 23%;
+    min-height: 100vh;
   }
 
   .nav-icones .activeDropChoose {

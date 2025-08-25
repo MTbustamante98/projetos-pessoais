@@ -24,7 +24,8 @@ const sendEmailJS = () => {
       .catch((error) => alert("Erro, tente novamente!", error));
   }
 
-  form.addEventListener("submit", sendEmail);
+  if (form)
+    form.addEventListener("submit", sendEmail);
 };
 
 export default sendEmailJS;

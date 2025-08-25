@@ -21,6 +21,26 @@
   left: 12rem;
 }
 
+.img-numeracao-rotinas {
+  position: absolute;
+  margin-top: 2.5rem;
+  right: 41.25rem;
+}
+
+.img-numeracao-rotinas img {
+  margin-bottom: 0.75rem;
+  width: 130px;
+  height: 130px;
+}
+
+[data-numeracao] {
+  display: none;
+}
+
+[data-numeracao].active {
+  display: block;
+}
+
 @media (max-width: 1440px) {
   .container-img-rotina {
     top: -0.625rem;
@@ -39,13 +59,27 @@
 
 @media (max-width: 1280px) {
   .container-img-rotina {
-    top: 20px;
-    left: 350px;
+    top: 1.25rem;
+    left: 21.875rem;
   }
 
   .container-img-rotina img {
     width: 80% !important;
     height: 550px;
+  }
+
+  .instrucao {
+    right: 2rem;
+    top: -4rem;
+  }
+
+  .img-posicao-boneco {
+    top: 32rem;
+  }
+
+  .img-numeracao-rotinas {
+    margin-top: -2.5rem;
+    right: 21.5rem;
   }
 }
 

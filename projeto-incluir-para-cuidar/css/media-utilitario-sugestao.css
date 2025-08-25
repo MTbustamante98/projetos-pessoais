@@ -176,7 +176,7 @@
   }
 
   .container-posicao-sugestao {
-    margin-top: 0;
+    margin-top: 4rem;
     margin-left: 10rem;
   }
 
@@ -185,7 +185,7 @@
     height: 170px;
     position: fixed;
     left: 1rem;
-    top: 8rem;
+    top: 13rem;
   }
 
   .container-sugestao-flex .textarea-img {
@@ -194,7 +194,7 @@
   }
 
   .form textarea {
-    height: 61%;
+    height: 55%;
     top: 150px;
   }
 

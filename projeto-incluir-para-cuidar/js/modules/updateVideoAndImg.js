@@ -1,4 +1,11 @@
-import { video, source, sliderImg, imgPerson } from "./elements";
+import {
+  video,
+  source,
+  sliderImg,
+  imgPerson,
+  imgNumeracao,
+  active,
+} from "./elements";
 
 const updateVideoImg = () => {
   const rotinas = {
@@ -31,15 +38,20 @@ const updateVideoImg = () => {
   const pagina = document.body.id.replace("rotina-", "");
   const listaAtual = rotinas[pagina];
   let currentIndex = 0;
+  let nextItem = null;
 
   if (listaAtual && listaAtual.length) {
+    nextItem = listaAtual[currentIndex];
     sliderImg.src = listaAtual[currentIndex].img;
     source.src = listaAtual[currentIndex].video;
     video.load();
+    updatePuppetInroutines();
   }
 
   function updatePuppetInroutines() {
-    const nextItem = listaAtual[currentIndex];
+    if (!nextItem) return;
+    if (!imgPerson) return;
+
     if (
       nextItem.img.includes("abdome-rub-dle.png") ||
       nextItem.img.includes("abdome-dle.png")
@@ -53,11 +65,19 @@ const updateVideoImg = () => {
   }
 
   function updateSliderAndMediaVideo() {
-    currentIndex++;
-    if (currentIndex >= listaAtual.length) currentIndex = 0;
+    const nextIndex = (currentIndex + 1) % listaAtual.length;
 
-    const nextItem = listaAtual[currentIndex];
+    if (nextIndex === 0) {
+      imgNumeracao.forEach((img) => img.classList.remove(active));
+    } else {
+      const balloonIndex = nextIndex - 1;
+      const balloon = imgNumeracao[balloonIndex];
+      if (balloon) balloon.classList.add(active);
+    }
 
+    currentIndex = nextIndex;
+
+    nextItem = listaAtual[currentIndex];
     sliderImg.src = nextItem.img;
     source.src = nextItem.video;
     video.load();

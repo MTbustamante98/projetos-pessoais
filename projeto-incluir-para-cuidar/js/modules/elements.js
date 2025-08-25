@@ -6,7 +6,6 @@ export const slide = document.querySelectorAll("[data-drop]");
 export const video = document.querySelector("video");
 export const source = video ? video.querySelector("source") : null;
 
-
 //Modal
 export const btnModal = document.querySelectorAll("[data-active-modal]");
 export const modal = document.querySelector("[data-modal]");
@@ -15,7 +14,8 @@ export const closeModal = document.querySelector(".close-modal");
 
 //Rotinas
 export const sliderImg = document.querySelector("[data-imagem-rotina]");
-export const imgPerson = document.querySelector("[data-person-img]")
+export const imgPerson = document.querySelector("[data-person-img]");
+export const imgNumeracao = document.querySelectorAll("[data-numeracao]");
 
 // Sugestão
 export const form = document.querySelector("#sendEmail");
