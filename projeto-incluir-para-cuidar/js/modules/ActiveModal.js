@@ -3,31 +3,34 @@ import {
   modal,
   containerMedia,
   active,
-  title,
   video,
   closeModal,
   slide,
 } from "./elements";
-console.log()
+
 const activeModal = () => {
   const events = ["click", "touchstart"];
   function openModal(e) {
-    e.preventDefault();
-    e.stopPropagation();
-
+    const title = document.querySelector("[data-titulo]");
     modal.classList.add(active);
-    if (modal) slide.forEach((slide) => slide.classList.remove(active))
+
+    if (modal) slide.forEach((slide) => slide.classList.remove(active));
     containerMedia.classList.add("removeClass");
 
     title.innerText = e.currentTarget.innerText.trim();
     if (!video.paused) video.pause();
   }
 
-  function closeModalHandler() {
+  function closeModalHandler(e) {
+    // const titulo = document.querySelector("[data-titulo]");
+
     modal.classList.remove(active);
     containerMedia.classList.remove("removeClass");
-    title.innerText = "Menu Inicial";
-    title.setAttribute("data-titulo", "Menu Inicial");
+
+    // if (titulo) {
+    //   titulo.innerText = "Menu Inicial";
+    //   titulo.setAttribute("data-titulo", "Menu Inicial");
+    // }
   }
 
   if (closeModal) {

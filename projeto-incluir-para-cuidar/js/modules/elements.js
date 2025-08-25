@@ -23,4 +23,3 @@ export const textarea = document.querySelector("textarea");
 export const inputName = document.querySelector("input");
 
 export const active = "active";
-export const title = document.querySelector("[data-titulo]");
