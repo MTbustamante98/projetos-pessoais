@@ -1,4 +1,4 @@
-import { video, source, sliderImg } from "./elements";
+import { video, source, sliderImg, imgPerson } from "./elements";
 
 const updateVideoImg = () => {
   const rotinas = {
@@ -20,7 +20,7 @@ const updateVideoImg = () => {
       },
       { img: "./img/abdome-orts-ap.png", video: "./videos/abdome-orts-ap.mp4" },
       { img: "./img/abdome-rub-dle.png", video: "./videos/abdome-rub-dle.mp4" },
-      { img: "./img/abdome-dle.png", video: "./videos/abdome-dle.m  p4" },
+      { img: "./img/abdome-dle.png", video: "./videos/abdome-dle.mp4" },
     ],
     torax: [
       { img: "./img/torax-pa.png", video: "./videos/torax-pa.mp4" },
@@ -38,6 +38,20 @@ const updateVideoImg = () => {
     video.load();
   }
 
+  function updatePuppetInroutines() {
+    const nextItem = listaAtual[currentIndex];
+    if (
+      nextItem.img.includes("abdome-rub-dle.png") ||
+      nextItem.img.includes("abdome-dle.png")
+    ) {
+      imgPerson.setAttribute("src", "./img/boneco-deitado.png");
+    } else if (nextItem.img.includes("torax-pe.png")) {
+      imgPerson.setAttribute("src", "./img/boneco-perfil.png");
+    } else {
+      imgPerson.setAttribute("src", "./img/boneco-em-pe.png");
+    }
+  }
+
   function updateSliderAndMediaVideo() {
     currentIndex++;
     if (currentIndex >= listaAtual.length) currentIndex = 0;
@@ -47,9 +61,12 @@ const updateVideoImg = () => {
     sliderImg.src = nextItem.img;
     source.src = nextItem.video;
     video.load();
+
+    updatePuppetInroutines();
   }
 
-  if (video && source) video.addEventListener("ended", updateSliderAndMediaVideo);
+  if (video && source)
+    video.addEventListener("ended", updateSliderAndMediaVideo);
 };
 
 export default updateVideoImg;

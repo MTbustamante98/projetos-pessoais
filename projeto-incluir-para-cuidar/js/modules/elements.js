@@ -15,6 +15,12 @@ export const closeModal = document.querySelector(".close-modal");
 
 //Rotinas
 export const sliderImg = document.querySelector("[data-imagem-rotina]");
+export const imgPerson = document.querySelector("[data-person-img]")
+
+// Sugestão
+export const form = document.querySelector("#sendEmail");
+export const textarea = document.querySelector("textarea");
+export const inputName = document.querySelector("textarea");
 
 export const active = "active";
 export const title = document.querySelector("[data-titulo]");

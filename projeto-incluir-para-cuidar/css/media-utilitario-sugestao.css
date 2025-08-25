@@ -88,6 +88,20 @@
   padding: 35px;
 }
 
+.form .input-label {
+  position: absolute;
+  top: 5.5rem;
+}
+
+.input-label input {
+  padding: 0.4rem 0.3rem;
+  margin-left: 0.3rem;
+}
+
+.input-label label {
+  font: 600 1.2rem "Roboto", Arial, sans-serif;
+}
+
 .sobreposicao {
   position: absolute;
   background: var(--white);

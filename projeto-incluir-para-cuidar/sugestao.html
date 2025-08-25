@@ -30,12 +30,29 @@
       <article>
         <section class="container-posicao-sugestao">
           <div class="container-sugestao-flex">
-            <img class="balao-img" src="./img/balao-sugestao.png" alt="Figura representativa de um balao" />
-            <form class="form">
+            <img
+              class="balao-img"
+              src="./img/balao-sugestao.png"
+              alt="Figura representativa de um balao"
+            />
+            <form id="sendEmail" class="form">
+              <div class="input-label">
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" id="nome"/>
+              </div>
               <div class="sobreposicao"></div>
               <div class="sobreposicao-2"></div>
-              <textarea class="font-text-area" name="textarea" id="textarea" placeholder="Deixe aqui a sua sugestão"></textarea>
-              <img class="textarea-img" src="./img/textarea-sugestao.png" alt="" />
+              <textarea
+                class="font-text-area"
+                name="textarea"
+                id="textarea"
+                placeholder="Deixe aqui a sua sugestão"
+              ></textarea>
+              <img
+                class="textarea-img"
+                src="./img/textarea-sugestao.png"
+                alt=""
+              />
             </form>
           </div>
         </section>
@@ -49,7 +66,9 @@
           alt="Voltar para menu inicial"
       /></a>
       <div class="div-btn-iniciar">
-        <button class="font-btn-sugestao">Enviar</button>
+        <button form="sendEmail" type="submit" class="font-btn-sugestao">
+          Enviar
+        </button>
       </div>
     </footer>
     <script src="./js/simple-anime.js"></script>
