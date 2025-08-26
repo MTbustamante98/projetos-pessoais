@@ -196,7 +196,7 @@
   }
 
   .form textarea {
-    height: 44%;
+    height: 42%;
     top: 150px;
   }
 
@@ -207,8 +207,8 @@
 
   .sobreposicao {
     height: 6%;
-    top: 316px;
-    left: 8px;
+    top: 310px;
+    left: 6px;
   }
 
   .sobreposicao-2 {

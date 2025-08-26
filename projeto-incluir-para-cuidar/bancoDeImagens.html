@@ -1,178 +1,123 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/media-utilitario-menu.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Special+Elite&display=swap"
-      rel="stylesheet"
-    />
-    <title>Banco de imagens</title>
-    <style>
-      @media (max-width: 1024px) {
-        body {
-          overflow-y: scroll !important;
-        }
 
-        .titulo-header-typewriter {
-          font-size: 3.75rem;
-        }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/media-utilitario-menu.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Special+Elite&display=swap" rel="stylesheet" />
+  <title>Banco de imagens</title>
+  <style>
+    @media (max-width: 1024px) {
+      body {
+        overflow-y: scroll !important;
       }
-    </style>
-  </head>
-  <body class="bg-radiologia">
-    <header class="header fadeInDown" data-anime="200">
-      <picture>
-        <a href="./index.html">
-          <img src="./img/logo-senac.png" alt="Logo da empresa Senac" width="150" height="150" />
-        </a>
-      </picture>
-      <h1 id="teste" class="titulo-header-typewriter" data-titulo>
-        Menu Inicial
-      </h1>
-    </header>
-    <main>
-      <section class="container-border-left fadeInDown" data-anime="300">
-        <div class="nav-icones">
-          <div class="menu-icones">
+
+      .titulo-header-typewriter {
+        font-size: 3.75rem;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-radiologia">
+  <header class="header fadeInDown" data-anime="200">
+    <picture>
+      <a href="./index.html">
+        <img src="./img/logo-senac.png" alt="Logo da empresa Senac" width="150" height="150" />
+      </a>
+    </picture>
+    <h1 id="teste" class="titulo-header-typewriter" data-titulo>
+      Menu Inicial
+    </h1>
+  </header>
+  <main>
+    <section class="container-border-left fadeInDown" data-anime="300">
+      <div class="nav-icones">
+        <div class="menu-icones">
+          <a href="./">
             <div data-toggle="inicial" class="drop-wrapper">
               <div class="activeDropChoose">
-                <img
-                  src="./img/ico-duas-maos-inicio.png"
-                  alt="Ícone de início"
-                />
+                <img src="./img/ico-duas-maos-inicio.png" alt="Ícone de início" />
               </div>
-              <a href="./">
-                <div
-                  class="btn-icone"
-                  data-drop="inicial"
-                  tabindex="0"
-                  role="button"
-                >
-                  <span class="span-botao-hover">Início</span>
-                </div>
-              </a>
-            </div>
-            <div data-toggle="apresentacao" class="drop-wrapper">
-              <div data-toggle="apresentacao" data class="activeDropChoose">
-                <img
-                  src="./img/ico-mao-apresentacao.png"
-                  alt="Ícone de apresentação"
-                />
+              <div class="btn-icone" data-drop="inicial" tabindex="0" role="button">
+                <span class="span-botao-hover">Início</span>
               </div>
-              <div
-                class="btn-icone"
-                data-drop="apresentacao"
-                data-video="./videos/apresentacao"
-                tabindex="1"
-                role="button"
-              >
-                <span
-                  class="span-botao-hover"
-                  data-video="./videos/apresentacao"
-                  >Apresentação</span
-                >
-              </div>
-            </div>
-            <div data-toggle="legenda" class="drop-wrapper">
-              <div class="activeDropChoose">
-                <img src="./img/ico-legenda.png" alt="Ícone de legenda" />
-              </div>
-              <div
-                class="btn-icone"
-                data-drop="legenda"
-                data-video="./videos/legenda"
-                tabindex="2"
-                role="button"
-              >
-                <span class="span-botao-hover" data-video="./videos/legenda"
-                  >Legenda</span
-                >
-              </div>
-            </div>
-            <div data-toggle="informacao" class="drop-wrapper">
-              <div class="activeDropChoose">
-                <img src="./img/ico-info.png" alt="Ícone de informação" />
-              </div>
-              <div
-                class="btn-icone"
-                data-drop="informacao"
-                data-video="./videos/info"
-                tabindex="3"
-                role="button"
-              >
-                <span class="span-botao-hover" data-video="./videos/info"
-                  >Informação</span
-                >
-              </div>
-            </div>
-            <div data-toggle="rotinas" class="drop-wrapper">
-              <div class="activeDropChoose">
-                <img src="./img/ico-rotinas.png" alt="Ícone de Rotinas" />
-              </div>
-              <div
-                class="btn-icone"
-                data-drop="rotinas"
-                data-active-modal
-                tabindex="3"
-                role="button"
-              >
-                <span class="span-botao-hover" data-active-modal>Rotinas</span>
-              </div>
-            </div>
+          </a>
+        </div>
+        <div data-toggle="apresentacao" class="drop-wrapper">
+          <div data-toggle="apresentacao" data class="activeDropChoose">
+            <img src="./img/ico-mao-apresentacao.png" alt="Ícone de apresentação" />
+          </div>
+          <div class="btn-icone" data-drop="apresentacao" data-video="./videos/apresentacao" tabindex="1" role="button">
+            <span class="span-botao-hover" data-video="./videos/apresentacao">Apresentação</span>
           </div>
         </div>
-      </section>
-      <div id="container-media-video" class="fadeInRight" data-anime="300">
-        <video controls class="media-video">
-          <source src="./videos/apresentacao.mp4" type="video/webm" />
-          <track
-            src="./legendas.vtt"
-            kind="captions"
-            srclang="pt"
-            label="Português"
-            default
-          />
-          O teu navegador não suporta vídeo.
-        </video>
+        <div data-toggle="legenda" class="drop-wrapper">
+          <div class="activeDropChoose">
+            <img src="./img/ico-legenda.png" alt="Ícone de legenda" />
+          </div>
+          <div class="btn-icone" data-drop="legenda" data-video="./videos/legenda" tabindex="2" role="button">
+            <span class="span-botao-hover" data-video="./videos/legenda">Legenda</span>
+          </div>
+        </div>
+        <div data-toggle="informacao" class="drop-wrapper">
+          <div class="activeDropChoose">
+            <img src="./img/ico-info.png" alt="Ícone de informação" />
+          </div>
+          <div class="btn-icone" data-drop="informacao" data-video="./videos/info" tabindex="3" role="button">
+            <span class="span-botao-hover" data-video="./videos/info">Informação</span>
+          </div>
+        </div>
+        <div data-toggle="rotinas" class="drop-wrapper">
+          <div class="activeDropChoose">
+            <img src="./img/ico-rotinas.png" alt="Ícone de Rotinas" />
+          </div>
+          <div class="btn-icone" data-drop="rotinas" data-active-modal tabindex="3" role="button">
+            <span class="span-botao-hover" data-active-modal>Rotinas</span>
+          </div>
+        </div>
       </div>
-    </main>
-    <section
-      class="modal"
-      data-modal
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="modal-title"
-    >
-      <button class="container-close-modal" aria-label="Fechar Modal">
-        <img class="close-modal" src="./img/close-modal.svg" alt="" />
-      </button>
-      <div class="modal-flex">
-        <a href="./rotina-mao.html">
-          <div class="box-modal">
-            <p class="paragraph-modal font-p-modal-xl">Mão</p>
-          </div>
-        </a>
-        <a href="./rotina-cranio.html">
-          <div class="box-modal">
-            <p class="paragraph-modal font-p-modal-xl">Crânio</p>
-          </div>
-        </a>
-        <a href="./rotina-abdome.html">
-          <div class="box-modal">
-            <p class="paragraph-modal font-p-modal-xl">Abdome</p>
-          </div>
-        </a>
-        <a href="./rotina-torax.html">
-          <div class="box-modal">
-            <p class="paragraph-modal font-p-modal-xl">Tórax</p>
-          </div>
-        </a>
       </div>
     </section>
-    <script src="./js/simple-anime.js"></script>
-    <script type="module" src="dist/main.js"></script>
-  </body>
+    <div id="container-media-video" class="fadeInRight" data-anime="300">
+      <video controls class="media-video">
+        <source src="./videos/apresentacao.mp4" type="video/webm" />
+        <track src="./legendas.vtt" kind="captions" srclang="pt" label="Português" default />
+        O teu navegador não suporta vídeo.
+      </video>
+    </div>
+  </main>
+  <section class="modal" data-modal role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button class="container-close-modal" aria-label="Fechar Modal">
+      <img class="close-modal" src="./img/close-modal.svg" alt="" />
+    </button>
+    <div class="modal-flex">
+      <a href="./rotina-mao.html">
+        <div class="box-modal">
+          <p class="paragraph-modal font-p-modal-xl">Mão</p>
+        </div>
+      </a>
+      <a href="./rotina-cranio.html">
+        <div class="box-modal">
+          <p class="paragraph-modal font-p-modal-xl">Crânio</p>
+        </div>
+      </a>
+      <a href="./rotina-abdome.html">
+        <div class="box-modal">
+          <p class="paragraph-modal font-p-modal-xl">Abdome</p>
+        </div>
+      </a>
+      <a href="./rotina-torax.html">
+        <div class="box-modal">
+          <p class="paragraph-modal font-p-modal-xl">Tórax</p>
+        </div>
+      </a>
+    </div>
+  </section>
+  <script src="./js/simple-anime.js"></script>
+  <script type="module" src="dist/main.js"></script>
+</body>
+
 </html>
