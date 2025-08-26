@@ -13,8 +13,13 @@
 
 @media (max-width: 1440px) {
   .container-img-pg-inicial {
-    top: -3.75rem;
-    left: -0.5rem;
+    top: -4.5rem;
+    left: -0.313rem;
+  }
+
+  .container-img-pg-inicial img {
+    width: auto;
+    height: auto;
   }
 }
 

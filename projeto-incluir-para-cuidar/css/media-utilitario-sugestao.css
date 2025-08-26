@@ -74,6 +74,8 @@
   border: none;
   resize: none;
   box-sizing: border-box;
+  padding: 0.625rem;
+  overflow: hidden;
 }
 
 .form textarea:focus {
@@ -196,7 +198,6 @@
   .form textarea {
     height: 44%;
     top: 150px;
-    overflow: hidden;
   }
 
   .form textarea::placeholder {
