@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -64,44 +64,22 @@
             <a href="./index.html">
               <div data-toggle="inicial" class="drop-wrapper">
                 <div class="activeDropChoose">
-                  <img src="./img/ico-duas-maos-inicio.png" alt="" />
+                  <img
+                    src="./img/ico-duas-maos-inicio.png"
+                    alt="Ícone de início"
+                  />
                 </div>
                 <div class="btn-icone" data-drop="inicial">
                   <span class="span-botao-hover">Início</span>
                 </div>
               </div>
             </a>
-            <div data-toggle="informacao" class="drop-wrapper">
-              <div class="activeDropChoose">
-                <img src="./img/ico-info.png" alt="" />
-              </div>
-              <div
-                class="btn-icone"
-                data-drop="informacao"
-                data-video="./videos/info"
-              >
-                <span class="span-botao-hover" data-video="./videos/info"
-                  >Informação</span
-                >
-              </div>
-            </div>
-            <div data-toggle="legenda" class="drop-wrapper">
-              <div class="activeDropChoose">
-                <img src="./img/ico-legenda.png" alt="" />
-              </div>
-              <div
-                class="btn-icone"
-                data-drop="legenda"
-                data-video="./videos/legenda"
-              >
-                <span class="span-botao-hover" data-video="./videos/legenda"
-                  >Legenda</span
-                >
-              </div>
-            </div>
             <div data-toggle="apresentacao" class="drop-wrapper">
               <div data-toggle="apresentacao" data class="activeDropChoose">
-                <img src="./img/ico-mao-apresentacao.png" alt="" />
+                <img
+                  src="./img/ico-mao-apresentacao.png"
+                  alt="Ícone Apresentação"
+                />
               </div>
               <div
                 class="btn-icone"
@@ -115,16 +93,51 @@
                 >
               </div>
             </div>
+            <div data-toggle="legenda" class="drop-wrapper">
+              <div class="activeDropChoose">
+                <img src="./img/ico-legenda.png" alt="Ícone de legenda" />
+              </div>
+              <div
+                class="btn-icone"
+                data-drop="legenda"
+                data-video="./videos/legenda"
+              >
+                <span class="span-botao-hover" data-video="./videos/legenda"
+                  >Legenda</span
+                >
+              </div>
+            </div>
+            <div data-toggle="informacao" class="drop-wrapper">
+              <div class="activeDropChoose">
+                <img src="./img/ico-info.png" alt="Ícone de informação" />
+              </div>
+              <div
+                class="btn-icone"
+                data-drop="informacao"
+                data-video="./videos/info"
+              >
+                <span class="span-botao-hover" data-video="./videos/info"
+                  >Informação</span
+                >
+              </div>
+            </div>
           </div>
         </div>
       </section>
       <div class="posicao-boneco">
-        <img src="./img/boneco-sentado.png" alt="" />
+        <img
+          src="./img/boneco-sentado.png"
+          alt="Boneco sentado representando a posição do paciente"
+        />
       </div>
       <div class="container-img-rotina">
-        <img data-imagem-rotina src="" alt="" />
+        <img
+          data-imagem-rotina
+          src=""
+          alt="Ilustrativo para posiçoes das rotinas"
+        />
       </div>
-      <p class="instrucao font-instrucao">
+      <p class="instrucao font-instrucao" role="note">
         Avance o vídeo para mudar o posicionamento!
       </p>
       <div class="numeracao-rotinas">
@@ -135,22 +148,31 @@
       <div id="container-media-video" class="fadeInRight" data-anime="300">
         <video controls class="media-video">
           <source src="" type="video/webm" />
+          <track
+            src="./legendas-mao.vtt"
+            kind="captions"
+            srclang="pt"
+            label="Português"
+            default
+          />
           O teu navegador não suporta vídeo.
         </video>
       </div>
     </main>
     <footer class="bg-barra-horizontal">
-      <a href="./bancoDeImagens.html"
-        ><img
-          class="img-prev"
-          src="./img/img-prev.png"
-          alt="Voltar para menu inicial"
-      /></a>
-      <a href="./sugestao.html">
+      <abbr title="Voltar menu inicial">
+        <a href="./bancoDeImagens.html"
+          ><img
+            class="img-prev"
+            src="./img/img-prev.png"
+            alt="Voltar para menu inicial"
+        /></a>
+      </abbr>
+      <a href="./sugestao.html" aria-label="Avançar para a próxima página">
         <img
           src="./img/avancar-prox-pagina.png"
           class="img-proximo"
-          alt="Avançar para rotina crânio"
+          alt="Avançar para sugestões"
         />
       </a>
     </footer>

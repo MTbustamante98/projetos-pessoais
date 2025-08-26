@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -30,26 +30,27 @@
             />
             <img
               src="./img/img-pg-inicial.png"
-              alt="Imagem ilustrativa, incluir para cuidar, soluções para o atendimento de pessoas surdas."
+              alt="Imagem ilustrativa do projeto Incluir para Cuidar"
             />
           </picture>
         </div>
       </article>
       <div id="container-media-video" class="fadeInRight remover-media" data-anime="300">
-        <video controls class="media-video">
+        <video controls class="media-video" aria-label="Vídeo introdutório sobre o projeto Incluir para Cuidar">
           <source src="" type="video/webm" />
+          <track src="./legendas.vtt" kind="captions" srclang="pt" label="Português" default
           O teu navegador não suporta vídeo.
         </video>
       </div>
     </main>
     <footer class="bg-barra-horizontal">
-      <a href="./bancoDeImagens.html">
-        <img
-          class="img-proximo"
-          src="./img/avancar-prox-pagina.png"
-          alt="Clique, e avance para a próxima página"
-        />
-      </a>
+        <a href="./bancoDeImagens.html" aria-label="Avançar para a próxima página">
+          <img
+            class="img-proximo"
+            src="./img/avancar-prox-pagina.png"
+            alt="Ícone para clicar e avançar"
+          />
+        </a>
     </footer>
     <script src="./js/simple-anime.js"></script>
     <script type="module" src="dist/main.js"></script>

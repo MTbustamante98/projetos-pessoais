@@ -1,7 +1,7 @@
 :root {
   --lightgreen: #bedc96;
-  --palegreen: #62DD57;
-  --limegreen: #47B43D;
+  --palegreen: #62dd57;
+  --limegreen: #47b43d;
   --black: #222;
   --darkSlateGray: #282828;
   --white: #fff;
@@ -24,4 +24,10 @@ main {
 
 a {
   text-decoration: none;
+}
+
+a:focus,
+button:focus {
+  outline: 2px solid #005fcc;
+  outline-offset: 2px;
 }
