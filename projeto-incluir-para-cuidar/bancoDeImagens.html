@@ -20,6 +20,17 @@
           font-size: 4rem;
         }
       }
+
+      @media (max-width: 768px) {
+        body {
+          overflow-y: scroll;
+        }
+
+        #container-media-video {
+          width: 80px;
+          height: 150px;
+        }
+      }
     </style>
   </head>
   <body class="bg-radiologia">
@@ -44,7 +55,7 @@
                   alt="Ícone de início"
                 />
               </div>
-              <a href="./index.html">
+              <a href="./">
                 <div
                   class="btn-icone"
                   data-drop="inicial"
@@ -147,7 +158,7 @@
       aria-labelledby="modal-title"
     >
       <button class="container-close-modal" aria-label="Fechar Modal">
-          <img class="close-modal" src="./img/close-modal.svg" alt="" />
+        <img class="close-modal" src="./img/close-modal.svg" alt="" />
       </button>
       <div class="modal-flex">
         <a href="./rotina-mao.html">
