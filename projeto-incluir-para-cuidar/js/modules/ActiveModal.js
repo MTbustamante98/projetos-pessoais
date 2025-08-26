@@ -11,43 +11,55 @@ import {
 const activeModal = () => {
   const events = ["click", "touchstart"];
   function openModal(e) {
+    e.stopPropagation();
+
     const title = document.querySelector("[data-titulo]");
     modal.classList.add(active);
 
     if (modal) slide.forEach((slide) => slide.classList.remove(active));
     containerMedia.classList.add("removeClass");
 
-    if (title) title.innerText = e.currentTarget.innerText.trim();
-
+    if (title) {
+      title.innerText = e.currentTarget.innerText.trim();
+    }
+ 
     if (!video.paused) video.pause();
   }
 
   function closeModalHandler() {
+    if (!modal || !modal.classList.contains(active)) return;
+
     modal.classList.remove(active);
     containerMedia.classList.remove("removeClass");
 
-    // if (title) {
-    //   title.innerText = "Menu Inicial";
-    //   title.setAttribute("data-titulo", "");
-    // }
+    const title = document.querySelector("[data-titulo]");
+    if (title) {
+      title.innerText = "Menu Inicial";
+      title.setAttribute("data-titulo", "");
+    }
   }
 
   if (closeModal) {
     events.forEach((eventType) =>
-      closeModal.addEventListener(eventType, closeModalHandler)
+      closeModal.addEventListener(eventType, (e) => {
+        e.stopPropagation();
+        closeModalHandler();
+      })
     );
   }
 
   events.forEach((eventType) => {
-    document.addEventListener(eventType, ({ target }) => {
-      const isOutsideModal = modal && !modal.contains(target);
-      const isNotBtn = ![...btnModal].includes(target);
-      const isNotClose = closeModal && !closeModal.contains(target);
-      const isClose = target === closeModal;
+    document.addEventListener(eventType, (e) => {
+      const target = e.target;
 
-      if ((isOutsideModal && isNotBtn && isNotClose) || isClose) {
-        closeModalHandler();
-      }
+      if (!modal || !modal.classList.contains(active)) return;
+
+      if (modal.contains(target)) return;
+
+      const clickBtnModal = [...btnModal].some((btn) => btn.contains(target));
+      if (clickBtnModal) return;
+
+      closeModalHandler();
     });
   });
 
