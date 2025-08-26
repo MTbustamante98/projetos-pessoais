@@ -176,16 +176,16 @@
   }
 
   .container-posicao-sugestao {
-    margin-top: 4rem;
-    margin-left: 10rem;
+    margin-top: 9rem;
+    margin-left: 5rem;
   }
 
   .container-sugestao-flex .balao-img {
-    width: 170px;
-    height: 170px;
+    width: 140px;
+    height: 140px;
     position: fixed;
-    left: 1rem;
-    top: 13rem;
+    left: 0.5rem;
+    top: 18rem;
   }
 
   .container-sugestao-flex .textarea-img {
@@ -194,7 +194,7 @@
   }
 
   .form textarea {
-    height: 55%;
+    height: 47%;
     top: 150px;
   }
 
@@ -205,7 +205,7 @@
   .sobreposicao {
     height: 6%;
     top: 316px;
-    left: 6px;
+    left: 8px;
   }
 
   .sobreposicao-2 {

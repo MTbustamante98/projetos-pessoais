@@ -17,19 +17,18 @@ const activeModal = () => {
     if (modal) slide.forEach((slide) => slide.classList.remove(active));
     containerMedia.classList.add("removeClass");
 
-    title.innerText = e.currentTarget.innerText.trim();
+    if (title) title.innerText = e.currentTarget.innerText.trim();
+
     if (!video.paused) video.pause();
   }
 
-  function closeModalHandler(e) {
-    // const titulo = document.querySelector("[data-titulo]");
-
+  function closeModalHandler() {
     modal.classList.remove(active);
     containerMedia.classList.remove("removeClass");
 
-    // if (titulo) {
-    //   titulo.innerText = "Menu Inicial";
-    //   titulo.setAttribute("data-titulo", "Menu Inicial");
+    // if (title) {
+    //   title.innerText = "Menu Inicial";
+    //   title.setAttribute("data-titulo", "");
     // }
   }
 

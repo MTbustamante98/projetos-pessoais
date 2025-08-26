@@ -9,12 +9,10 @@ const toUpdateVideos = () => {
         const title = document.querySelector("[data-titulo]");
 
         const spanText = itemOpenVideo.querySelector("span");
-        if (spanText) {
+        if (spanText && title) {
           const text = spanText.innerText.trim();
 
-          title.innerText = "";
           title.innerText = text;
-
           title.setAttribute("data-titulo", text);
         }
 

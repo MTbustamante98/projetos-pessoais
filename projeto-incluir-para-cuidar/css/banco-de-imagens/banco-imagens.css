@@ -143,15 +143,11 @@
 
   .btn-icone {
     width: 210px !important;
-    margin-top: -8rem;
+    margin-top: -7rem;
   }
 }
 
 @media (max-width: 1024px) {
-  body {
-    overflow-y: scroll;
-  }
-
   .menu-icones {
     top: 25%;
     left: 30%;

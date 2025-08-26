@@ -93,8 +93,8 @@
   }
 
   .container-img-rotina {
-    top: 130px;
-    left: 10px;
+    top: 8.125rem;
+    left: 0.3rem;
   }
 
   .container-img-rotina img {
@@ -105,5 +105,21 @@
   .instrucao {
     right: 1rem;
     top: 0;
+  }
+
+  .img-posicao-boneco {
+    top: 38.5rem;
+    left: 18.6rem;
+  }
+
+  .img-numeracao-rotinas {
+    margin-top: 2rem;
+    right: 17.5rem;
+  }
+
+  .img-numeracao-rotinas img {
+    margin-bottom: 0.75rem;
+    width: 100px;
+    height: 100px;
   }
 }
