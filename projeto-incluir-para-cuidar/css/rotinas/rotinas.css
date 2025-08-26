@@ -7,6 +7,7 @@
 .container-img-rotina img {
   width: 95% !important;
   height: 550px;
+  z-index: 1;
 }
 
 .instrucao {
@@ -104,13 +105,13 @@
   }
 
   .container-img-rotina {
-    top: 8.125rem;
+    top: 6.5rem;
     left: 0.3rem;
   }
 
   .container-img-rotina img {
     width: 60% !important;
-    height: 550px;
+    height: 500px;
   }
 
   .instrucao {
@@ -119,7 +120,7 @@
   }
 
   .posicao-boneco {
-    top: 38.5rem;
+    top: 40.5rem;
     left: 18.6rem;
   }
 
@@ -132,5 +133,6 @@
     margin-bottom: 0.75rem;
     width: 100px;
     height: 100px;
+    z-index: 0;
   }
 }
