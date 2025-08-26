@@ -11,6 +11,7 @@ import {
 const activeModal = () => {
   const events = ["click", "touchstart"];
   function openModal(e) {
+    e.preventDefault();
     e.stopPropagation();
 
     const title = document.querySelector("[data-titulo]");
