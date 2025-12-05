@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
+
+:root {
+  --lightgreen: #bedc96;
+  --palegreen: #62dd57;
+  --limegreen: #47b43d;
+  --black: #222;
+  --darkSlateGray: #282828;
+  --white: #fff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  background: url("./assets/rad_background-removebg.png") center no-repeat;
+  background-size: 75% 130%;
+  min-height: 100vh;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:focus,
+button:focus {
+  outline: 2px solid #005fcc;
+  outline-offset: 2px;
+}
+
+@media (max-width: 80rem) {
+  body {
+    background-size: contain;
+  }
+}
+
+@media (max-width: 64rem) {
+  body {
+    background-size: contain;
+  }
+}

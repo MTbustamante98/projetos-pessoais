@@ -1,0 +1,11 @@
+@import "./geral.css";
+
+@import "./header/header.css";
+@import "./header/activeChooseTheme.css";
+
+@import "./keypad/keypad.css";
+@import "./keypad/activeKeyPad.css";
+
+@import "./cores/cores.css";
+
+@import "./tipografia/tipografia.css";

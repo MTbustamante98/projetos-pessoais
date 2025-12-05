@@ -60,7 +60,7 @@
 }
 
 .faq-lista ul {
-  font-family: "Roboto", Arial, sans-serif;
+  font: 500 0.975rem "Roboto", Arial, sans-serif;
   padding: 0 20px;
   list-style-type: decimal;
 }

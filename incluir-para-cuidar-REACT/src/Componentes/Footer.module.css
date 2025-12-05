@@ -1,0 +1,41 @@
+.footer {
+  height: 11%;
+  background: url("../assets/barra-horizontal.png") center no-repeat;
+  background-size: cover;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  z-index: 10;
+}
+
+.imgNext {
+  height: 65%;
+  width: 4%;
+  position: absolute;
+  right: 0.938rem;
+  top: 1.25rem;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.imgPrev {
+  height: 65%;
+  width: 4%;
+  position: absolute;
+  left: 0.938rem;
+  top: 1.25rem;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+@media (max-width: 80rem) {
+  .imgNext {
+    height: 55%;
+    top: 1.5rem;
+  }
+
+  .imgPrev {
+    height: 55%;
+    top: 1.5rem;
+  }
+}

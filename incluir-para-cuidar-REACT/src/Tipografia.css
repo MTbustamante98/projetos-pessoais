@@ -1,0 +1,36 @@
+.titulo-header-typewriter {
+  font: 500 4rem "Special Elite", cursive;
+  color: var(--darkSlateGray);
+}
+
+.slide-button-font {
+  font: 900 1.125rem "Roboto", Arial, sans-serif;
+}
+
+.font-p-modal-xl {
+  font: 900 3.5rem "Roboto", Arial, sans-serif;
+}
+
+.font-instruction {
+  font: 700 0.75rem "Roboto", Arial, sans-serif;
+}
+
+.font-btn-sugestao {
+  font: 900 1.5rem "Roboto", Arial, sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.font-text-area {
+  font: 500 1.2rem "Roboto", Arial, sans-serif;
+}
+
+@media (max-width: 1024px) {
+  .font-p-modal-xl {
+    font-size: 2rem;
+  }
+
+  .titulo-header-typewriter {
+    font-size: 3rem;
+  }
+}

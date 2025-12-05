@@ -1,0 +1,69 @@
+.parentContainer {
+  position: relative;
+}
+
+.containerImgRoutine {
+  position: absolute;
+  top: 3rem;
+  left: 28.75rem;
+}
+
+.containerImgRoutine img {
+  width: 95% !important;
+  height: 550px;
+}
+
+.videoRoutine {
+  width: 33%;
+  height: 55%;
+  right: 60px;
+  top: 13.25rem;
+}
+
+.informativeParagraph {
+  position: absolute;
+  right: 4rem;
+  top: 2.25rem;
+}
+
+.numberingRoutines {
+  position: absolute;
+  right: 41.25rem;
+  margin-top: 2.75rem;
+}
+
+.numberingRoutines img {
+  width: 130px;
+  height: 130px;
+}
+
+.positionPuppet {
+  position: absolute;
+  top: 34rem;
+  left: 12rem;
+}
+
+@media (max-width: 80rem) {
+  .videoRoutine {
+    width: 27%;
+    height: 600px;
+    top: 7rem !important;
+  }
+}
+
+@media (max-width: 80rem) {
+  .containerImgRoutine {
+    top: 10rem;
+    left: 20rem;
+  }
+
+  .containerImgRoutine img {
+    width: 80% !important;
+    height: 550px;
+  }
+
+  .informativeParagraph {
+    right: 2.2rem;
+    top: 5.5rem;
+  }
+}

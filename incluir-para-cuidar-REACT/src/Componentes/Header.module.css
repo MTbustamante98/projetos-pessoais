@@ -1,0 +1,35 @@
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1.875rem;
+}
+
+.title {
+  margin-top: 1.5rem;
+  position: relative;
+}
+
+.title::before {
+  content: "";
+  width: 25%;
+  height: 6%;
+  background: var(--lightgreen);
+  position: absolute;
+  right: 4.75rem;
+  bottom: 0.313rem;
+  border-radius: 0.25rem;
+  opacity: 0.5;
+}
+
+.title::after {
+  content: "";
+  height: 60px;
+  width: 60px;
+  display: inline-block;
+  margin-left: 0.938rem;
+  background: url("../assets/ico-play-60px.png") no-repeat;
+}
+
+.header a {
+  outline: none;
+}

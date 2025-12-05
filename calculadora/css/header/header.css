@@ -1,0 +1,55 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  color: var(--gunMetal);
+}
+
+.select-theme {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.select-theme .theme-text {
+  text-transform: uppercase;
+  color: var(--gunMetal);
+}
+
+.box-direct-interation {
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  margin-top: -0.938rem;
+}
+
+.number-of-theme {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.number-of-theme .number {
+  margin-bottom: 0.313rem;
+  color: var(--gunMetal);
+}
+
+.box-choose {
+  padding: 0.688rem 2rem;
+  background: var(--YinmnBlue);
+  border-radius: 1rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.choose {
+  width: 1rem;
+  height: 1rem;
+  background: var(--iceBlue);
+  border-radius: 50%;
+  position: absolute;
+  top: 0.188rem;
+  left: 0.313rem;
+}

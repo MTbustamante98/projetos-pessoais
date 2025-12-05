@@ -36,12 +36,18 @@ const updateVideoImg = () => {
   };
 
   const pagina = document.body.id.replace("rotina-", "");
+  if (!pagina) return;
+
   const listaAtual = rotinas[pagina];
+  
+  //Índice da imagem/vídeo atual
   let currentIndex = 0;
+
+  //Guarda o próximo item a ser usado
   let nextItem = null;
 
   if (listaAtual && listaAtual.length) {
-    nextItem = listaAtual[currentIndex];
+    nextItem = listaAtual[currentIndex]; //Apenas a primeira atribuição, definindo o ponto de partida do slider.
     sliderImg.src = listaAtual[currentIndex].img;
     source.src = listaAtual[currentIndex].video;
     video.load();
@@ -66,7 +72,7 @@ const updateVideoImg = () => {
 
   function updateSliderAndMediaVideo() {
     const nextIndex = (currentIndex + 1) % listaAtual.length;
-
+    
     if (nextIndex === 0) {
       imgNumeracao.forEach((img) => img.classList.remove(active));
     } else {
@@ -75,8 +81,9 @@ const updateVideoImg = () => {
       if (balloon) balloon.classList.add(active);
     }
 
+    //Aqui ele é reatribuído com o elemento correspondente ao novo índice, após o cálculo.
     currentIndex = nextIndex;
-
+    
     nextItem = listaAtual[currentIndex];
     sliderImg.src = nextItem.img;
     source.src = nextItem.video;

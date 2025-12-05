@@ -1,0 +1,81 @@
+.modal {
+  position: absolute;
+  left: 30%;
+  top: 23%;
+  width: 800px;
+  height: auto;
+}
+
+.linkModalsContainer {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.linkModalsContainer a:focus {
+  outline: none !important;
+}
+
+.boxModal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 250px;
+  border: 0.188rem solid var(--black);
+  border-radius: 0.625rem;
+  background: var(--white);
+  box-shadow: 7px 5px 0 0 var(--black);
+  position: relative;
+  color: var(--darkSlateGray);
+}
+
+.boxModal:hover {
+  transform: translateY(-5px);
+  box-shadow: 10px 8px 0 0 var(--black);
+}
+
+.boxModal::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  transition: width 0.8s ease;
+  background: var(--lightgreen);
+  z-index: -1;
+}
+
+.boxModal:hover::after {
+  width: 100%;
+  right: auto;
+  left: 0;
+}
+
+.closeModal {
+  position: absolute;
+  top: -15%;
+  right: 8%;
+  cursor: pointer;
+}
+
+@media (max-width: 80rem) {
+  .modal {
+    left: 24%;
+    top: 30%;
+  }
+
+  .boxModal {
+    width: 240px;
+    height: 190px;
+  }
+
+  .closeModal {
+    top: -17%;
+    right: 15%;
+  }
+}

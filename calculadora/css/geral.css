@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow-y: hidden;
+  background: var(--uranianBlue);
+  transition: background-color 0.6s ease;
+}
+
+
+body.theme-2 {
+  background: var(--ghostWhite);
+}
+
+body.theme-3 {
+  background: var(--lightBlack);
+}
+
+.main {
+  width: 330px;
+  height: auto;
+}

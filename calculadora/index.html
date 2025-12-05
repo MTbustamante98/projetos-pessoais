@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Calculadora básica" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Calc</title>
+  </head>
+  <body class="theme-1">
+    <main class="main">
+      <header class="header">
+        <p class="logo font-b-l">Calc</p>
+        <div class="select-theme">
+          <span class="font-s theme-text">Theme</span>
+          <div class="box-direct-interation">
+            <div class="number-of-theme">
+              <span class="number font-s"></span>
+              <span class="number font-s"></span>
+              <span class="number font-s"></span>
+            </div>
+            <div class="box-choose">
+              <div class="choose t1"></div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <section class="background-keypad">
+        <div class="keypad">
+          <section class="numeric-digits">
+            <span data-operation-display class="font-xxl">
+              <span data-operator-display></span>
+            </span>
+            <span data-digit class="font-xxl"></span>
+          </section>
+          <button type="button" class="btn-calc font-l-sl" data-value="7">
+            7
+          </button>
+          <button type="button" class="btn-calc font-l-sl" data-value="8">
+            8
+          </button>
+          <button type="button" class="btn-calc font-l-sl" data-value="9">
+            9
+          </button>
+          <button
+            type="button"
+            id="btn-del"
+            class="btn-calc font-l-sl"
+            data-operator="del"
+          >
+            del
+          </button>
+          <button type="button" class="btn-calc font-l-sl" data-value="4">
+            4
+          </button>
+          <button type="button" class="btn-calc font-l-sl" data-value="5">
+            5
+          </button>
+          <button type="button" class="btn-calc font-l-sl" data-value="6">
+            6
+          </button>
+          <button type="button" class="btn-calc font-l-sl" data-operator="+">
+            +
+          </button>
+          <button type="button" class="btn-calc font-l-sl" data-value="1">
+            1
+          </button>
+          <button type="button" class="btn-calc font-l-sl" data-value="2">
+            2
+          </button>
+          <button type="button" class="btn-calc font-l-sl" data-value="3">
+            3
+          </button>
+          <button type="button" class="btn-calc font-l-sl" data-operator="-">
+            -
+          </button>
+          <button type="button" class="btn-calc font-l-sl" data-operator=".">
+            .
+          </button>
+          <button type="button" class="btn-calc font-l-sl" data-value="0">
+            0
+          </button>
+          <button type="button" class="btn-calc font-l-sl" data-operator="/">
+            /
+          </button>
+          <button type="button" class="btn-calc font-l-sl" data-operator="x">
+            x
+          </button>
+          <button
+            type="button"
+            id="btn-reset"
+            class="font-l-sl"
+            data-btn-modifiers
+          >
+            <span>Reset</span>
+          </button>
+          <button
+            type="button"
+            id="btn-result"
+            class="font-l-sl"
+            data-btn-modifiers
+          >
+            <span>=</span>
+          </button>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="js/script.js"></script>
+  </body>
+</html>

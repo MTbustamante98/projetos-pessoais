@@ -1,0 +1,38 @@
+.opacityAnime {
+  animation: opacity 1.5s ease forwards;
+}
+
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animeLeft {
+  opacity: 0;
+  transform: translateX(100px);
+  animation: showLeft 0.8s forwards;
+}
+
+@keyframes showLeft {
+  to {
+    opacity: 1;
+    transform: initial;
+  }
+}
+
+.animeUp {
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: showUp 0.8s forwards;
+}
+
+@keyframes showUp {
+  to {
+    opacity: 1;
+    transform: initial;
+  }
+}

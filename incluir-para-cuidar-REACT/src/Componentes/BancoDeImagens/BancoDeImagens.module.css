@@ -1,0 +1,25 @@
+.videoBankPosition {
+  width: 50%;
+  height: 60%;
+  top: 15rem;
+  right: 20rem;
+}
+
+.informativeParagraph {
+  position: absolute;
+  right: 20rem;
+  top: 13rem;
+}
+
+@media (max-width: 80rem) {
+  .videoBankPosition {
+    width: 30%;
+    height: 70%;
+    top: 10rem !important;
+  }
+
+  .informativeParagraph {
+    right: 1rem;
+    top: 8rem;
+  }
+}

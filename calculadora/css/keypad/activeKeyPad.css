@@ -1,0 +1,32 @@
+body.theme-2 .background-keypad {
+  background: var(--platinum);
+}
+
+body.theme-2 .btn-calc {
+  background: var(--seaSalt);
+  color: var(--black);
+}
+
+body.theme-2 #btn-reset,
+body.theme-2 #btn-result {
+  background: var(--blue500);
+}
+
+body.theme-2 #btn-reset:hover,
+body.theme-2 #btn-result:hover {
+  background: var(--blue400);
+}
+
+body.theme-3 .background-keypad {
+  background: var(--grey);
+}
+
+body.theme-3 #btn-reset,
+body.theme-3 #btn-result {
+  background: var(--lightSeaGreen);
+}
+
+body.theme-3 .btn-calc {
+  background: var(--orange);
+  color: var(--white);
+}

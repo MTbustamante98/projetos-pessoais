@@ -112,7 +112,7 @@ export default function initPomodoros() {
         currentTimer.innerText = `${min.toString().padStart(2, "0")}:${sec
           .toString()
           .padStart(2, "0")}`;
-      }, 50);
+      }, 1000);
     } else {
       timerState.isRunning = false;
       clearInterval(timerState.interval);

@@ -1,0 +1,41 @@
+.choose.t1 {
+  position: absolute;
+  top: 0.188rem;
+  left: 0.313rem;
+}
+
+.choose.t1:hover {
+  background: var(--powerBlue);
+}
+
+.choose.t2 {
+  transform: translateX(100%);
+  background: var(--orange700);
+}
+
+.choose.t2:hover {
+  background: var(--orange600);
+}
+
+.choose.t3 {
+  transform: translateX(230%);
+  background: var(--orange);
+}
+
+/* .choose.t3:hover {
+ 
+} */
+
+body.theme-2 .box-choose {
+  background: var(--platinum);
+}
+
+body.theme-3 .box-choose {
+  background: var(--white);
+}
+
+body.theme-3 .logo,
+body.theme-3 .theme-text,
+body.theme-3 .number {
+  color: var(--white);
+}
