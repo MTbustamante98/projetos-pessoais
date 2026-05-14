@@ -1,0 +1,161 @@
+@import "tailwindcss";
+
+@theme {
+  /* Primary */
+  --color-red: #ff0005;
+  --color-red-2: #c50b0e;
+  --color-red-3: #b20609;
+  --color-red-4: #8c0017;
+  --color-red-5: #730002;
+  --color-red-6: #660011;
+
+  /* Neutral */
+  --color-neutral-1: #121212;
+  --color-neutral: #222;
+  --color-neutral-2: #b3b3b3;
+  --color-neutral-3: #cccccc;
+  --color-neutral-4: #ededed;
+  --color-neutral-5: #f7f7f7;
+  --color-white: #fff;
+  --color-form: #dedede;
+
+  --font-sans: "Poppins";
+  --font-display: "Sofia Sans Condensed", "Roboto Condensed", "sans-serif";
+  --font-serif: "Fraunces", "serif";
+
+  --breakpoint-laptop: 1280px;
+  --breakpoint-laptop-max: (width < 1440px);
+}
+
+@utility container {
+  margin: 0 auto;
+  padding: 0 0.5rem;
+
+  @media (width >= 40rem) {
+    padding: 0 1rem;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+.dec {
+  position: relative;
+}
+
+.dec::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0;
+  background: var(--color-red);
+  transition: 0.3s;
+}
+
+.dec:hover::after {
+  width: 100%;
+}
+
+a.active::after {
+  width: 100%;
+}
+
+.decFooterMobile {
+  position: relative;
+}
+
+.decFooterMobile::after {
+  content: "";
+  height: 15px;
+  width: 3px;
+  background: var(--color-red-2);
+  position: absolute;
+  left: -7px;
+  bottom: 7px;
+}
+
+.decLocationSpan {
+  position: relative;
+}
+
+.decLocationSpan::before {
+  content: url("./assets/icon-location.svg");
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.decAspasSobreHome {
+  position: relative;
+}
+
+.decAspasSobreHome::before {
+  content: url("./assets/aspas-1.svg");
+  position: absolute;
+  left: 5px;
+  top: -10px;
+}
+
+.decAspasSobreHome-2 {
+  position: relative;
+}
+
+.decAspasSobreHome-2::after {
+  content: url("./assets/aspas-2.svg");
+  position: absolute;
+  bottom: -15px !important;
+  margin-left: 0.313rem;
+}
+
+@media (min-width: 650px) and (max-width: 1023px) {
+  .decAspasSobreHome-2::after {
+    right: 48px !important;
+    bottom: -15px !important;
+  }
+}
+
+.paragraphNotFound {
+  display: flex;
+  align-items: center;
+}
+
+.paragraphNotFound::after {
+  content: url("./assets/obturador.png");
+  display: inline-block;
+  margin: 0.3rem 0 0 0.313rem;
+}
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+  .decAspasSobreHome-2::after {
+    right: 285px !important;
+    bottom: -15px !important;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1440px) {
+  .decAspasSobreHome::before {
+    left: -25px;
+  }
+
+  .decAspasSobreHome-2::after {
+    right: 15px !important;
+    bottom: -10px;
+  }
+}
+
+@media (min-width: 1441px) {
+  .decAspasSobreHome::before {
+    left: -25px;
+    top: -10px;
+  }
+
+  .decAspasSobreHome-2::after {
+    right: 12px !important;
+    bottom: -15px !important;
+  }
+}
+
+.esteiraSlides {
+  transition: transform 0.5s ease-in-out;
+}

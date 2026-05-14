@@ -1,0 +1,1 @@
+ w-[clamp(30rem,25vw,60rem)] h-[clamp(20rem,30vw,48rem)] 
