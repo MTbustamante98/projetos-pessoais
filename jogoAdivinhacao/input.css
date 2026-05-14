@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #ededed;
+}
+
+button:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+#mensagemErroAcerto.activeCorrect {
+  background: green;
+}
+
+#mensagemErroAcerto.activeWrong {
+  background: red;
+}
+
+#btnIniciar:disabled,
+#inputPalpite:disabled {
+  opacity: 0.2;
+  cursor: auto;
+}
+
+#btnIniciar:disabled:hover {
+  background: black;
+}
+
+#btnNovoJogo.active {
+  display: none;
+}
+
+#inputPalpite:focus {
+  border: 2px solid black;
+}
