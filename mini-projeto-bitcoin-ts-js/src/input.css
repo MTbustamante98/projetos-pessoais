@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  /* Primary */
+  --color-primaria1: #e39043;
+  --color-primaria2: #fec28b;
+  --color-primaria3: #f3b072;
+  --color-primaria4: #502a06;
+
+  /* Neutral */
+  --color-neutral-1: #141414;
+  --color-neutral-2: #e0e0e0;
+
+  --font-sans: "Poppins";
+  --font-serif: "Playfair Display", "serif";
+}
+
+@utility container {
+  margin: 0 auto;
+  padding: 0 0.5rem;
+
+  @media (width >= 40rem) {
+    padding: 0 1rem;
+  }
+}
+
+.imgBitcoin {
+  position: relative;
+}
+
+.imgBitcoin::after {
+  content: url("/assets/bitcoin.png");
+  position: absolute;
+  top: 2px;
+  margin-left: 4px;
+  width: 1rem;
+  height: 1rem;
+}
+
+#paragraphCard.active {
+  font-size: 1.875rem;
+}
+
+#paragraphCard.active.imgBitcoin::after {
+  top: -2px;
+}
+
+#btnAtualizar:disabled {
+  opacity: 0.3;
+}
+
+#btnAtualizar.active {
+  cursor: wait;
+}

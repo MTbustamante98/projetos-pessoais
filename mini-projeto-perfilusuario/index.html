@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/output.css" />
+  </head>
+
+  <body class="bg-neutral-1">
+    <section class="flex justify-center items-center h-screen">
+      <div
+        id="card"
+        class="grid grid-cols-1 justify-items-center rounded-sm h-160 w-100 bg-neutral-4 relative"
+      >
+        <div class="bg-orange h-50 w-full rounded-sm"></div>
+        <div class="rounded-full h-40 w-40 absolute top-28 bg-neutral-4">
+          <img
+            id="imgUsuario"
+            class="rounded-full relative w-full"
+            src=""
+            alt=""
+          />
+        </div>
+        <div class="flex flex-col gap-8 self-center">
+          <div class="flex flex-col items-center gap-2">
+            <span class="text-xs text-neutral-3 font-medium">Nome perfil</span>
+            <p class="font-semibold iconeUser text-lg">
+              <span id="first">Matheus</span> <span id="last">Bustamante</span>
+            </p>
+          </div>
+          <div class="flex flex-col items-center gap-2">
+            <span class="text-xs text-neutral-3 font-medium"
+              >Email usuário</span
+            >
+            <p id="email" class="font-semibold iconeEmail text-lg">
+              matheus@hotmail.com
+            </p>
+          </div>
+          <div class="flex flex-col items-center gap-2">
+            <span class="text-xs text-neutral-3 font-medium">Localização</span>
+            <p class="font-semibold iconeLocalizacao text-lg">
+              <span id="city"></span>, <span id="country"></span>.
+            </p>
+          </div>
+        </div>
+        <button
+          class="self-end px-8 py-2 bg-red cursor-pointer relative -top-6 shadow-md text-white rounded-sm hover:bg-red-2 transition-colors tracking-wider"
+          id="btnCriarUsuario"
+        >
+          Criar usuário
+        </button>
+      </div>
+    </section>
+  </body>
+  <script type="module" src="./dist/modules/script.js"></script>
+</html>

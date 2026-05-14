@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@theme {
+  /* Primary */
+  --color-red: #8c0017;
+  --color-red-2: #b20609;
+  --color-orange: #ffb700;
+
+  /* Neutral */
+  --color-neutral-black: #222;
+  --color-neutral-1: #000;
+  --color-neutral-2: #e0e0e0;
+  --color-neutral-3: #b3b3b3;
+  --color-neutral-4: #f7f7f7;
+}
+
+@utility container {
+  margin: 0 auto;
+  padding: 0 0.5rem;
+
+  @media (width >= 40rem) {
+    padding: 0 1rem;
+  }
+}
+
+body {
+  font-family: "Roboto", Arial, sans-serif;
+}
+
+.iconeUser,
+.iconeEmail,
+.iconeLocalizacao {
+  position: relative;
+}
+
+.iconeUser::before {
+  content: url("/assets/icone-usuario.png");
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  margin-right: 0.4rem;
+  margin-top: -5px;
+  vertical-align: middle;
+}
+
+.iconeEmail::before {
+  content: url("/assets/icone-email.png");
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  margin-right: 0.4rem;
+  margin-top: -1px;
+  vertical-align: middle;
+}
+
+.iconeLocalizacao::before {
+  content: url("/assets/icone-localizacao.png");
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  margin-top: -5px;
+  vertical-align: middle;
+}
+
+.activeMale {
+  border: 3px solid blue;
+}
+
+.activeFemale {
+  border: 3px solid violet;
+}
