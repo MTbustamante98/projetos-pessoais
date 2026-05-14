@@ -1,6 +1,5 @@
 import { elements } from "../elements.js";
 import { numeroAleatorioGerado } from "../config/contants.js";
-import { assertExists } from "utils/funcsUtilitarias.js";
 
 export function verificarJogadaAltaOuBaixa(value: number | undefined) {
   const { mensagemAltoBaixo, btnIniciarGame } = elements;
