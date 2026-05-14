@@ -26,3 +26,8 @@ export function iterarLimparNumerosPalpites() {
   childrens.forEach((item) => (item.innerHTML = ""));
   listaPalpites.length = 0;
 }
+
+//verificar em runtime, se item é null
+export function assertExists(elements: Record<string, unknown>): boolean {
+  return Object.values(elements).every((el) => el !== null && el !== undefined);
+}

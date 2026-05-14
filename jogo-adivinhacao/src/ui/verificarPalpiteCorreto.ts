@@ -1,24 +1,35 @@
 import { elements } from "../elements.js";
 import { numeroAleatorioGerado, active } from "../config/contants.js";
-import { verificarTrueDisabled } from "../utils/funcsUtilitarias.js";
+import {
+  assertExists,
+  verificarTrueDisabled,
+} from "../utils/funcsUtilitarias.js";
 
 export function verifiarPalpiteCorreto(value: number | undefined): void {
+  const {
+    mensagemErroAcerto,
+    inputPalpites,
+    btnIniciarGame,
+    mensagemAltoBaixo,
+    btnNewGame,
+  } = elements;
+
+  //verificar em runtime, se item é null
+  if (assertExists(elements)) return;
+
   const palpiteCorreto = numeroAleatorioGerado === value;
 
-  if (!elements.mensagemErroAcerto) return;
-
-  elements.mensagemErroAcerto.innerText = palpiteCorreto
+  mensagemErroAcerto!.innerText = palpiteCorreto
     ? "Parabéns! Você acertou!"
     : "Errado";
 
-  elements.mensagemErroAcerto.classList.toggle("activeCorrect", palpiteCorreto);
-  elements.mensagemErroAcerto.classList.toggle("activeWrong", !palpiteCorreto);
+  mensagemErroAcerto!.classList.toggle("activeCorrect", palpiteCorreto);
+  mensagemErroAcerto!.classList.toggle("activeWrong", !palpiteCorreto);
 
-  if (palpiteCorreto && elements.mensagemAltoBaixo)
-    elements.mensagemAltoBaixo.innerHTML = "";
+  if (palpiteCorreto && mensagemAltoBaixo) mensagemAltoBaixo.innerHTML = "";
 
-  if (elements.mensagemErroAcerto.classList.contains("activeCorrect")) {
-    verificarTrueDisabled(elements.btnIniciarGame, elements.inputPalpites);
-    elements.btnNewGame?.classList.remove(active);
+  if (mensagemErroAcerto!.classList.contains("activeCorrect")) {
+    verificarTrueDisabled(btnIniciarGame, inputPalpites);
+    btnNewGame!.classList.remove(active);
   }
 }

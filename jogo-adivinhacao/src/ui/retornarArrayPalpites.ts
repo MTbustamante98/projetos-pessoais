@@ -2,11 +2,16 @@ import { elements } from "../elements.js";
 import { listaPalpites } from "../config/contants.js";
 
 export function gerarRetornarArrayPalpites(value: number | undefined): void {
-  const numeroPalpite = listaPalpites.push(Number(value));
+  if (
+    value === undefined ||
+    isNaN(value) ||
+    elements.paragrafoPalpites === null
+  )
+    return;
 
-  if (isNaN(numeroPalpite)) return;
+  listaPalpites.push(value);
 
-  if (!elements.paragrafoPalpites) return;
+  if (elements.paragrafoPalpites === null) return;
 
   const htmlPalpites = listaPalpites
     .map((p) => {

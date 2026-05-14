@@ -7,12 +7,14 @@ import {
 
 function iniciarJogo(e: MouseEvent) {
   e.preventDefault();
+
   atualizarPalpitesNaTela();
   elements.inputPalpites?.focus();
 }
 
 function restartJogo(e: MouseEvent) {
   e.preventDefault();
+
   limparDadosTotais();
   iterarLimparNumerosPalpites();
 }

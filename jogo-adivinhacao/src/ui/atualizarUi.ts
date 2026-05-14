@@ -8,7 +8,7 @@ import { gerarRetornarArrayPalpites } from "./retornarArrayPalpites.js";
 export function atualizarPalpitesNaTela() {
   const valueInputPalpite = puxarValorInput();
 
-  if (!valueInputPalpite) return;
+  if (valueInputPalpite === null) return;
 
   if (elements.inputPalpites) elements.inputPalpites.value = "";
 
